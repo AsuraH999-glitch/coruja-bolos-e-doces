@@ -13,18 +13,28 @@ import { useReveal, useParallax } from "@/hooks/use-reveal";
 import logoAsset from "@/assets/logo.asset.json";
 import confeiteiroAsset from "@/assets/confeiteiro.asset.json";
 import boloRedVelvetAsset from "@/assets/bolo-red-velvet.jpg.asset.json";
-import bolosImg from "@/assets/product-bolos.jpg";
-import docesImg from "@/assets/product-doces.jpg";
+import bolosAsset from "@/assets/bolo-pink-hearts.jpg.asset.json";
+import docesAsset from "@/assets/pave-cereja.jpg.asset.json";
 import cupcakesImg from "@/assets/product-cupcakes.jpg";
 import donutsImg from "@/assets/product-donuts.jpg";
-import tortasImg from "@/assets/product-tortas.jpg";
-import trufasImg from "@/assets/product-trufas.jpg";
-import gallery1 from "@/assets/gallery-1.jpg";
-import gallery2 from "@/assets/gallery-2.jpg";
-import gallery3 from "@/assets/gallery-3.jpg";
-import gallery4 from "@/assets/gallery-4.jpg";
-import gallery5 from "@/assets/gallery-5.jpg";
-import gallery6 from "@/assets/gallery-6.jpg";
+import tortasAsset from "@/assets/torta-morango.jpg.asset.json";
+import trufasAsset from "@/assets/caixa-brownies.jpg.asset.json";
+import gallery1Asset from "@/assets/bolo-lilas-morango.jpg.asset.json";
+import gallery2Asset from "@/assets/morangos-brownie.jpg.asset.json";
+import gallery3Asset from "@/assets/bolo-branco-flores.jpg.asset.json";
+import gallery4Asset from "@/assets/charlotte-cerejas.jpg.asset.json";
+import gallery5Asset from "@/assets/pave-chocolate.jpg.asset.json";
+import gallery6Asset from "@/assets/pudim.jpg.asset.json";
+const bolosImg = bolosAsset.url;
+const docesImg = docesAsset.url;
+const tortasImg = tortasAsset.url;
+const trufasImg = trufasAsset.url;
+const gallery1 = gallery1Asset.url;
+const gallery2 = gallery2Asset.url;
+const gallery3 = gallery3Asset.url;
+const gallery4 = gallery4Asset.url;
+const gallery5 = gallery5Asset.url;
+const gallery6 = gallery6Asset.url;
 
 const WHATSAPP = "5519995766824";
 const wa = (msg: string) =>
@@ -604,12 +614,12 @@ function HowItWorks() {
 /* ---------------- GALLERY ---------------- */
 function Gallery() {
   const items = [
-    { src: gallery1, alt: "Bolo de andares com rosas", h: "row-span-2" },
-    { src: gallery2, alt: "Morangos com chocolate", h: "" },
-    { src: gallery3, alt: "Bolo rosa com topper dourado", h: "" },
-    { src: gallery4, alt: "Mesa de doces boutique", h: "row-span-2" },
-    { src: gallery5, alt: "Naked cake de morango", h: "" },
-    { src: gallery6, alt: "Confeitando cupcake à mão", h: "" },
+    { src: gallery1, alt: "Bolo lilás com morangos ao chocolate", h: "row-span-2" },
+    { src: gallery2, alt: "Morangos com brownie artesanal", h: "" },
+    { src: gallery3, alt: "Bolo branco com flores rosas", h: "" },
+    { src: gallery4, alt: "Charlotte com cerejas e morangos", h: "row-span-2" },
+    { src: gallery5, alt: "Pavê de chocolate com morangos", h: "" },
+    { src: gallery6, alt: "Pudim de leite artesanal", h: "" },
   ];
   return (
     <section id="galeria" className="section-warm py-20 md:py-28 relative">
