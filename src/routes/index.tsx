@@ -664,8 +664,10 @@ function FinalCTA() {
   return (
     <section className="py-24 md:py-32 relative overflow-hidden">
       <div className="absolute inset-0" style={{ background: "var(--gradient-dark)" }} />
-      <div className="absolute inset-0 opacity-40" style={{ background: "radial-gradient(ellipse at 30% 20%, color-mix(in oklab, var(--rose) 45%, transparent) 0%, transparent 50%), radial-gradient(ellipse at 80% 90%, color-mix(in oklab, var(--gold) 30%, transparent) 0%, transparent 55%)" }} />
-      <div className="absolute inset-0 opacity-30" style={{ backgroundImage: "radial-gradient(circle at 1px 1px, rgba(255,255,255,0.15) 1px, transparent 0)", backgroundSize: "24px 24px" }} />
+      <div className="absolute inset-0 opacity-50" style={{ background: "radial-gradient(ellipse at 20% 10%, color-mix(in oklab, var(--rose) 55%, transparent) 0%, transparent 55%), radial-gradient(ellipse at 85% 95%, color-mix(in oklab, var(--gold) 35%, transparent) 0%, transparent 60%), radial-gradient(ellipse at 60% 50%, color-mix(in oklab, var(--rose-deep) 30%, transparent) 0%, transparent 65%)" }} />
+      <div className="absolute inset-0 opacity-25" style={{ backgroundImage: "radial-gradient(circle at 1px 1px, rgba(255,255,255,0.12) 1px, transparent 0)", backgroundSize: "28px 28px" }} />
+      <div className="absolute inset-0 opacity-[0.08] mix-blend-overlay" style={{ backgroundImage: "var(--noise-url)", backgroundSize: "220px 220px" }} />
+
 
       <div className="relative mx-auto max-w-3xl px-4 text-center">
         <Heart className="mx-auto h-8 w-8 text-rose animate-float" />
