@@ -614,12 +614,12 @@ function HowItWorks() {
 /* ---------------- GALLERY ---------------- */
 function Gallery() {
   const items = [
-    { src: gallery1, alt: "Bolo de andares com rosas", h: "row-span-2" },
-    { src: gallery2, alt: "Morangos com chocolate", h: "" },
-    { src: gallery3, alt: "Bolo rosa com topper dourado", h: "" },
-    { src: gallery4, alt: "Mesa de doces boutique", h: "row-span-2" },
-    { src: gallery5, alt: "Naked cake de morango", h: "" },
-    { src: gallery6, alt: "Confeitando cupcake à mão", h: "" },
+    { src: gallery1, alt: "Bolo lilás com morangos ao chocolate", h: "row-span-2" },
+    { src: gallery2, alt: "Morangos com brownie artesanal", h: "" },
+    { src: gallery3, alt: "Bolo branco com flores rosas", h: "" },
+    { src: gallery4, alt: "Charlotte com cerejas e morangos", h: "row-span-2" },
+    { src: gallery5, alt: "Pavê de chocolate com morangos", h: "" },
+    { src: gallery6, alt: "Pudim de leite artesanal", h: "" },
   ];
   return (
     <section id="galeria" className="section-warm py-20 md:py-28 relative">
