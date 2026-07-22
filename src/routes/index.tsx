@@ -748,7 +748,7 @@ function Footer() {
               <li className="flex items-center gap-2"><MessageCircle className="h-4 w-4 text-rose-deep" />
                 <a href={wa("Olá, Coruja!")} target="_blank" rel="noopener" className="hover:text-rose-deep">WhatsApp</a>
               </li>
-              <li className="flex items-center gap-2"><Instagram className="h-4 w-4 text-rose-deep" /> @coruja.bolosedoces</li>
+              <li className="flex items-center gap-2"><Instagram className="h-4 w-4 text-rose-deep" /> @corujadocess</li>
             </ul>
           </div>
 
@@ -764,9 +764,9 @@ function Footer() {
           <div>
             <p className="text-xs font-semibold uppercase tracking-widest text-rose-deep">Atendimento</p>
             <ul className="mt-4 space-y-2 text-sm text-chocolate/75">
-              <li className="flex items-center gap-2"><MapPin className="h-4 w-4 text-rose-deep" /> Piracicaba e região</li>
+              <li className="flex items-center gap-2"><MapPin className="h-4 w-4 text-rose-deep" />&nbsp;Campinas - SP e região</li>
               <li>Pedidos com 5 dias de antecedência</li>
-              <li>Ingredientes selecionados</li>
+              <li>Personalizados para cada ocasião</li>
             </ul>
           </div>
         </div>
