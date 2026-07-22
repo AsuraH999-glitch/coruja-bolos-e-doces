@@ -13,6 +13,7 @@ import { useReveal, useParallax } from "@/hooks/use-reveal";
 import logoAsset from "@/assets/logo.asset.json";
 import confeiteiroAsset from "@/assets/confeiteiro.asset.json";
 import boloRedVelvetAsset from "@/assets/bolo-red-velvet.jpg.asset.json";
+import boloLilasMorangoAsset from "@/assets/bolo-lilas-morango.jpg.asset.json";
 
 import bolosImg from "@/assets/product-bolos.jpg";
 import docesImg from "@/assets/product-doces.jpg";
@@ -373,7 +374,7 @@ function About() {
       <div className="mx-auto max-w-6xl px-4 grid lg:grid-cols-2 gap-14 items-center">
         <div data-reveal className="relative order-2 lg:order-1">
           <div className="relative rounded-[2.5rem] overflow-hidden shadow-[var(--shadow-elegant)]">
-            <img src={confeiteiroAsset.url} alt="Confeiteiro da Coruja Bolos & Doces" width={800} height={1000} loading="lazy" className="w-full h-[540px] object-cover" />
+            <img src={boloLilasMorangoAsset.url} alt="Bolo artesanal de chantilly lilás com morangos cobertos de chocolate branco e fitas decorativas" width={800} height={1000} loading="lazy" className="w-full h-[540px] object-cover" />
           </div>
           <div className="absolute -bottom-6 -right-4 md:-right-8 glass rounded-2xl px-5 py-4 max-w-[240px] shadow-[var(--shadow-soft)]">
             <div className="flex items-center gap-2 text-gold text-sm">
