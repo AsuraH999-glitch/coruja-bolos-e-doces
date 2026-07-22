@@ -122,23 +122,53 @@ const FAQ = [
 function Landing() {
   const rootRef = useReveal<HTMLDivElement>();
   return (
-    <div ref={rootRef} className="min-h-screen bg-background text-foreground overflow-x-hidden">
-      <Nav />
-      <Hero />
-      <SocialProof />
-      <About />
-      <Products />
-      <Menu />
-      <Differentials />
-      <HowItWorks />
-      <Gallery />
-      <FAQSection />
-      <FinalCTA />
-      <Footer />
-      <WhatsAppFloat />
+    <div ref={rootRef} className="page-atmosphere min-h-screen text-foreground overflow-x-hidden">
+      <AtmosphereDecor />
+      <div className="relative z-10">
+        <Nav />
+        <Hero />
+        <SocialProof />
+        <About />
+        <Products />
+        <Menu />
+        <Differentials />
+        <HowItWorks />
+        <Gallery />
+        <FAQSection />
+        <FinalCTA />
+        <Footer />
+        <WhatsAppFloat />
+      </div>
     </div>
   );
 }
+
+/* ---------------- ATMOSPHERE ---------------- */
+function AtmosphereDecor() {
+  return (
+    <div aria-hidden className="pointer-events-none fixed inset-0 z-0 overflow-hidden">
+      {/* Grain */}
+      <div className="grain-overlay" />
+
+      {/* Soft blurred blobs — organic depth */}
+      <div className="absolute -top-40 left-[-10%] h-[38rem] w-[38rem] rounded-full opacity-[0.35] blur-[110px]"
+        style={{ background: "radial-gradient(circle, color-mix(in oklab, var(--rose) 55%, transparent) 0%, transparent 70%)" }} />
+      <div className="absolute top-[35%] right-[-12%] h-[42rem] w-[42rem] rounded-full opacity-[0.28] blur-[130px]"
+        style={{ background: "radial-gradient(circle, color-mix(in oklab, var(--gold) 45%, transparent) 0%, transparent 70%)" }} />
+      <div className="absolute bottom-[10%] left-[20%] h-[30rem] w-[30rem] rounded-full opacity-[0.22] blur-[120px]"
+        style={{ background: "radial-gradient(circle, color-mix(in oklab, var(--rose-deep) 40%, transparent) 0%, transparent 70%)" }} />
+
+      {/* Organic hairlines at extremities */}
+      <svg className="absolute top-0 left-0 h-full w-24 opacity-[0.35]" viewBox="0 0 100 1000" preserveAspectRatio="none" fill="none">
+        <path d="M20,0 C40,200 10,400 30,600 C50,800 15,900 25,1000" stroke="color-mix(in oklab, var(--rose-deep) 25%, transparent)" strokeWidth="0.6" />
+      </svg>
+      <svg className="absolute top-0 right-0 h-full w-24 opacity-[0.3]" viewBox="0 0 100 1000" preserveAspectRatio="none" fill="none">
+        <path d="M80,0 C60,220 90,420 70,620 C50,820 85,920 75,1000" stroke="color-mix(in oklab, var(--gold) 30%, transparent)" strokeWidth="0.6" />
+      </svg>
+    </div>
+  );
+}
+
 
 /* ---------------- NAV ---------------- */
 function Nav() {
