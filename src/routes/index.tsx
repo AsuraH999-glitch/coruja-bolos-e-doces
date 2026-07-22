@@ -593,7 +593,7 @@ function Gallery() {
     { src: gallery6, alt: "Confeitando cupcake à mão", h: "" },
   ];
   return (
-    <section id="galeria" className="py-20 md:py-28">
+    <section id="galeria" className="section-warm py-20 md:py-28 relative">
       <div className="mx-auto max-w-6xl px-4">
         <div className="flex flex-wrap items-end justify-between gap-6">
           <div className="max-w-xl">
