@@ -308,37 +308,32 @@ function Hero() {
               height={1000}
               className="w-full h-[520px] md:h-[600px] object-cover"
             />
-            <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, transparent 55%, rgba(78,52,46,0.35) 100%)" }} />
-            <div className="absolute bottom-5 left-5 right-5 flex items-center justify-between glass rounded-2xl px-4 py-3">
-              <div>
-                <p className="font-display text-lg leading-tight text-chocolate">Cada detalhe, com carinho</p>
-                <p className="text-xs text-chocolate/70">Confeitaria artesanal boutique</p>
-              </div>
-              <div className="h-10 w-10 rounded-full grid place-items-center text-white" style={{ background: "var(--gradient-primary)" }}>
-                <Heart className="h-4 w-4 fill-current" />
-              </div>
+            <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, transparent 55%, rgba(78,52,46,0.30) 100%)" }} />
+          </div>
+
+          {/* Floating badge top — Feito com amor */}
+          <div className="absolute -top-4 left-6 md:-left-6 glass rounded-2xl px-4 py-3 flex items-center gap-3 animate-float shadow-[var(--shadow-soft)]">
+            <div className="h-9 w-9 rounded-full grid place-items-center text-white shrink-0" style={{ background: "var(--gradient-primary)" }}>
+              <Heart className="h-4 w-4 fill-current" />
+            </div>
+            <div className="text-xs leading-tight">
+              <p className="font-semibold text-chocolate">Feito com amor</p>
+              <p className="text-chocolate/60">para momentos únicos</p>
             </div>
           </div>
-          {/* Floating badge */}
-          <div className="hidden md:flex absolute -left-6 top-8 glass rounded-2xl px-4 py-3 items-center gap-3 animate-float">
-            <div className="h-9 w-9 rounded-full grid place-items-center" style={{ background: "color-mix(in oklab, var(--gold) 25%, white)" }}>
-              <Sparkles className="h-4 w-4 text-chocolate" />
+
+          {/* Floating badge bottom — Encomendas 100% Personalizadas */}
+          <div className="absolute -bottom-5 right-4 md:-right-6 glass rounded-2xl px-4 py-3 flex items-center gap-3 animate-float shadow-[var(--shadow-soft)]" style={{ animationDelay: "1s" }}>
+            <div className="h-9 w-9 rounded-full grid place-items-center shrink-0" style={{ background: "color-mix(in oklab, var(--rose) 22%, white)" }}>
+              <Sparkles className="h-4 w-4 text-rose-deep" />
             </div>
-            <div className="text-xs">
-              <p className="font-semibold text-chocolate">Ingredientes premium</p>
-              <p className="text-chocolate/60">Chocolate belga</p>
-            </div>
-          </div>
-          <div className="hidden md:flex absolute -right-4 bottom-24 glass rounded-2xl px-4 py-3 items-center gap-3 animate-float" style={{ animationDelay: "1s" }}>
-            <div className="h-9 w-9 rounded-full grid place-items-center text-white" style={{ background: "var(--gradient-primary)" }}>
-              <HandHeart className="h-4 w-4" />
-            </div>
-            <div className="text-xs">
-              <p className="font-semibold text-chocolate">Feito à mão</p>
-              <p className="text-chocolate/60">Toda semana</p>
+            <div className="text-xs leading-tight">
+              <p className="font-semibold text-chocolate">Encomendas</p>
+              <p className="text-chocolate/60">100% Personalizadas</p>
             </div>
           </div>
         </div>
+
       </div>
     </section>
   );
