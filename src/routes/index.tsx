@@ -345,29 +345,30 @@ function SocialProof() {
     { icon: Star, label: "Clientes satisfeitos", value: "Feedback carinhoso em cada entrega" },
     { icon: Cake, label: "Produção artesanal", value: "Receitas preparadas à mão, uma a uma" },
     { icon: Heart, label: "Feito com carinho", value: "Atenção total aos detalhes que emocionam" },
+/* ---------------- STATS BAR ---------------- */
+function SocialProof() {
+  const stats = [
+    { value: "+500", label: "Encomendas realizadas" },
+    { value: "+100", label: "Sabores exclusivos" },
+    { value: "100%", label: "Feito com carinho" },
+    { value: "5★",   label: "Avaliações dos clientes" },
   ];
   return (
-    <section className="py-16 md:py-24 relative">
+    <section className="pt-8 pb-6 md:pt-10 md:pb-10 relative">
       <div className="mx-auto max-w-6xl px-4">
-        <div className="grid md:grid-cols-3 gap-5">
-          {items.map((it) => (
-            <div key={it.label} data-reveal className="group card-premium p-7">
-              <div className="icon-chip mb-5">
-                <it.icon className="h-5 w-5" strokeWidth={1.5} />
-              </div>
-
-              <p className="font-display text-xl text-chocolate">{it.label}</p>
-              <p className="mt-2 text-sm text-chocolate/65 leading-relaxed">{it.value}</p>
+        <div data-reveal className="card-premium px-6 py-8 md:px-10 md:py-9 grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-4 items-center">
+          {stats.map((s, i) => (
+            <div key={s.label} className={`text-center relative ${i > 0 ? "md:before:absolute md:before:left-0 md:before:top-1/2 md:before:-translate-y-1/2 md:before:h-10 md:before:w-px md:before:bg-[color-mix(in_oklab,var(--rose-deep)_18%,transparent)]" : ""}`}>
+              <p className="font-display text-3xl md:text-4xl text-rose-deep leading-none">{s.value}</p>
+              <p className="mt-2 text-xs md:text-sm text-chocolate/65 tracking-wide">{s.label}</p>
             </div>
           ))}
         </div>
-        <p data-reveal className="mt-10 text-center font-display italic text-lg md:text-xl text-chocolate/70 max-w-2xl mx-auto">
-          "Cada detalhe é preparado para tornar sua comemoração ainda mais especial."
-        </p>
       </div>
     </section>
   );
 }
+
 
 /* ---------------- ABOUT ---------------- */
 function About() {
