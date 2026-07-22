@@ -189,9 +189,11 @@
   border-radius: 9999px;
   background: var(--gradient-primary);
   color: var(--primary-foreground);
-  font-weight: 600;
-  font-size: 0.95rem;
-  letter-spacing: 0.01em;
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 0.9rem;
+  letter-spacing: 0.02em;
+
   box-shadow: var(--shadow-elegant);
   overflow: hidden;
   transition: var(--transition-smooth);
