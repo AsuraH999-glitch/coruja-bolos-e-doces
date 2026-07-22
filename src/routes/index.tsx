@@ -257,14 +257,21 @@ function Hero() {
             Encomende bolos personalizados e doces artesanais produzidos com ingredientes selecionados para aniversários, festas e ocasiões especiais.
           </p>
 
-          <ul className="mt-8 grid grid-cols-2 gap-x-6 gap-y-3 text-sm text-chocolate/80 max-w-md">
-            {["Produção artesanal","Ingredientes selecionados","Personalização completa","Atendimento humanizado"].map((f) => (
-              <li key={f} className="flex items-center gap-2">
-                <CheckCircle2 className="h-4 w-4 text-rose-deep shrink-0" />
-                <span>{f}</span>
-              </li>
+          <div className="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-xl">
+            {[
+              { icon: HandHeart, label: "Produção Artesanal" },
+              { icon: ShieldCheck, label: "Ingredientes Selecionados" },
+              { icon: Palette, label: "Personalização Completa" },
+              { icon: MessageCircle, label: "Atendimento Humanizado" },
+            ].map((f) => (
+              <div key={f.label} className="flex flex-col items-center text-center gap-2 group">
+                <div className="icon-chip">
+                  <f.icon className="h-5 w-5" strokeWidth={1.5} />
+                </div>
+                <span className="text-[11px] font-semibold text-chocolate/75 leading-tight">{f.label}</span>
+              </div>
             ))}
-          </ul>
+          </div>
 
           <div className="mt-9 flex flex-wrap items-center gap-3">
             <a href={wa("Olá, Coruja! Gostaria de fazer uma encomenda.")} target="_blank" rel="noopener" className="btn-primary">
@@ -275,7 +282,7 @@ function Hero() {
             </a>
           </div>
 
-          <div className="mt-10 flex items-center gap-4 text-xs text-chocolate/60">
+          <div className="mt-8 flex items-center gap-4 text-xs text-chocolate/60">
             <div className="flex -space-x-2">
               {[0,1,2,3].map((i) => (
                 <div key={i} className="h-8 w-8 rounded-full ring-2 ring-cream" style={{ background: `linear-gradient(135deg, oklch(0.85 0.08 ${350 + i*10}), oklch(0.78 0.11 5))` }} />
@@ -285,9 +292,10 @@ function Hero() {
               <div className="flex items-center gap-1 text-gold">
                 {[0,1,2,3,4].map((i) => <Star key={i} className="h-3.5 w-3.5 fill-current" />)}
               </div>
-              <span>Celebrações adoçadas com carinho todos os meses</span>
+              <span><strong className="text-chocolate/80">+500 clientes</strong> satisfeitos</span>
             </div>
           </div>
+
         </div>
 
         {/* Hero image card */}
@@ -300,71 +308,62 @@ function Hero() {
               height={1000}
               className="w-full h-[520px] md:h-[600px] object-cover"
             />
-            <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, transparent 55%, rgba(78,52,46,0.35) 100%)" }} />
-            <div className="absolute bottom-5 left-5 right-5 flex items-center justify-between glass rounded-2xl px-4 py-3">
-              <div>
-                <p className="font-display text-lg leading-tight text-chocolate">Cada detalhe, com carinho</p>
-                <p className="text-xs text-chocolate/70">Confeitaria artesanal boutique</p>
-              </div>
-              <div className="h-10 w-10 rounded-full grid place-items-center text-white" style={{ background: "var(--gradient-primary)" }}>
-                <Heart className="h-4 w-4 fill-current" />
-              </div>
+            <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, transparent 55%, rgba(78,52,46,0.30) 100%)" }} />
+          </div>
+
+          {/* Floating badge top — Feito com amor */}
+          <div className="absolute -top-4 left-6 md:-left-6 glass rounded-2xl px-4 py-3 flex items-center gap-3 animate-float shadow-[var(--shadow-soft)]">
+            <div className="h-9 w-9 rounded-full grid place-items-center text-white shrink-0" style={{ background: "var(--gradient-primary)" }}>
+              <Heart className="h-4 w-4 fill-current" />
+            </div>
+            <div className="text-xs leading-tight">
+              <p className="font-semibold text-chocolate">Feito com amor</p>
+              <p className="text-chocolate/60">para momentos únicos</p>
             </div>
           </div>
-          {/* Floating badge */}
-          <div className="hidden md:flex absolute -left-6 top-8 glass rounded-2xl px-4 py-3 items-center gap-3 animate-float">
-            <div className="h-9 w-9 rounded-full grid place-items-center" style={{ background: "color-mix(in oklab, var(--gold) 25%, white)" }}>
-              <Sparkles className="h-4 w-4 text-chocolate" />
+
+          {/* Floating badge bottom — Encomendas 100% Personalizadas */}
+          <div className="absolute -bottom-5 right-4 md:-right-6 glass rounded-2xl px-4 py-3 flex items-center gap-3 animate-float shadow-[var(--shadow-soft)]" style={{ animationDelay: "1s" }}>
+            <div className="h-9 w-9 rounded-full grid place-items-center shrink-0" style={{ background: "color-mix(in oklab, var(--rose) 22%, white)" }}>
+              <Sparkles className="h-4 w-4 text-rose-deep" />
             </div>
-            <div className="text-xs">
-              <p className="font-semibold text-chocolate">Ingredientes premium</p>
-              <p className="text-chocolate/60">Chocolate belga</p>
-            </div>
-          </div>
-          <div className="hidden md:flex absolute -right-4 bottom-24 glass rounded-2xl px-4 py-3 items-center gap-3 animate-float" style={{ animationDelay: "1s" }}>
-            <div className="h-9 w-9 rounded-full grid place-items-center text-white" style={{ background: "var(--gradient-primary)" }}>
-              <HandHeart className="h-4 w-4" />
-            </div>
-            <div className="text-xs">
-              <p className="font-semibold text-chocolate">Feito à mão</p>
-              <p className="text-chocolate/60">Toda semana</p>
+            <div className="text-xs leading-tight">
+              <p className="font-semibold text-chocolate">Encomendas</p>
+              <p className="text-chocolate/60">100% Personalizadas</p>
             </div>
           </div>
         </div>
+
       </div>
     </section>
   );
 }
 
-/* ---------------- SOCIAL PROOF ---------------- */
+/* ---------------- STATS BAR ---------------- */
+
 function SocialProof() {
-  const items = [
-    { icon: Star, label: "Clientes satisfeitos", value: "Feedback carinhoso em cada entrega" },
-    { icon: Cake, label: "Produção artesanal", value: "Receitas preparadas à mão, uma a uma" },
-    { icon: Heart, label: "Feito com carinho", value: "Atenção total aos detalhes que emocionam" },
+  const stats = [
+    { value: "+500", label: "Encomendas realizadas" },
+    { value: "+100", label: "Sabores exclusivos" },
+    { value: "100%", label: "Feito com carinho" },
+    { value: "5★",   label: "Avaliações dos clientes" },
   ];
   return (
-    <section className="py-16 md:py-24 relative">
+    <section className="pt-8 pb-6 md:pt-10 md:pb-10 relative">
       <div className="mx-auto max-w-6xl px-4">
-        <div className="grid md:grid-cols-3 gap-5">
-          {items.map((it) => (
-            <div key={it.label} data-reveal className="group card-premium p-7">
-              <div className="icon-chip mb-5">
-                <it.icon className="h-5 w-5" strokeWidth={1.5} />
-              </div>
-
-              <p className="font-display text-xl text-chocolate">{it.label}</p>
-              <p className="mt-2 text-sm text-chocolate/65 leading-relaxed">{it.value}</p>
+        <div data-reveal className="card-premium px-6 py-8 md:px-10 md:py-9 grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-4 items-center">
+          {stats.map((s, i) => (
+            <div key={s.label} className={`text-center relative ${i > 0 ? "md:before:absolute md:before:left-0 md:before:top-1/2 md:before:-translate-y-1/2 md:before:h-10 md:before:w-px md:before:bg-[color-mix(in_oklab,var(--rose-deep)_18%,transparent)]" : ""}`}>
+              <p className="font-display text-3xl md:text-4xl text-rose-deep leading-none">{s.value}</p>
+              <p className="mt-2 text-xs md:text-sm text-chocolate/65 tracking-wide">{s.label}</p>
             </div>
           ))}
         </div>
-        <p data-reveal className="mt-10 text-center font-display italic text-lg md:text-xl text-chocolate/70 max-w-2xl mx-auto">
-          "Cada detalhe é preparado para tornar sua comemoração ainda mais especial."
-        </p>
       </div>
     </section>
   );
 }
+
 
 /* ---------------- ABOUT ---------------- */
 function About() {
@@ -373,7 +372,7 @@ function About() {
       <div className="mx-auto max-w-6xl px-4 grid lg:grid-cols-2 gap-14 items-center">
         <div data-reveal className="relative order-2 lg:order-1">
           <div className="relative rounded-[2.5rem] overflow-hidden shadow-[var(--shadow-elegant)]">
-            <img src={boloRedVelvetAsset.url} alt="Bolo Red Velvet decorado com morangos" width={800} height={1000} loading="lazy" className="w-full h-[540px] object-cover" />
+            <img src={confeiteiroAsset.url} alt="Confeiteiro da Coruja Bolos & Doces" width={800} height={1000} loading="lazy" className="w-full h-[540px] object-cover" />
           </div>
           <div className="absolute -bottom-6 -right-4 md:-right-8 glass rounded-2xl px-5 py-4 max-w-[240px] shadow-[var(--shadow-soft)]">
             <div className="flex items-center gap-2 text-gold text-sm">
@@ -651,23 +650,27 @@ function Gallery() {
 function FAQSection() {
   return (
     <section id="faq" className="py-20 md:py-28 relative" style={{ background: "var(--gradient-soft)" }}>
-      <div className="mx-auto max-w-3xl px-4">
-        <div className="text-center">
-          <span className="eyebrow"><span className="inline-block h-1.5 w-1.5 rounded-full bg-rose-deep" /> Perguntas frequentes</span>
-          <h2 className="mt-4 font-display text-4xl md:text-5xl text-chocolate text-balance">
-            Tudo o que você quer <em className="not-italic text-rose-deep">saber</em>.
-          </h2>
+      <div className="mx-auto max-w-6xl px-4">
+        <div className="flex flex-wrap items-end justify-between gap-6">
+          <div className="max-w-xl">
+            <span className="eyebrow"><span className="inline-block h-1.5 w-1.5 rounded-full bg-rose-deep" /> Dúvidas frequentes</span>
+            <h2 className="mt-4 font-display text-4xl md:text-5xl text-chocolate text-balance">
+              Tudo o que você quer <em className="not-italic text-rose-deep">saber</em>.
+            </h2>
+          </div>
+          <a href={wa("Olá, Coruja! Ainda tenho uma dúvida.")} target="_blank" rel="noopener" className="text-sm text-chocolate/70 hover:text-rose-deep inline-flex items-center gap-2">
+            Ainda tem dúvidas? Fale conosco <MessageCircle className="h-4 w-4" />
+          </a>
         </div>
 
-        <Accordion type="single" collapsible className="mt-12 space-y-3">
+        <Accordion type="single" collapsible className="mt-12 grid md:grid-cols-2 gap-3">
           {FAQ.map((f, i) => (
             <AccordionItem
               key={i}
               value={`item-${i}`}
               data-reveal
-              className="!border-0 rounded-[24px] bg-white/85 backdrop-blur-sm ring-1 ring-white/70 shadow-[0_10px_28px_-18px_rgba(78,52,46,0.22)] overflow-hidden px-6 hover:shadow-[0_20px_44px_-22px_rgba(217,91,141,0.28)] hover:ring-[color-mix(in_oklab,var(--rose)_40%,transparent)] transition-all"
+              className="!border-0 rounded-[24px] bg-white/85 backdrop-blur-sm ring-1 ring-white/70 shadow-[0_10px_28px_-18px_rgba(78,52,46,0.22)] overflow-hidden px-6 hover:shadow-[0_20px_44px_-22px_rgba(217,91,141,0.28)] hover:ring-[color-mix(in_oklab,var(--rose)_40%,transparent)] transition-all self-start"
             >
-
               <AccordionTrigger className="!py-5 font-display text-lg text-chocolate hover:!no-underline text-left">
                 {f.q}
               </AccordionTrigger>
@@ -683,36 +686,43 @@ function FAQSection() {
 /* ---------------- FINAL CTA ---------------- */
 function FinalCTA() {
   return (
-    <section className="py-24 md:py-32 relative overflow-hidden">
+    <section className="py-20 md:py-24 relative overflow-hidden">
       <div className="absolute inset-0" style={{ background: "var(--gradient-dark)" }} />
-      <div className="absolute inset-0 opacity-50" style={{ background: "radial-gradient(ellipse at 20% 10%, color-mix(in oklab, var(--rose) 55%, transparent) 0%, transparent 55%), radial-gradient(ellipse at 85% 95%, color-mix(in oklab, var(--gold) 35%, transparent) 0%, transparent 60%), radial-gradient(ellipse at 60% 50%, color-mix(in oklab, var(--rose-deep) 30%, transparent) 0%, transparent 65%)" }} />
-      <div className="absolute inset-0 opacity-25" style={{ backgroundImage: "radial-gradient(circle at 1px 1px, rgba(255,255,255,0.12) 1px, transparent 0)", backgroundSize: "28px 28px" }} />
+      <div className="absolute inset-0 opacity-60" style={{ background: "radial-gradient(ellipse at 15% 20%, color-mix(in oklab, var(--rose) 45%, transparent) 0%, transparent 55%), radial-gradient(ellipse at 85% 90%, color-mix(in oklab, var(--gold) 30%, transparent) 0%, transparent 60%)" }} />
+      <div className="absolute inset-0 opacity-20" style={{ backgroundImage: "radial-gradient(circle at 1px 1px, rgba(255,255,255,0.12) 1px, transparent 0)", backgroundSize: "28px 28px" }} />
       <div className="absolute inset-0 opacity-[0.08] mix-blend-overlay" style={{ backgroundImage: "var(--noise-url)", backgroundSize: "220px 220px" }} />
 
-
-      <div className="relative mx-auto max-w-3xl px-4 text-center">
-        <Heart className="mx-auto h-8 w-8 text-rose animate-float" />
-        <h2 data-reveal className="mt-6 font-display text-4xl md:text-6xl text-white text-balance leading-[1.05]">
-          Seu próximo momento especial merece algo <em className="not-italic" style={{ background: "linear-gradient(135deg, var(--rose) 0%, var(--gold) 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>inesquecível</em>.
-        </h2>
-        <p data-reveal className="mt-6 text-white/70 text-lg text-pretty max-w-xl mx-auto">
-          Solicite seu orçamento e transforme sua celebração em uma experiência ainda mais especial.
-        </p>
-        <div data-reveal className="mt-10 flex flex-wrap justify-center gap-3">
-          <a href={wa("Olá, Coruja! Quero fazer um pedido agora.")} target="_blank" rel="noopener" className="btn-primary !py-4 !px-8 text-base">
-            <MessageCircle className="h-5 w-5" /> Fazer Pedido Agora
-          </a>
-          <a href="#cardapio" className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 backdrop-blur px-7 py-4 text-sm font-semibold text-white hover:bg-white/10 transition">
-            Ver cardápio completo
-          </a>
+      <div className="relative mx-auto max-w-6xl px-4 grid lg:grid-cols-[1.15fr_0.85fr] gap-12 items-center">
+        <div>
+          <h2 data-reveal className="font-display text-4xl md:text-5xl lg:text-6xl text-white text-balance leading-[1.05]">
+            Seu próximo momento especial merece algo <em className="not-italic" style={{ background: "linear-gradient(135deg, var(--rose) 0%, var(--gold) 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>inesquecível</em>.
+          </h2>
+          <p data-reveal className="mt-5 text-white/75 text-base md:text-lg text-pretty max-w-lg">
+            Fale conosco agora pelo WhatsApp e solicite seu orçamento. Vamos adoçar seu momento juntos!
+          </p>
+          <div data-reveal className="mt-8">
+            <a href={wa("Olá, Coruja! Quero fazer uma encomenda pelo site.")} target="_blank" rel="noopener" className="btn-primary !py-4 !px-8 text-base">
+              <MessageCircle className="h-5 w-5" /> Fazer Encomenda pelo WhatsApp
+            </a>
+          </div>
+          <div data-reveal className="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-xs text-white/60">
+            <span className="inline-flex items-center gap-2"><CheckCircle2 className="h-3.5 w-3.5 text-rose" /> Resposta rápida</span>
+            <span className="inline-flex items-center gap-2"><CheckCircle2 className="h-3.5 w-3.5 text-rose" /> Atendimento humanizado</span>
+            <span className="inline-flex items-center gap-2"><CheckCircle2 className="h-3.5 w-3.5 text-rose" /> Encomendas 100% seguras</span>
+          </div>
         </div>
-        <p data-reveal className="mt-10 text-xs text-white/50 uppercase tracking-[0.25em]">
-          Contato · WhatsApp (19) 99576-6824
-        </p>
+
+        <div data-reveal className="relative">
+          <div className="relative rounded-[2rem] overflow-hidden ring-1 ring-white/10 shadow-[0_40px_100px_-30px_rgba(0,0,0,0.6)]">
+            <img src={boloRedVelvetAsset.url} alt="Bolo Coruja finalizado" width={800} height={800} loading="lazy" className="w-full h-[360px] md:h-[440px] object-cover" />
+            <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, transparent 55%, rgba(0,0,0,0.35) 100%)" }} />
+          </div>
+        </div>
       </div>
     </section>
   );
 }
+
 
 /* ---------------- FOOTER ---------------- */
 function Footer() {
