@@ -221,8 +221,11 @@
   background: color-mix(in oklab, white 60%, transparent);
   backdrop-filter: blur(10px);
   color: var(--chocolate);
-  font-weight: 600;
-  font-size: 0.95rem;
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 0.9rem;
+  letter-spacing: 0.02em;
+
   transition: var(--transition-smooth);
   &:hover { background: white; border-color: color-mix(in oklab, var(--chocolate) 25%, transparent); transform: translateY(-2px); }
 }
