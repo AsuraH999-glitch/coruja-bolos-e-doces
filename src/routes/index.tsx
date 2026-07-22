@@ -339,13 +339,8 @@ function Hero() {
   );
 }
 
-/* ---------------- SOCIAL PROOF ---------------- */
-function SocialProof() {
-  const items = [
-    { icon: Star, label: "Clientes satisfeitos", value: "Feedback carinhoso em cada entrega" },
-    { icon: Cake, label: "Produção artesanal", value: "Receitas preparadas à mão, uma a uma" },
-    { icon: Heart, label: "Feito com carinho", value: "Atenção total aos detalhes que emocionam" },
 /* ---------------- STATS BAR ---------------- */
+
 function SocialProof() {
   const stats = [
     { value: "+500", label: "Encomendas realizadas" },
