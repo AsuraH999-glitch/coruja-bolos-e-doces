@@ -13,7 +13,7 @@ import { useReveal, useParallax } from "@/hooks/use-reveal";
 import logoAsset from "@/assets/logo.asset.json";
 import confeiteiroAsset from "@/assets/confeiteiro.asset.json";
 import boloRedVelvetAsset from "@/assets/bolo-red-velvet.jpg.asset.json";
-import ctaCakeAsset from "@/assets/cta-cake.jpg.asset.json";
+
 import bolosImg from "@/assets/product-bolos.jpg";
 import docesImg from "@/assets/product-doces.jpg";
 import cupcakesImg from "@/assets/product-cupcakes.jpg";
