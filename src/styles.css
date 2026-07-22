@@ -419,10 +419,103 @@ svg.lucide { stroke-width: 1.5; }
   0% { background-position: -200% 0; }
   100% { background-position: 200% 0; }
 }
+/* Nearly imperceptible breathing — for hero-tier accents */
+@keyframes breathe {
+  0%, 100% { transform: scale(1); opacity: 0.9; }
+  50% { transform: scale(1.035); opacity: 1; }
+}
+/* Extremely soft glow pulse */
+@keyframes soft-glow {
+  0%, 100% { box-shadow: 0 0 0 0 color-mix(in oklab, var(--rose-deep) 0%, transparent); }
+  50% { box-shadow: 0 0 44px 4px color-mix(in oklab, var(--rose-deep) 18%, transparent); }
+}
+/* Slow drift for parallax orbs */
+@keyframes drift {
+  0%, 100% { transform: translate3d(0,0,0); }
+  50% { transform: translate3d(14px,-10px,0); }
+}
+/* Tiny sparkle twinkle */
+@keyframes twinkle {
+  0%, 100% { opacity: 0.15; transform: scale(0.9); }
+  50% { opacity: 0.85; transform: scale(1.1); }
+}
 
 @utility animate-fade-up { animation: fade-up 0.9s cubic-bezier(0.22, 1, 0.36, 1) both; }
 @utility animate-fade-in { animation: fade-in 1.2s ease-out both; }
 @utility animate-float { animation: float-slow 8s ease-in-out infinite; }
+@utility animate-breathe { animation: breathe 6.5s ease-in-out infinite; }
+@utility animate-glow-soft { animation: soft-glow 5.5s ease-in-out infinite; }
+@utility animate-drift { animation: drift 14s ease-in-out infinite; }
+@utility animate-twinkle { animation: twinkle 4.5s ease-in-out infinite; }
+@utility animate-shimmer-slow {
+  background: linear-gradient(110deg, transparent 30%, color-mix(in oklab, white 60%, transparent) 50%, transparent 70%);
+  background-size: 200% 100%;
+  animation: shimmer 3.6s linear infinite;
+}
+
+/* Tiny decorative ornament — a hairline with a centered dot, editorial flourish */
+@utility ornament-line {
+  position: relative;
+  display: inline-block;
+  height: 1px;
+  width: 3rem;
+  background: linear-gradient(90deg, transparent, color-mix(in oklab, var(--rose-deep) 40%, transparent), transparent);
+  &::before, &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    height: 4px; width: 4px;
+    border-radius: 9999px;
+    background: color-mix(in oklab, var(--rose-deep) 55%, transparent);
+    transform: translateY(-50%);
+  }
+  &::before { left: -6px; }
+  &::after  { right: -6px; }
+}
+
+/* Diamond/pearl ornament between title & subtitle */
+@utility ornament-diamond {
+  display: inline-grid;
+  place-items: center;
+  &::before {
+    content: "";
+    width: 6px; height: 6px;
+    background: var(--gradient-primary);
+    transform: rotate(45deg);
+    border-radius: 1px;
+    box-shadow: 0 0 12px color-mix(in oklab, var(--rose-deep) 45%, transparent);
+  }
+}
+
+/* Refined hover lift — for any element that already has its own transition */
+@utility hover-lift {
+  transition: transform 0.55s cubic-bezier(0.22,1,0.36,1), box-shadow 0.55s cubic-bezier(0.22,1,0.36,1);
+  &:hover { transform: translateY(-3px); }
+}
+
+/* Underline reveal — editorial link */
+@utility link-underline {
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0; bottom: -2px;
+    height: 1px; width: 100%;
+    background: currentColor;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.6s cubic-bezier(0.22,1,0.36,1);
+  }
+  &:hover::after { transform: scaleX(1); transform-origin: left; }
+}
 
 .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.9s cubic-bezier(0.22,1,0.36,1), transform 0.9s cubic-bezier(0.22,1,0.36,1); }
 .reveal.in { opacity: 1; transform: translateY(0); }
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-float, .animate-breathe, .animate-glow-soft, .animate-drift, .animate-twinkle, .animate-shimmer-slow {
+    animation: none !important;
+  }
+  .reveal { transition: opacity 0.3s ease; transform: none; }
+}
+
