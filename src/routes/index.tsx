@@ -536,11 +536,12 @@ function Differentials() {
             <div
               key={d.title}
               data-reveal
-              className="rounded-3xl p-7 bg-white border border-border/50 shadow-[var(--shadow-sm)] hover:shadow-[var(--shadow-soft)] hover:-translate-y-1 transition-all duration-500"
+              className="group rounded-3xl p-7 bg-white border border-border/50 shadow-[var(--shadow-sm)] hover:shadow-[var(--shadow-soft)] hover:-translate-y-1 transition-all duration-500"
             >
-              <div className="h-12 w-12 rounded-2xl grid place-items-center" style={{ background: "var(--gradient-primary)" }}>
-                <d.icon className="h-5 w-5 text-white" />
+              <div className="icon-chip icon-chip-lg">
+                <d.icon className="h-5 w-5" strokeWidth={1.5} />
               </div>
+
               <h3 className="mt-5 font-display text-xl text-chocolate">{d.title}</h3>
               <p className="mt-2 text-sm text-chocolate/65 leading-relaxed">{d.desc}</p>
             </div>
