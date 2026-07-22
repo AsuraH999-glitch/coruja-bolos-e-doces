@@ -39,11 +39,11 @@ export const Route = createFileRoute("/")({
         content:
           "Bolos personalizados, doces artesanais e cupcakes feitos com carinho para tornar aniversários, festas e ocasiões especiais inesquecíveis. Peça seu orçamento pelo WhatsApp.",
       },
-      { property: "og:title", content: "Coruja Bolos & Doces — Confeitaria Boutique" },
+      { property: "og:title", content: "Coruja Bolos & Doces — Confeitaria Artesanal Boutique" },
       {
         property: "og:description",
         content:
-          "Bolos e doces artesanais feitos com carinho para momentos inesquecíveis. Encomende pelo WhatsApp.",
+          "Bolos personalizados, doces artesanais e cupcakes feitos com carinho para tornar aniversários, festas e ocasiões especiais inesquecíveis. Peça seu orçamento pelo WhatsApp.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
