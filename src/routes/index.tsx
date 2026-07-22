@@ -9,7 +9,7 @@ import {
   Accordion, AccordionContent, AccordionItem, AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { useReveal } from "@/hooks/use-reveal";
+import { useReveal, useParallax } from "@/hooks/use-reveal";
 import logoAsset from "@/assets/logo.asset.json";
 import confeiteiroAsset from "@/assets/confeiteiro.asset.json";
 import bolosImg from "@/assets/product-bolos.jpg";
@@ -145,18 +145,27 @@ function Landing() {
 
 /* ---------------- ATMOSPHERE ---------------- */
 function AtmosphereDecor() {
+  const blob1 = useParallax<HTMLDivElement>(60);
+  const blob2 = useParallax<HTMLDivElement>(-45);
+  const blob3 = useParallax<HTMLDivElement>(35);
   return (
     <div aria-hidden className="pointer-events-none fixed inset-0 z-0 overflow-hidden">
       {/* Grain */}
       <div className="grain-overlay" />
 
-      {/* Soft blurred blobs — organic depth */}
-      <div className="absolute -top-40 left-[-10%] h-[38rem] w-[38rem] rounded-full opacity-[0.35] blur-[110px]"
+      {/* Soft blurred blobs — organic depth with parallax + breathing */}
+      <div ref={blob1} className="absolute -top-40 left-[-10%] h-[38rem] w-[38rem] rounded-full opacity-[0.35] blur-[110px] animate-breathe"
         style={{ background: "radial-gradient(circle, color-mix(in oklab, var(--rose) 55%, transparent) 0%, transparent 70%)" }} />
-      <div className="absolute top-[35%] right-[-12%] h-[42rem] w-[42rem] rounded-full opacity-[0.28] blur-[130px]"
-        style={{ background: "radial-gradient(circle, color-mix(in oklab, var(--gold) 45%, transparent) 0%, transparent 70%)" }} />
-      <div className="absolute bottom-[10%] left-[20%] h-[30rem] w-[30rem] rounded-full opacity-[0.22] blur-[120px]"
-        style={{ background: "radial-gradient(circle, color-mix(in oklab, var(--rose-deep) 40%, transparent) 0%, transparent 70%)" }} />
+      <div ref={blob2} className="absolute top-[35%] right-[-12%] h-[42rem] w-[42rem] rounded-full opacity-[0.28] blur-[130px] animate-drift"
+        style={{ background: "radial-gradient(circle, color-mix(in oklab, var(--gold) 45%, transparent) 0%, transparent 70%)", animationDelay: "-4s" }} />
+      <div ref={blob3} className="absolute bottom-[10%] left-[20%] h-[30rem] w-[30rem] rounded-full opacity-[0.22] blur-[120px] animate-breathe"
+        style={{ background: "radial-gradient(circle, color-mix(in oklab, var(--rose-deep) 40%, transparent) 0%, transparent 70%)", animationDelay: "-2s" }} />
+
+      {/* Twinkle sparkles — quase imperceptíveis */}
+      <div className="absolute top-[18%] left-[12%] h-1 w-1 rounded-full bg-rose-deep/60 animate-twinkle" />
+      <div className="absolute top-[62%] right-[18%] h-1 w-1 rounded-full bg-gold/70 animate-twinkle" style={{ animationDelay: "-1.5s" }} />
+      <div className="absolute top-[38%] left-[52%] h-[3px] w-[3px] rounded-full bg-rose/60 animate-twinkle" style={{ animationDelay: "-2.8s" }} />
+      <div className="absolute bottom-[22%] right-[42%] h-1 w-1 rounded-full bg-rose-deep/50 animate-twinkle" style={{ animationDelay: "-3.4s" }} />
 
       {/* Organic hairlines at extremities */}
       <svg className="absolute top-0 left-0 h-full w-24 opacity-[0.35]" viewBox="0 0 100 1000" preserveAspectRatio="none" fill="none">
@@ -168,6 +177,7 @@ function AtmosphereDecor() {
     </div>
   );
 }
+
 
 
 /* ---------------- NAV ---------------- */
