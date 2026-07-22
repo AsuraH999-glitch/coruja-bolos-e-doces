@@ -236,6 +236,60 @@
   border: 1px solid color-mix(in oklab, white 60%, transparent);
 }
 
+/* Global stroke refinement for Lucide icons — premium editorial weight */
+svg.lucide { stroke-width: 1.5; }
+
+/* Premium icon chip — glass container with soft shadow + hover polish */
+@utility icon-chip {
+  position: relative;
+  display: inline-grid;
+  place-items: center;
+  height: 2.75rem;
+  width: 2.75rem;
+  border-radius: 9999px;
+  color: var(--rose-deep);
+  background:
+    linear-gradient(160deg, color-mix(in oklab, white 85%, transparent) 0%, color-mix(in oklab, var(--rose) 12%, white) 100%);
+  backdrop-filter: blur(14px) saturate(140%);
+  border: 1px solid color-mix(in oklab, white 70%, transparent);
+  box-shadow:
+    0 1px 0 0 rgba(255,255,255,0.9) inset,
+    0 -1px 0 0 color-mix(in oklab, var(--rose-deep) 8%, transparent) inset,
+    0 10px 24px -14px color-mix(in oklab, var(--rose-deep) 40%, transparent);
+  transition: transform 0.4s cubic-bezier(0.22,1,0.36,1),
+              box-shadow 0.4s cubic-bezier(0.22,1,0.36,1),
+              color 0.3s ease,
+              background 0.4s ease;
+  & svg { transition: transform 0.4s cubic-bezier(0.22,1,0.36,1); }
+}
+.group:hover .icon-chip,
+.icon-chip:hover {
+  transform: translateY(-2px) scale(1.06);
+  color: white;
+  background: var(--gradient-primary);
+  box-shadow:
+    0 1px 0 0 rgba(255,255,255,0.35) inset,
+    0 18px 40px -18px color-mix(in oklab, var(--rose-deep) 55%, transparent);
+}
+.group:hover .icon-chip svg,
+.icon-chip:hover svg { transform: scale(1.08); }
+
+@utility icon-chip-lg {
+  height: 3.25rem;
+  width: 3.25rem;
+}
+
+@utility icon-chip-dark {
+  color: color-mix(in oklab, white 92%, transparent);
+  background:
+    linear-gradient(160deg, color-mix(in oklab, white 14%, transparent) 0%, color-mix(in oklab, var(--rose-deep) 22%, transparent) 100%);
+  border: 1px solid color-mix(in oklab, white 22%, transparent);
+  box-shadow:
+    0 1px 0 0 color-mix(in oklab, white 25%, transparent) inset,
+    0 12px 30px -14px rgba(0,0,0,0.5);
+}
+
+
 @utility eyebrow {
   display: inline-flex;
   align-items: center;
