@@ -715,7 +715,7 @@ function FinalCTA() {
 
         <div data-reveal className="relative">
           <div className="relative rounded-[2rem] overflow-hidden ring-1 ring-white/10 shadow-[0_40px_100px_-30px_rgba(0,0,0,0.6)]">
-            <img src={boloRedVelvetAsset.url} alt="Bolo Coruja finalizado" width={800} height={800} loading="lazy" className="w-full h-[360px] md:h-[440px] object-cover" />
+            <img src={ctaCakeAsset.url} alt="Bolo Coruja finalizado" width={800} height={800} loading="lazy" className="w-full h-[360px] md:h-[440px] object-cover" />
             <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, transparent 55%, rgba(0,0,0,0.35) 100%)" }} />
           </div>
         </div>
