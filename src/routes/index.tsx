@@ -693,31 +693,22 @@ function FinalCTA() {
       <div className="absolute inset-0 opacity-20" style={{ backgroundImage: "radial-gradient(circle at 1px 1px, rgba(255,255,255,0.12) 1px, transparent 0)", backgroundSize: "28px 28px" }} />
       <div className="absolute inset-0 opacity-[0.08] mix-blend-overlay" style={{ backgroundImage: "var(--noise-url)", backgroundSize: "220px 220px" }} />
 
-      <div className="relative mx-auto max-w-6xl px-4 grid lg:grid-cols-[1.15fr_0.85fr] gap-12 items-center">
-        <div>
-          <h2 data-reveal className="font-display text-4xl md:text-5xl lg:text-6xl text-white text-balance leading-[1.05]">
-            Seu próximo momento especial merece algo <em className="not-italic" style={{ background: "linear-gradient(135deg, var(--rose) 0%, var(--gold) 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>inesquecível</em>.
-          </h2>
-          <p data-reveal className="mt-5 text-white/75 text-base md:text-lg text-pretty max-w-lg">
-            Fale conosco agora pelo WhatsApp e solicite seu orçamento. Vamos adoçar seu momento juntos!
-          </p>
-          <div data-reveal className="mt-8">
-            <a href={wa("Olá, Coruja! Quero fazer uma encomenda pelo site.")} target="_blank" rel="noopener" className="btn-primary !py-4 !px-8 text-base">
-              <MessageCircle className="h-5 w-5" /> Fazer Encomenda pelo WhatsApp
-            </a>
-          </div>
-          <div data-reveal className="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-xs text-white/60">
-            <span className="inline-flex items-center gap-2"><CheckCircle2 className="h-3.5 w-3.5 text-rose" /> Resposta rápida</span>
-            <span className="inline-flex items-center gap-2"><CheckCircle2 className="h-3.5 w-3.5 text-rose" /> Atendimento humanizado</span>
-            <span className="inline-flex items-center gap-2"><CheckCircle2 className="h-3.5 w-3.5 text-rose" /> Encomendas 100% seguras</span>
-          </div>
+      <div className="relative mx-auto max-w-3xl px-4 text-center">
+        <h2 data-reveal className="font-display text-4xl md:text-5xl lg:text-6xl text-white text-balance leading-[1.05]">
+          Seu próximo momento especial merece algo <em className="not-italic" style={{ background: "linear-gradient(135deg, var(--rose) 0%, var(--gold) 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>inesquecível</em>.
+        </h2>
+        <p data-reveal className="mt-5 mx-auto text-white/75 text-base md:text-lg text-pretty max-w-lg">
+          Fale conosco agora pelo WhatsApp e solicite seu orçamento. Vamos adoçar seu momento juntos!
+        </p>
+        <div data-reveal className="mt-8">
+          <a href={wa("Olá, Coruja! Quero fazer uma encomenda pelo site.")} target="_blank" rel="noopener" className="btn-primary !py-4 !px-8 text-base">
+            <MessageCircle className="h-5 w-5" /> Fazer Encomenda pelo WhatsApp
+          </a>
         </div>
-
-        <div data-reveal className="relative">
-          <div className="relative rounded-[2rem] overflow-hidden ring-1 ring-white/10 shadow-[0_40px_100px_-30px_rgba(0,0,0,0.6)]">
-            <img src={ctaCakeAsset.url} alt="Bolo Coruja finalizado" width={800} height={800} loading="lazy" className="w-full h-[360px] md:h-[440px] object-cover" />
-            <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, transparent 55%, rgba(0,0,0,0.35) 100%)" }} />
-          </div>
+        <div data-reveal className="mt-8 flex flex-wrap justify-center gap-x-6 gap-y-2 text-xs text-white/60">
+          <span className="inline-flex items-center gap-2"><CheckCircle2 className="h-3.5 w-3.5 text-rose" /> Resposta rápida</span>
+          <span className="inline-flex items-center gap-2"><CheckCircle2 className="h-3.5 w-3.5 text-rose" /> Atendimento humanizado</span>
+          <span className="inline-flex items-center gap-2"><CheckCircle2 className="h-3.5 w-3.5 text-rose" /> Encomendas 100% seguras</span>
         </div>
       </div>
     </section>
