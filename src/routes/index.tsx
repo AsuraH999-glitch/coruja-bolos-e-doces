@@ -257,14 +257,21 @@ function Hero() {
             Encomende bolos personalizados e doces artesanais produzidos com ingredientes selecionados para aniversários, festas e ocasiões especiais.
           </p>
 
-          <ul className="mt-8 grid grid-cols-2 gap-x-6 gap-y-3 text-sm text-chocolate/80 max-w-md">
-            {["Produção artesanal","Ingredientes selecionados","Personalização completa","Atendimento humanizado"].map((f) => (
-              <li key={f} className="flex items-center gap-2">
-                <CheckCircle2 className="h-4 w-4 text-rose-deep shrink-0" />
-                <span>{f}</span>
-              </li>
+          <div className="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-xl">
+            {[
+              { icon: HandHeart, label: "Produção Artesanal" },
+              { icon: ShieldCheck, label: "Ingredientes Selecionados" },
+              { icon: Palette, label: "Personalização Completa" },
+              { icon: MessageCircle, label: "Atendimento Humanizado" },
+            ].map((f) => (
+              <div key={f.label} className="flex flex-col items-center text-center gap-2 group">
+                <div className="icon-chip">
+                  <f.icon className="h-5 w-5" strokeWidth={1.5} />
+                </div>
+                <span className="text-[11px] font-semibold text-chocolate/75 leading-tight">{f.label}</span>
+              </div>
             ))}
-          </ul>
+          </div>
 
           <div className="mt-9 flex flex-wrap items-center gap-3">
             <a href={wa("Olá, Coruja! Gostaria de fazer uma encomenda.")} target="_blank" rel="noopener" className="btn-primary">
@@ -275,7 +282,7 @@ function Hero() {
             </a>
           </div>
 
-          <div className="mt-10 flex items-center gap-4 text-xs text-chocolate/60">
+          <div className="mt-8 flex items-center gap-4 text-xs text-chocolate/60">
             <div className="flex -space-x-2">
               {[0,1,2,3].map((i) => (
                 <div key={i} className="h-8 w-8 rounded-full ring-2 ring-cream" style={{ background: `linear-gradient(135deg, oklch(0.85 0.08 ${350 + i*10}), oklch(0.78 0.11 5))` }} />
@@ -285,9 +292,10 @@ function Hero() {
               <div className="flex items-center gap-1 text-gold">
                 {[0,1,2,3,4].map((i) => <Star key={i} className="h-3.5 w-3.5 fill-current" />)}
               </div>
-              <span>Celebrações adoçadas com carinho todos os meses</span>
+              <span><strong className="text-chocolate/80">+500 clientes</strong> satisfeitos</span>
             </div>
           </div>
+
         </div>
 
         {/* Hero image card */}
