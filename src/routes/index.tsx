@@ -337,7 +337,7 @@ function SocialProof() {
       <div className="mx-auto max-w-6xl px-4">
         <div className="grid md:grid-cols-3 gap-5">
           {items.map((it) => (
-            <div key={it.label} data-reveal className="group rounded-3xl bg-white/70 backdrop-blur-sm border border-white p-7 shadow-[var(--shadow-soft)] hover:-translate-y-1 transition-all duration-500">
+            <div key={it.label} data-reveal className="group card-premium p-7">
               <div className="icon-chip mb-5">
                 <it.icon className="h-5 w-5" strokeWidth={1.5} />
               </div>
@@ -417,31 +417,34 @@ function Products() {
             <article
               key={p.name}
               data-reveal
-              className="group relative rounded-3xl overflow-hidden bg-white shadow-[var(--shadow-soft)] hover:shadow-[var(--shadow-elegant)] transition-all duration-500 hover:-translate-y-1"
+              className="group card-product flex flex-col"
             >
-              <div className="relative aspect-[4/3] overflow-hidden">
-                <img src={p.img} alt={p.name} width={1024} height={768} loading="lazy" className="h-full w-full object-cover transition-transform duration-[900ms] group-hover:scale-105" />
-                <div className="absolute top-4 left-4 glass rounded-full px-3 py-1 text-[11px] font-semibold text-chocolate tracking-wide">
+              <div className="relative aspect-[4/3] overflow-hidden rounded-t-[32px]">
+                <img src={p.img} alt={p.name} width={1024} height={768} loading="lazy" className="h-full w-full object-cover transition-transform duration-[1100ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.08]" />
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" style={{ background: "linear-gradient(180deg, transparent 55%, rgba(78,52,46,0.35) 100%)" }} />
+                <div className="absolute top-4 left-4 glass rounded-full px-3 py-1 text-[11px] font-semibold text-chocolate tracking-wide shadow-[0_6px_18px_-8px_rgba(78,52,46,0.35)]">
                   {p.tag}
                 </div>
               </div>
-              <div className="p-6">
+              <div className="p-6 relative">
                 <div className="flex items-center gap-2 text-rose-deep">
                   <p.icon className="h-4 w-4" />
                   <span className="text-xs font-semibold uppercase tracking-widest">Coleção</span>
                 </div>
                 <h3 className="mt-2 font-display text-2xl text-chocolate">{p.name}</h3>
                 <p className="mt-2 text-sm text-chocolate/65 leading-relaxed">{p.desc}</p>
+                <div className="divider-hairline mt-5" />
                 <a
                   href={wa(`Olá, Coruja! Gostaria de um orçamento de ${p.name}.`)}
                   target="_blank" rel="noopener"
-                  className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-rose-deep group/link"
+                  className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-rose-deep group/link"
                 >
                   Solicitar Orçamento
                   <ArrowRight className="h-4 w-4 transition-transform group-hover/link:translate-x-1" />
                 </a>
               </div>
             </article>
+
           ))}
         </div>
       </div>
@@ -489,8 +492,9 @@ function Menu() {
                   <div
                     key={i}
                     data-reveal
-                    className="group flex items-center justify-between gap-4 rounded-2xl bg-white p-5 border border-transparent hover:border-[color-mix(in_oklab,var(--rose)_35%,transparent)] hover:shadow-[var(--shadow-soft)] transition-all"
+                    className="group flex items-center justify-between gap-4 rounded-[24px] bg-white/85 backdrop-blur-sm p-5 border border-white/70 shadow-[0_10px_28px_-18px_rgba(78,52,46,0.22)] hover:-translate-y-0.5 hover:border-[color-mix(in_oklab,var(--rose)_40%,transparent)] hover:shadow-[0_22px_44px_-20px_rgba(217,91,141,0.28)] transition-all duration-500"
                   >
+
                     <div className="min-w-0">
                       <p className="font-display text-lg text-chocolate leading-tight">{item.name}</p>
                       <p className="text-xs text-chocolate/60 mt-1">{item.size}</p>
@@ -536,7 +540,7 @@ function Differentials() {
             <div
               key={d.title}
               data-reveal
-              className="group rounded-3xl p-7 bg-white border border-border/50 shadow-[var(--shadow-sm)] hover:shadow-[var(--shadow-soft)] hover:-translate-y-1 transition-all duration-500"
+              className="group card-premium p-7"
             >
               <div className="icon-chip icon-chip-lg">
                 <d.icon className="h-5 w-5" strokeWidth={1.5} />
@@ -544,7 +548,9 @@ function Differentials() {
 
               <h3 className="mt-5 font-display text-xl text-chocolate">{d.title}</h3>
               <p className="mt-2 text-sm text-chocolate/65 leading-relaxed">{d.desc}</p>
+              <div className="divider-hairline mt-5 opacity-60" />
             </div>
+
           ))}
         </div>
       </div>
@@ -614,8 +620,9 @@ function Gallery() {
             <div
               key={i}
               data-reveal
-              className={`group relative overflow-hidden rounded-3xl shadow-[var(--shadow-soft)] ${it.h}`}
+              className={`group relative overflow-hidden rounded-[28px] border border-white/60 shadow-[0_20px_50px_-24px_rgba(78,52,46,0.32)] hover:shadow-[0_36px_80px_-28px_rgba(217,91,141,0.38)] transition-shadow duration-500 ${it.h}`}
             >
+
               <img src={it.src} alt={it.alt} loading="lazy" className="h-full w-full object-cover transition-transform duration-[1200ms] group-hover:scale-110" />
               <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" style={{ background: "linear-gradient(180deg, transparent 40%, rgba(78,52,46,0.55) 100%)" }} />
               <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
@@ -647,8 +654,9 @@ function FAQSection() {
               key={i}
               value={`item-${i}`}
               data-reveal
-              className="!border-0 rounded-2xl bg-white shadow-[var(--shadow-sm)] overflow-hidden px-6 hover:shadow-[var(--shadow-soft)] transition-shadow"
+              className="!border-0 rounded-[24px] bg-white/85 backdrop-blur-sm ring-1 ring-white/70 shadow-[0_10px_28px_-18px_rgba(78,52,46,0.22)] overflow-hidden px-6 hover:shadow-[0_20px_44px_-22px_rgba(217,91,141,0.28)] hover:ring-[color-mix(in_oklab,var(--rose)_40%,transparent)] transition-all"
             >
+
               <AccordionTrigger className="!py-5 font-display text-lg text-chocolate hover:!no-underline text-left">
                 {f.q}
               </AccordionTrigger>
