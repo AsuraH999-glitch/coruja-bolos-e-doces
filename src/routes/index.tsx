@@ -337,10 +337,11 @@ function SocialProof() {
       <div className="mx-auto max-w-6xl px-4">
         <div className="grid md:grid-cols-3 gap-5">
           {items.map((it) => (
-            <div key={it.label} data-reveal className="rounded-3xl bg-white/70 backdrop-blur-sm border border-white p-7 shadow-[var(--shadow-soft)] hover:-translate-y-1 transition-all duration-500">
-              <div className="h-11 w-11 rounded-2xl grid place-items-center mb-4" style={{ background: "color-mix(in oklab, var(--rose) 18%, white)" }}>
-                <it.icon className="h-5 w-5 text-rose-deep" />
+            <div key={it.label} data-reveal className="group rounded-3xl bg-white/70 backdrop-blur-sm border border-white p-7 shadow-[var(--shadow-soft)] hover:-translate-y-1 transition-all duration-500">
+              <div className="icon-chip mb-5">
+                <it.icon className="h-5 w-5" strokeWidth={1.5} />
               </div>
+
               <p className="font-display text-xl text-chocolate">{it.label}</p>
               <p className="mt-2 text-sm text-chocolate/65 leading-relaxed">{it.value}</p>
             </div>
