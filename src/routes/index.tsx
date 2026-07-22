@@ -12,7 +12,6 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useReveal, useParallax } from "@/hooks/use-reveal";
 import logoAsset from "@/assets/logo.asset.json";
 import confeiteiroAsset from "@/assets/confeiteiro.asset.json";
-import boloRedVelvetAsset from "@/assets/bolo-red-velvet.jpg.asset.json";
 import boloLilasMorangoAsset from "@/assets/bolo-lilas-morango.jpg.asset.json";
 
 import bolosImg from "@/assets/product-bolos.jpg";
