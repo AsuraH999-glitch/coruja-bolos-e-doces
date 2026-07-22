@@ -698,7 +698,7 @@ function FinalCTA() {
           Seu próximo momento especial merece algo <em className="not-italic" style={{ background: "linear-gradient(135deg, var(--rose) 0%, var(--gold) 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>inesquecível</em>.
         </h2>
         <p data-reveal className="mt-5 mx-auto text-white/75 text-base md:text-lg text-pretty max-w-lg">
-          Fale conosco agora pelo WhatsApp e solicite seu orçamento. Vamos adoçar seu momento juntos!
+          Solicite seu orçamento e transforme sua celebração em uma experiência ainda mais especial.&nbsp;
         </p>
         <div data-reveal className="mt-8">
           <a href={wa("Olá, Coruja! Quero fazer uma encomenda pelo site.")} target="_blank" rel="noopener" className="btn-primary !py-4 !px-8 text-base">
