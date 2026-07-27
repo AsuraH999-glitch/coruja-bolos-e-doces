@@ -62,39 +62,56 @@ const PRODUCTS = [
   { icon: Sparkles, name: "Mini Trufas", desc: "Chocolate belga em recheios que se desmancham na boca.", img: trufasImg, tag: "Boutique" },
 ];
 
+const PRICE_TRAD = "R$ 95,00 /kg";
+const PRICE_ESP = "R$ 110,00 /kg";
+
 const MENU = {
-  bolos: [
-    { name: "Bolo com decoração personalizada", size: "10 fatias", price: "R$ 110,00" },
-    { name: "Bolo com decoração personalizada", size: "15 fatias", price: "R$ 150,00" },
-    { name: "Bolo com decoração personalizada", size: "20 fatias", price: "R$ 200,00" },
-    { name: "Bolo com detalhes em bico", size: "10 fatias", price: "R$ 95,00" },
-    { name: "Bolo com detalhes em bico", size: "20 fatias", price: "R$ 160,00" },
-    { name: "Bolo liso (sem topo e bico)", size: "10 fatias", price: "R$ 85,00" },
-    { name: "Bolo liso (sem topo e bico)", size: "20 fatias", price: "R$ 150,00" },
-  ],
-  doces: [
-    { name: "Brigadeiro", size: "Chocolate belga com granulado", price: "R$ 150 / cento" },
-    { name: "Beijinho", size: "Doce de coco decorado com cravo", price: "R$ 150 / cento" },
-    { name: "Bicho de Pé", size: "Morango ou Nesquik", price: "R$ 150 / cento" },
-    { name: "Cajuzinho", size: "Amendoim com castanha", price: "R$ 150 / cento" },
-    { name: "Ninho com Nutella", size: "Leite Ninho com cobertura de Nutella", price: "R$ 150 / cento" },
-    { name: "Olho de Sogra", size: "Ameixa com recheio de beijinho", price: "R$ 150 / cento" },
-  ],
-  cupcakes: [
-    { name: "Brigadeiro", size: "Massa de chocolate, recheio e cobertura", price: "R$ 7,00" },
-    { name: "Ninho com Nutella", size: "Recheio de Nutella e chantilly de Ninho", price: "R$ 7,00" },
-    { name: "Red Velvet", size: "Massa red velvet com cream cheese", price: "R$ 7,00" },
-    { name: "Leite Ninho com Morango", size: "Leite Ninho e pedaços de morango", price: "R$ 7,00" },
-    { name: "Chocolate Belga", size: "Recheio trufado de chocolate belga", price: "R$ 7,00" },
-    { name: "Acima de 15 unidades", size: "Preço promocional por unidade", price: "R$ 5,00" },
-  ],
-  donuts: [
-    { name: "Donut Chocolate", size: "Cobertura especial com confeitos", price: "R$ 150 / cento" },
-    { name: "Donut Morango", size: "Glacê rosa com granulado", price: "R$ 150 / cento" },
-    { name: "Donut Belga", size: "Chocolate belga ao leite", price: "R$ 150 / cento" },
-    { name: "Meio cento", size: "50 unidades sortidas", price: "R$ 80,00" },
-  ],
-};
+  branca: {
+    tradicionais: [
+      "Leite Condensado com Morango",
+      "Ninho com Abacaxi",
+      "Ninho com Pêssego",
+      "Doce de Leite com Abacaxi",
+      "Doce de Leite com Ameixa",
+      "Doce de Leite com Nozes",
+      "Floresta Branca",
+      "Bolo de Pudim",
+    ],
+    especiais: [
+      "Ninho com Morango",
+      "Nutella com Ninho",
+      "Nutella com Morango",
+      "Leite Condensado com Morango",
+      "Ninho com Brownie e Morango",
+      "Ouro Branco",
+      "Doce de Leite com Nozes",
+    ],
+  },
+  chocolate: {
+    tradicionais: [
+      "Brigadeiro",
+      "Brigadeiro com Mousse de Limão",
+      "Brigadeiro com Doce de Leite",
+      "Ninho com Brigadeiro",
+      "Ninho com Brigadeiro e Nutella",
+      "Prestígio",
+      "Ninho Trufado Preto",
+      "Ninho Trufado Branco",
+      "Floresta Negra",
+    ],
+    especiais: [
+      "Brigadeiro com Morango",
+      "Brownie com Morango e Brigadeiro",
+      "Sonho de Valsa",
+    ],
+  },
+} as const;
+
+const FINISHES = [
+  { title: "Bolo Liso", desc: "Sem topo e sem bico. Acabamento clean e elegante.", extra: "Sem valor adicional", cta: "Solicitar Orçamento" },
+  { title: "Bolo com Detalhes em Bico", desc: "Bicos decorativos delicados que valorizam o design.", extra: "+ R$ 10,00 /kg", cta: "Solicitar Orçamento" },
+  { title: "Decoração Personalizada", desc: "Projeto autoral criado sob medida para o seu evento.", extra: "Valor sob consulta", cta: "Solicitar Orçamento" },
+];
 
 const DIFFERENTIALS = [
   { icon: HandHeart, title: "Feito com carinho", desc: "Cada peça é preparada à mão com atenção aos detalhes." },
