@@ -3,7 +3,7 @@ import { useState } from "react";
 import {
   Heart, Sparkles, Cake, Cookie, Coffee, Cherry, Star, Instagram,
   MessageCircle, Clock, ShieldCheck, Palette, HandHeart, ChevronDown,
-  ArrowRight, MapPin, Phone, CheckCircle2,
+  ArrowRight, MapPin, Phone, CheckCircle2, CalendarDays,
 } from "lucide-react";
 import {
   Accordion, AccordionContent, AccordionItem, AccordionTrigger,
