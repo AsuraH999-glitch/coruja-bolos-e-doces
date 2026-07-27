@@ -480,161 +480,278 @@ function Products() {
   );
 }
 
-/* ---------------- MENU ---------------- */
-function FlavorCard({ name, tier }: { name: string; tier: "Tradicional" | "Especial" }) {
-  const price = tier === "Tradicional" ? PRICE_TRAD : PRICE_ESP;
-  const isEsp = tier === "Especial";
+/* ---------------- CONFIGURATOR ---------------- */
+const FLAVOR_EMOJI: Record<string, string> = {
+  "Ninho com Morango": "🍓",
+  "Nutella com Ninho": "🍫",
+  "Nutella com Morango": "🍓",
+  "Leite Condensado com Morango": "🍓",
+  "Ninho com Brownie e Morango": "🍫",
+  "Ouro Branco": "🥥",
+  "Doce de Leite com Nozes": "🌰",
+  "Ninho com Abacaxi": "🍍",
+  "Ninho com Pêssego": "🍑",
+  "Doce de Leite com Abacaxi": "🍍",
+  "Doce de Leite com Ameixa": "🍇",
+  "Floresta Branca": "🍒",
+  "Bolo de Pudim": "🍮",
+  "Brigadeiro": "🍫",
+  "Brigadeiro com Mousse de Limão": "🍋",
+  "Brigadeiro com Doce de Leite": "🍯",
+  "Ninho com Brigadeiro": "🍫",
+  "Ninho com Brigadeiro e Nutella": "🍫",
+  "Prestígio": "🥥",
+  "Ninho Trufado Preto": "🍫",
+  "Ninho Trufado Branco": "🤍",
+  "Floresta Negra": "🍒",
+  "Brigadeiro com Morango": "🍓",
+  "Brownie com Morango e Brigadeiro": "🍓",
+  "Sonho de Valsa": "💗",
+};
+
+type Dough = "branca" | "chocolate";
+type Tier = "tradicionais" | "especiais";
+type Finish = { title: string; extra: string; addPerKg: number };
+
+const FINISH_OPTIONS: Finish[] = [
+  { title: "Bolo Liso", extra: "Sem valor adicional", addPerKg: 0 },
+  { title: "Bico Decorado", extra: "+ R$ 10,00 /kg", addPerKg: 10 },
+  { title: "Personalizado", extra: "Sob consulta", addPerKg: 0 },
+];
+
+function StepHeader({ n, title, subtitle, done }: { n: number; title: string; subtitle: string; done: boolean }) {
   return (
-    <div
-      data-reveal
-      className="group relative flex flex-col justify-between gap-4 rounded-[24px] bg-white/85 backdrop-blur-sm p-5 border border-white/70 shadow-[0_10px_28px_-18px_rgba(78,52,46,0.22)] hover:-translate-y-0.5 hover:border-[color-mix(in_oklab,var(--rose)_40%,transparent)] hover:shadow-[0_22px_44px_-20px_rgba(217,91,141,0.28)] transition-all duration-500"
-    >
-      <div className="flex items-start justify-between gap-3">
-        <div className="min-w-0">
-          <span
-            className={`inline-flex items-center gap-1 text-[10px] font-semibold uppercase tracking-[0.18em] px-2 py-0.5 rounded-full ${
-              isEsp
-                ? "text-rose-deep bg-[color-mix(in_oklab,var(--rose)_18%,white)] border border-[color-mix(in_oklab,var(--rose-deep)_20%,transparent)]"
-                : "text-chocolate/70 bg-[color-mix(in_oklab,var(--beige)_60%,white)] border border-[color-mix(in_oklab,var(--chocolate)_10%,transparent)]"
-            }`}
-          >
-            {isEsp && <Sparkles className="h-3 w-3" />} {tier}
-          </span>
-          <p className="mt-2 font-display text-lg text-chocolate leading-tight">{name}</p>
-        </div>
-        <span className="text-sm font-semibold text-rose-deep whitespace-nowrap">{price}</span>
-      </div>
-      <div className="divider-hairline" />
-      <a
-        href={wa(`Olá, Coruja! Quero encomendar um bolo sabor "${name}" (${tier} — ${price}).`)}
-        target="_blank"
-        rel="noopener"
-        className="inline-flex items-center justify-center gap-2 rounded-full px-4 py-2 text-xs font-semibold uppercase tracking-wider bg-white/70 border border-[color-mix(in_oklab,var(--chocolate)_10%,transparent)] text-chocolate hover:bg-[image:var(--gradient-primary)] hover:text-white hover:border-transparent transition-all duration-400"
+    <div className="flex items-start gap-4">
+      <div
+        className={`grid h-10 w-10 shrink-0 place-items-center rounded-full font-display text-base transition-all duration-500 ${
+          done
+            ? "bg-[image:var(--gradient-primary)] text-white shadow-[0_10px_24px_-12px_color-mix(in_oklab,var(--rose-deep)_55%,transparent)]"
+            : "bg-white/70 backdrop-blur-sm text-chocolate/70 border border-white"
+        }`}
       >
-        <MessageCircle className="h-3.5 w-3.5" /> Pedir pelo WhatsApp
-      </a>
+        {done ? <CheckCircle2 className="h-5 w-5" strokeWidth={2} /> : `0${n}`}
+      </div>
+      <div className="min-w-0">
+        <p className="eyebrow"><span className="inline-block h-1 w-6 rounded-full bg-rose-deep/60" /> Etapa {n}</p>
+        <h3 className="mt-1 font-display text-2xl md:text-3xl text-chocolate leading-tight">{title}</h3>
+        <p className="mt-1 text-sm text-chocolate/60">{subtitle}</p>
+      </div>
     </div>
   );
 }
 
-function FlavorGroup({ title, tier, items }: { title: string; tier: "Tradicional" | "Especial"; items: readonly string[] }) {
-  const price = tier === "Tradicional" ? PRICE_TRAD : PRICE_ESP;
+function OptionCard({
+  active, onClick, children, className = "",
+}: { active: boolean; onClick: () => void; children: React.ReactNode; className?: string }) {
   return (
-    <div className="mt-10 first:mt-0">
-      <div className="flex flex-wrap items-end justify-between gap-2 mb-5">
-        <div>
-          <span className="eyebrow"><span className="inline-block h-1.5 w-1.5 rounded-full bg-rose-deep" /> Sabores {title}</span>
-          <h3 className="mt-2 font-display text-2xl md:text-3xl text-chocolate">
-            {title === "Tradicionais" ? "Clássicos irresistíveis" : "Criações especiais"}
-          </h3>
-        </div>
-        <div className="text-right">
-          <p className="text-[11px] uppercase tracking-[0.18em] text-chocolate/50">A partir de</p>
-          <p className="font-display text-xl text-rose-deep">{price}</p>
-        </div>
-      </div>
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-        {items.map((name) => (
-          <FlavorCard key={name} name={name} tier={tier} />
-        ))}
-      </div>
-    </div>
+    <button
+      type="button"
+      onClick={onClick}
+      className={`group relative text-left rounded-[24px] p-6 md:p-7 transition-all duration-500 backdrop-blur-sm overflow-hidden ${
+        active
+          ? "bg-white border-[color-mix(in_oklab,var(--rose-deep)_55%,transparent)] shadow-[0_0_0_1px_color-mix(in_oklab,var(--rose-deep)_35%,transparent),0_24px_60px_-24px_color-mix(in_oklab,var(--rose-deep)_45%,transparent)] -translate-y-0.5"
+          : "bg-white/70 border-white/70 hover:-translate-y-0.5 hover:bg-white hover:border-[color-mix(in_oklab,var(--rose)_45%,transparent)] hover:shadow-[0_18px_44px_-22px_color-mix(in_oklab,var(--rose-deep)_35%,transparent)]"
+      } border ${className}`}
+    >
+      {active && (
+        <span className="absolute top-4 right-4 grid h-7 w-7 place-items-center rounded-full bg-[image:var(--gradient-primary)] text-white shadow-[0_8px_20px_-8px_color-mix(in_oklab,var(--rose-deep)_55%,transparent)] animate-fade-in">
+          <CheckCircle2 className="h-4 w-4" strokeWidth={2.2} />
+        </span>
+      )}
+      <span
+        aria-hidden
+        className={`pointer-events-none absolute -inset-px rounded-[24px] transition-opacity duration-500 ${active ? "opacity-100" : "opacity-0"}`}
+        style={{ background: "radial-gradient(120% 80% at 50% -10%, color-mix(in oklab, var(--rose) 22%, transparent) 0%, transparent 55%)" }}
+      />
+      <span className="relative block">{children}</span>
+    </button>
   );
 }
 
 function Menu() {
+  const [dough, setDough] = useState<Dough | null>(null);
+  const [tier, setTier] = useState<Tier | null>(null);
+  const [flavor, setFlavor] = useState<string | null>(null);
+  const [finish, setFinish] = useState<Finish | null>(null);
+
+  const pickDough = (d: Dough) => {
+    setDough(d);
+    if (tier && !MENU[d][tier].includes(flavor ?? "")) setFlavor(null);
+  };
+  const pickTier = (t: Tier) => {
+    setTier(t);
+    if (dough && !MENU[dough][t].includes(flavor ?? "")) setFlavor(null);
+  };
+
+  const flavors = dough && tier ? MENU[dough][tier] : [];
+  const basePrice = tier === "especiais" ? 110 : tier === "tradicionais" ? 95 : 0;
+  const totalPerKg = basePrice + (finish?.addPerKg ?? 0);
+
+  const doughLabel = dough === "branca" ? "Massa Branca" : dough === "chocolate" ? "Massa de Chocolate" : null;
+  const tierLabel = tier === "tradicionais" ? "Tradicionais" : tier === "especiais" ? "Especiais" : null;
+
+  const complete = dough && tier && flavor && finish;
+  const message = complete
+    ? `Olá, Coruja! Quero encomendar um bolo personalizado:%0A%0A• Massa: ${doughLabel}%0A• Categoria: ${tierLabel}%0A• Sabor: ${flavor}%0A• Acabamento: ${finish!.title}%0A• Valor: R$ ${totalPerKg},00 /kg%0A%0APoderia me passar mais detalhes?`
+    : `Olá, Coruja! Gostaria de montar um bolo personalizado.`;
+
   return (
-    <section id="cardapio" className="py-20 md:py-28 relative" style={{ background: "var(--gradient-soft)" }}>
+    <section id="cardapio" className="py-20 md:py-28 relative section-cool">
       <div className="mx-auto max-w-6xl px-4">
         <div className="max-w-2xl">
-          <span className="eyebrow"><span className="inline-block h-1.5 w-1.5 rounded-full bg-rose-deep" /> Cardápio</span>
+          <span className="eyebrow"><span className="inline-block h-1.5 w-1.5 rounded-full bg-rose-deep" /> Configurador</span>
           <h2 className="mt-4 font-display text-4xl md:text-5xl text-chocolate text-balance">
-            Sabores autorais, preços <em className="not-italic text-rose-deep">transparentes</em>.
+            Monte o seu bolo <em className="not-italic accent-rose">passo a passo</em>.
           </h2>
           <p className="mt-4 text-chocolate/65 text-pretty">
-            Escolha o tipo de massa, o sabor que mais combina com sua ocasião e faça seu pedido diretamente pelo WhatsApp.
+            Uma experiência guiada para desenhar o bolo perfeito para o seu momento — escolha a massa, o sabor e o acabamento, e receba seu orçamento pelo WhatsApp.
           </p>
         </div>
 
-        <Tabs defaultValue="branca" className="mt-12">
-          <TabsList className="!bg-white/70 backdrop-blur-sm !p-1.5 !h-auto rounded-full border border-white shadow-[var(--shadow-soft)] flex flex-wrap gap-1 mx-auto justify-center max-w-full">
-            {[
-              { v: "branca", l: "Massa Branca" },
-              { v: "chocolate", l: "Massa de Chocolate" },
-            ].map((t) => (
-              <TabsTrigger
-                key={t.v}
-                value={t.v}
-                className="!rounded-full !px-6 !py-2.5 !text-sm !font-semibold data-[state=active]:!bg-[image:var(--gradient-primary)] data-[state=active]:!text-white data-[state=active]:!shadow-[var(--shadow-soft)] text-chocolate/70"
-              >
-                {t.l}
-              </TabsTrigger>
-            ))}
-          </TabsList>
-
-          {(Object.keys(MENU) as (keyof typeof MENU)[]).map((key) => (
-            <TabsContent key={key} value={key} className="mt-10">
-              <FlavorGroup title="Tradicionais" tier="Tradicional" items={MENU[key].tradicionais} />
-              <FlavorGroup title="Especiais" tier="Especial" items={MENU[key].especiais} />
-            </TabsContent>
-          ))}
-        </Tabs>
-
-        {/* Acabamentos */}
-        <div className="mt-20">
-          <div className="max-w-2xl">
-            <span className="eyebrow"><span className="inline-block h-1.5 w-1.5 rounded-full bg-rose-deep" /> Acabamentos</span>
-            <h3 className="mt-3 font-display text-3xl md:text-4xl text-chocolate text-balance">
-              Escolha o acabamento <em className="not-italic text-rose-deep">ideal</em> para o seu bolo.
-            </h3>
-          </div>
-          <div className="grid md:grid-cols-3 gap-5 mt-8">
-            {FINISHES.map((f) => (
-              <div
-                key={f.title}
-                data-reveal
-                className="card-premium p-7 flex flex-col justify-between gap-6"
-              >
-                <div>
-                  <div className="icon-chip mb-4"><Cake className="h-5 w-5" /></div>
-                  <h4 className="font-display text-xl text-chocolate">{f.title}</h4>
-                  <p className="mt-2 text-sm text-chocolate/65 leading-relaxed">{f.desc}</p>
-                </div>
-                <div>
-                  <div className="divider-hairline mb-4" />
-                  <p className="text-[11px] uppercase tracking-[0.18em] text-chocolate/50">Investimento</p>
-                  <p className="font-display text-lg text-rose-deep mb-4">{f.extra}</p>
-                  <a
-                    href={wa(`Olá, Coruja! Quero um orçamento para bolo com acabamento: ${f.title}.`)}
-                    target="_blank"
-                    rel="noopener"
-                    className="inline-flex items-center gap-2 text-sm font-semibold text-chocolate hover:text-rose-deep link-underline"
-                  >
-                    {f.cta} <ArrowRight className="h-4 w-4" />
-                  </a>
-                </div>
+        <div className="mt-14 grid lg:grid-cols-[1fr_360px] gap-10">
+          {/* Steps */}
+          <div className="space-y-14">
+            {/* STEP 1 — Dough */}
+            <div>
+              <StepHeader n={1} title="Escolha a massa" subtitle="A base que dá caráter ao seu bolo." done={!!dough} />
+              <div className="mt-6 grid sm:grid-cols-2 gap-5">
+                {([
+                  { v: "branca", label: "Massa Branca", emoji: "🍰", desc: "Aveludada, leve e delicada." },
+                  { v: "chocolate", label: "Massa de Chocolate", emoji: "🍫", desc: "Intensa, cremosa e marcante." },
+                ] as const).map((o) => (
+                  <OptionCard key={o.v} active={dough === o.v} onClick={() => pickDough(o.v)}>
+                    <div className="flex items-center gap-4">
+                      <div className="grid h-14 w-14 shrink-0 place-items-center rounded-2xl bg-[color-mix(in_oklab,var(--rose)_10%,white)] border border-white text-3xl">
+                        {o.emoji}
+                      </div>
+                      <div className="min-w-0">
+                        <p className="font-display text-xl text-chocolate leading-tight">{o.label}</p>
+                        <p className="text-sm text-chocolate/60 mt-1">{o.desc}</p>
+                      </div>
+                    </div>
+                  </OptionCard>
+                ))}
               </div>
-            ))}
-          </div>
-        </div>
+            </div>
 
-        {/* Info strip */}
-        <div className="mt-12 rounded-[28px] border border-white/70 bg-white/70 backdrop-blur-sm shadow-[var(--shadow-soft)] p-6 md:p-8">
-          <div className="grid md:grid-cols-3 gap-6 md:gap-4">
-            {[
-              { icon: CalendarDays, title: "Pedidos com antecedência", desc: "Encomendas com no mínimo 5 dias de antecedência." },
-              { icon: Star, title: "Ingredientes premium", desc: "Selecionados a dedo para um sabor inesquecível." },
-              { icon: MessageCircle, title: "Atendimento pelo WhatsApp", desc: "Tire dúvidas e finalize seu pedido de forma ágil." },
-            ].map((i) => (
-              <div key={i.title} className="flex items-start gap-4">
-                <div className="icon-chip shrink-0"><i.icon className="h-5 w-5" /></div>
-                <div>
-                  <p className="font-display text-lg text-chocolate leading-tight">{i.title}</p>
-                  <p className="text-sm text-chocolate/60 mt-1">{i.desc}</p>
-                </div>
+            {/* STEP 2 — Tier */}
+            <div className={dough ? "" : "opacity-50 pointer-events-none"}>
+              <StepHeader n={2} title="Escolha a categoria" subtitle="Clássicos irresistíveis ou criações especiais." done={!!tier} />
+              <div className="mt-6 grid sm:grid-cols-2 gap-5">
+                {([
+                  { v: "tradicionais", label: "Tradicionais", icon: Star, price: "R$ 95,00 /kg", desc: "Sabores queridos, sempre um sucesso." },
+                  { v: "especiais", label: "Especiais", icon: Sparkles, price: "R$ 110,00 /kg", desc: "Combinações autorais com ingredientes premium." },
+                ] as const).map((o) => (
+                  <OptionCard key={o.v} active={tier === o.v} onClick={() => pickTier(o.v)}>
+                    <div className="flex items-start justify-between gap-4">
+                      <div className="min-w-0">
+                        <div className="icon-chip"><o.icon className="h-5 w-5" /></div>
+                        <p className="mt-4 font-display text-xl text-chocolate leading-tight">{o.label}</p>
+                        <p className="text-sm text-chocolate/60 mt-1">{o.desc}</p>
+                      </div>
+                      <div className="text-right">
+                        <p className="text-[10px] uppercase tracking-[0.18em] text-chocolate/50">A partir de</p>
+                        <p className="font-display text-lg text-rose-deep whitespace-nowrap">{o.price}</p>
+                      </div>
+                    </div>
+                  </OptionCard>
+                ))}
               </div>
-            ))}
+            </div>
+
+            {/* STEP 3 — Flavor */}
+            <div className={dough && tier ? "" : "opacity-50 pointer-events-none"}>
+              <StepHeader n={3} title="Escolha o sabor" subtitle={flavors.length ? `${flavors.length} opções disponíveis` : "Selecione massa e categoria primeiro."} done={!!flavor} />
+              <div className="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                {flavors.map((name) => {
+                  const active = flavor === name;
+                  return (
+                    <OptionCard key={name} active={active} onClick={() => setFlavor(name)} className="!p-5">
+                      <div className="flex items-center gap-3">
+                        <div className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-[color-mix(in_oklab,var(--rose)_10%,white)] border border-white text-xl">
+                          {FLAVOR_EMOJI[name] ?? "🍰"}
+                        </div>
+                        <p className="font-display text-base text-chocolate leading-tight">{name}</p>
+                      </div>
+                    </OptionCard>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* STEP 4 — Finish */}
+            <div className={dough && tier && flavor ? "" : "opacity-50 pointer-events-none"}>
+              <StepHeader n={4} title="Escolha o acabamento" subtitle="O toque final que define a estética do bolo." done={!!finish} />
+              <div className="mt-6 grid sm:grid-cols-3 gap-5">
+                {FINISH_OPTIONS.map((f) => (
+                  <OptionCard key={f.title} active={finish?.title === f.title} onClick={() => setFinish(f)}>
+                    <div>
+                      <div className="icon-chip"><Cake className="h-5 w-5" /></div>
+                      <p className="mt-4 font-display text-lg text-chocolate leading-tight">{f.title}</p>
+                      <div className="divider-hairline my-3" />
+                      <p className="text-[10px] uppercase tracking-[0.18em] text-chocolate/50">Adicional</p>
+                      <p className="font-display text-base text-rose-deep">{f.extra}</p>
+                    </div>
+                  </OptionCard>
+                ))}
+              </div>
+            </div>
           </div>
+
+          {/* Summary */}
+          <aside className="lg:sticky lg:top-24 self-start">
+            <div className="card-premium p-7">
+              <span className="eyebrow"><span className="inline-block h-1.5 w-1.5 rounded-full bg-rose-deep" /> Seu bolo</span>
+              <h3 className="mt-3 font-display text-2xl text-chocolate leading-tight">Resumo do pedido</h3>
+              <div className="divider-hairline mt-5" />
+
+              <dl className="mt-5 space-y-4 text-sm">
+                {[
+                  { label: "Massa", value: doughLabel },
+                  { label: "Categoria", value: tierLabel },
+                  { label: "Sabor", value: flavor },
+                  { label: "Acabamento", value: finish?.title },
+                ].map((row) => (
+                  <div key={row.label} className="flex items-start justify-between gap-4">
+                    <dt className="text-[11px] uppercase tracking-[0.18em] text-chocolate/50 pt-0.5">{row.label}</dt>
+                    <dd className={`text-right font-medium ${row.value ? "text-chocolate" : "text-chocolate/30 italic"}`}>
+                      {row.value ?? "a escolher"}
+                    </dd>
+                  </div>
+                ))}
+              </dl>
+
+              <div className="divider-hairline mt-6" />
+
+              <div className="mt-5 flex items-end justify-between">
+                <div>
+                  <p className="text-[11px] uppercase tracking-[0.18em] text-chocolate/50">Valor estimado</p>
+                  <p className="mt-1 font-display text-3xl text-rose-deep">
+                    {totalPerKg > 0 ? `R$ ${totalPerKg},00` : "—"}
+                    {totalPerKg > 0 && <span className="text-sm text-chocolate/50 font-sans ml-1">/kg</span>}
+                  </p>
+                </div>
+                {finish?.title === "Personalizado" && (
+                  <span className="text-[10px] uppercase tracking-[0.18em] text-chocolate/50 pb-1">+ sob consulta</span>
+                )}
+              </div>
+
+              <a
+                href={wa(decodeURIComponent(message))}
+                target="_blank"
+                rel="noopener"
+                aria-disabled={!complete}
+                onClick={(e) => { if (!complete) e.preventDefault(); }}
+                className={`btn-primary w-full mt-6 ${!complete ? "opacity-50 cursor-not-allowed pointer-events-none" : ""}`}
+              >
+                <MessageCircle className="h-4 w-4" /> Pedir no WhatsApp
+              </a>
+
+              <p className="mt-4 text-[11px] text-chocolate/50 leading-relaxed text-center">
+                Encomendas com no mínimo 5 dias de antecedência. Valores por quilo, pedido mínimo de 2kg.
+              </p>
+            </div>
+          </aside>
         </div>
       </div>
     </section>
