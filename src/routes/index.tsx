@@ -576,11 +576,11 @@ function Menu() {
 
   const pickDough = (d: Dough) => {
     setDough(d);
-    if (tier && !MENU[d][tier].includes(flavor ?? "")) setFlavor(null);
+    if (tier && !(MENU[d][tier] as readonly string[]).includes(flavor ?? "")) setFlavor(null);
   };
   const pickTier = (t: Tier) => {
     setTier(t);
-    if (dough && !MENU[dough][t].includes(flavor ?? "")) setFlavor(null);
+    if (dough && !(MENU[dough][t] as readonly string[]).includes(flavor ?? "")) setFlavor(null);
   };
 
   const flavors = dough && tier ? MENU[dough][tier] : [];
