@@ -775,7 +775,7 @@ const PARTY_CATEGORIES = [
     image: docesTradicionaisAsset.url,
     description: "Escolha até 4 sabores no cento ou 2 sabores no meio cento.",
     items: ["Brigadeiro", "Beijinho", "Bicho de Pé", "Cajuzinho", "Casadinho", "Olho de Sogra", "Brigadeiro de Leite Ninho", "Ninho com Nutella"],
-    pricing: ["Centro: R$ 150,00", "Meio Centro: R$ 80,00"],
+    pricing: ["Cento: R$ 150,00", "Meio Cento: R$ 80,00"],
   },
   {
     id: "brownie",
@@ -783,7 +783,7 @@ const PARTY_CATEGORIES = [
     image: brownieAsset.url,
     description: "Brownie tradicional com chocolate belga e casquinha crocante.",
     items: [],
-    pricing: ["Centro: R$ 150,00", "Meio Centro: R$ 80,00"],
+    pricing: ["Cento: R$ 150,00", "Meio Cento: R$ 80,00"],
   },
   {
     id: "mini-trufas",
@@ -791,7 +791,7 @@ const PARTY_CATEGORIES = [
     image: miniTrufasAsset.url,
     description: "Bombons de chocolate belga com recheios que se desmancham na boca.",
     items: ["Brigadeiro", "Maracujá", "Cocada Cremosa", "Doce de Leite", "Creme de Avelã"],
-    pricing: ["Centro: R$ 150,00", "Meio Centro: R$ 80,00"],
+    pricing: ["Cento: R$ 150,00", "Meio Cento: R$ 80,00"],
   },
   {
     id: "donuts",
@@ -799,7 +799,7 @@ const PARTY_CATEGORIES = [
     image: donutsAsset.url,
     description: "Donuts artesanais com massa fofinha e coberturas especiais.",
     items: [],
-    pricing: ["Centro: R$ 150,00", "Meio Centro: R$ 80,00"],
+    pricing: ["Cento: R$ 150,00", "Meio Cento: R$ 80,00"],
   },
   {
     id: "cupcakes",
