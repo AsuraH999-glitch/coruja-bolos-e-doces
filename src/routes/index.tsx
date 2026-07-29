@@ -14,6 +14,12 @@ import logoAsset from "@/assets/logo.asset.json";
 import confeiteiroAsset from "@/assets/confeiteiro.asset.json";
 import boloLilasMorangoAsset from "@/assets/bolo-lilas-morango.jpg.asset.json";
 
+import docesTradicionaisAsset from "@/assets/doces-tradicionais.jpg.asset.json";
+import brownieAsset from "@/assets/brownie.jpg.asset.json";
+import miniTrufasAsset from "@/assets/mini-trufas.jpg.asset.json";
+import donutsAsset from "@/assets/donuts.jpg.asset.json";
+import cupcakesAsset from "@/assets/cupcakes.jpg.asset.json";
+
 import bolosImg from "@/assets/product-bolos.jpg";
 import docesImg from "@/assets/product-doces.jpg";
 import cupcakesImg from "@/assets/product-cupcakes.jpg";
@@ -150,6 +156,7 @@ function Landing() {
         <About />
         <Products />
         <Menu />
+        <PartySection />
         <Differentials />
         <HowItWorks />
         <Gallery />
@@ -752,6 +759,168 @@ function Menu() {
               </p>
             </div>
           </aside>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+
+
+/* ---------------- COMPLETE SUA FESTA ---------------- */
+const PARTY_CATEGORIES = [
+  {
+    id: "doces-tradicionais",
+    title: "Doces Tradicionais",
+    image: docesTradicionaisAsset.url,
+    description: "Escolha até 4 sabores no cento ou 2 sabores no meio cento.",
+    items: ["Brigadeiro", "Beijinho", "Bicho de Pé", "Cajuzinho", "Casadinho", "Olho de Sogra", "Brigadeiro de Leite Ninho", "Ninho com Nutella"],
+    pricing: ["Centro: R$ 150,00", "Meio Centro: R$ 80,00"],
+  },
+  {
+    id: "brownie",
+    title: "Brownie",
+    image: brownieAsset.url,
+    description: "Brownie tradicional com chocolate belga e casquinha crocante.",
+    items: [],
+    pricing: ["Centro: R$ 150,00", "Meio Centro: R$ 80,00"],
+  },
+  {
+    id: "mini-trufas",
+    title: "Mini Trufas",
+    image: miniTrufasAsset.url,
+    description: "Bombons de chocolate belga com recheios que se desmancham na boca.",
+    items: ["Brigadeiro", "Maracujá", "Cocada Cremosa", "Doce de Leite", "Creme de Avelã"],
+    pricing: ["Centro: R$ 150,00", "Meio Centro: R$ 80,00"],
+  },
+  {
+    id: "donuts",
+    title: "Donuts",
+    image: donutsAsset.url,
+    description: "Donuts artesanais com massa fofinha e coberturas especiais.",
+    items: [],
+    pricing: ["Centro: R$ 150,00", "Meio Centro: R$ 80,00"],
+  },
+  {
+    id: "cupcakes",
+    title: "Cupcakes",
+    image: cupcakesAsset.url,
+    description: "Massa aveludada, cobertura cremosa e decoração boutique.",
+    items: ["Brigadeiro", "Ninho com Nutella", "Red Velvet", "Leite Ninho com Morango", "Chocolate Belga", "Cenoura com Brigadeiro"],
+    pricing: ["R$ 7,00 por unidade", "Acima de 15 unidades: R$ 5,00 por unidade"],
+  },
+];
+
+function partyMessage(cat: (typeof PARTY_CATEGORIES)[number]) {
+  const lines = [`Olá, Coruja! Gostaria de encomendar ${cat.title}.`];
+  if (cat.items.length) lines.push(`Sabores: ${cat.items.join(", ")}.`);
+  lines.push(cat.description);
+  lines.push(`Preço: ${cat.pricing.join(" / ")}.`);
+  lines.push("Poderia me enviar mais informações?");
+  return lines.join("\n");
+}
+
+function PartyCard({ cat }: { cat: (typeof PARTY_CATEGORIES)[number] }) {
+  return (
+    <article
+      data-reveal
+      className="group flex flex-col rounded-[28px] bg-[var(--card)]/75 border border-[var(--card)]/80 backdrop-blur-md shadow-[var(--shadow-soft)] overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-[var(--shadow-elegant)]"
+    >
+      <div className="relative aspect-[4/3] overflow-hidden">
+        <img
+          src={cat.image}
+          alt={cat.title}
+          width={1024}
+          height={1024}
+          loading="lazy"
+          className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-chocolate/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+      </div>
+
+      <div className="flex flex-col flex-1 p-6 md:p-7">
+        <h3 className="font-display text-2xl md:text-[1.75rem] text-chocolate leading-tight">{cat.title}</h3>
+        <p className="mt-2 text-sm text-chocolate/65 leading-relaxed">{cat.description}</p>
+
+        {cat.items.length > 0 && (
+          <div className="mt-4 flex flex-wrap gap-2">
+            {cat.items.map((item) => (
+              <span
+                key={item}
+                className="inline-flex items-center rounded-full bg-rose/10 px-2.5 py-1 text-[11px] font-medium text-rose-deep border border-rose/10"
+              >
+                {item}
+              </span>
+            ))}
+          </div>
+        )}
+
+        <div className="mt-auto pt-6">
+          <div className="space-y-1">
+            {cat.pricing.map((price) => (
+              <p key={price} className="font-display text-lg text-rose-deep leading-tight">{price}</p>
+            ))}
+          </div>
+          <a
+            href={wa(partyMessage(cat))}
+            target="_blank"
+            rel="noopener"
+            className="btn-primary w-full mt-5 !py-3 !text-sm"
+          >
+            <MessageCircle className="h-4 w-4" /> Pedir pelo WhatsApp
+          </a>
+        </div>
+      </div>
+    </article>
+  );
+}
+
+function PartySection() {
+  return (
+    <section id="complete-sua-festa" className="py-20 md:py-28 relative overflow-hidden section-warm">
+      <div className="mx-auto max-w-6xl px-4">
+        <div className="max-w-2xl mx-auto text-center">
+          <span className="eyebrow justify-center">
+            <span className="inline-block h-1.5 w-1.5 rounded-full bg-rose-deep" /> Para sua festa
+          </span>
+          <h2 className="mt-4 font-display text-4xl md:text-5xl text-chocolate text-balance">
+            Complete sua <em className="not-italic text-rose-deep">festa</em>.
+          </h2>
+          <p className="mt-4 text-chocolate/65 text-pretty">
+            Além dos bolos personalizados, temos uma seleção de doces artesanais preparados com o mesmo carinho para deixar sua comemoração ainda mais especial.
+          </p>
+        </div>
+
+        <div className="mt-14 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+          {PARTY_CATEGORIES.map((cat) => (
+            <PartyCard key={cat.id} cat={cat} />
+          ))}
+        </div>
+
+        <div
+          className="mt-16 md:mt-20 relative rounded-[32px] overflow-hidden p-8 md:p-12 text-center"
+          style={{ background: "var(--gradient-dark)" }}
+        >
+          <div
+            className="absolute inset-0 opacity-20"
+            style={{
+              backgroundImage:
+                "radial-gradient(circle at 30% 30%, var(--rose) 0%, transparent 25%), radial-gradient(circle at 70% 70%, var(--gold) 0%, transparent 25%)",
+            }}
+          />
+          <div className="relative z-10 max-w-2xl mx-auto">
+            <Sparkles className="h-6 w-6 text-gold mx-auto mb-4" />
+            <h3 className="font-display text-3xl md:text-4xl text-cream leading-tight">Gostou? Faça sua encomenda agora mesmo.</h3>
+            <p className="mt-3 text-cream/70">Escolha seus doces favoritos e receba uma proposta personalizada em poucas horas.</p>
+            <a
+              href={wa("Olá, Coruja! Gostaria de fazer uma encomenda de doces.")}
+              target="_blank"
+              rel="noopener"
+              className="btn-primary mt-6 mx-auto"
+            >
+              <MessageCircle className="h-4 w-4" /> Solicitar pelo WhatsApp
+            </a>
+          </div>
         </div>
       </div>
     </section>
