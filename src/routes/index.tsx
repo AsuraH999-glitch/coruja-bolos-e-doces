@@ -799,7 +799,7 @@ const PARTY_CATEGORIES = [
     image: donutsAsset.url,
     description: "Donuts artesanais com massa fofinha e coberturas especiais.",
     items: [],
-    pricing: ["Centro: R$ 150,00", "Meio Centro: R$ 80,00"],
+    pricing: ["Cento: R$ 150,00", "Meio Cento: R$ 80,00"],
   },
   {
     id: "cupcakes",
