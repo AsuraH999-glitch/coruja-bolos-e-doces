@@ -818,13 +818,24 @@ function PartyCard({ cat }: { cat: (typeof PARTY_CATEGORIES)[number] }) {
 
 function PartySection() {
   return (
-    <section id="complete-sua-festa" className="py-20 md:py-28 relative overflow-hidden section-warm">
+    <section id="complete-sua-festa" className="pt-10 pb-20 md:pt-12 md:pb-28 relative overflow-hidden section-warm">
       <div className="mx-auto max-w-6xl px-4">
-        <div className="max-w-2xl mx-auto text-center">
+        {/* Transição elegante entre o configurador e os doces */}
+        <div className="flex items-center gap-5 md:gap-8" data-reveal>
+          <span className="hidden sm:block h-px flex-1 bg-[linear-gradient(90deg,transparent,color-mix(in_oklab,var(--rose)_45%,transparent))]" />
+          <p className="font-display text-xl md:text-2xl text-chocolate/80 text-center italic">
+            Quer deixar sua festa ainda mais completa?
+          </p>
+          <span className="hidden sm:block h-px flex-1 bg-[linear-gradient(270deg,transparent,color-mix(in_oklab,var(--rose)_45%,transparent))]" />
+        </div>
+
+        <div className="mt-14 max-w-2xl mx-auto text-center">
           <span className="eyebrow justify-center">
-            <span className="inline-block h-1.5 w-1.5 rounded-full bg-rose-deep" /> Para sua festa
+            <span className="inline-block h-1.5 w-1.5 rounded-full bg-rose-deep" /> Parte 02 · Para sua festa
           </span>
-          <h2 className="mt-4 font-display text-4xl md:text-5xl text-chocolate text-balance">
+          <h3 className="mt-4 font-display text-3xl md:text-4xl text-chocolate text-balance">
+            Complete sua <em className="not-italic text-rose-deep">festa</em>.
+
             Complete sua <em className="not-italic text-rose-deep">festa</em>.
           </h2>
           <p className="mt-4 text-chocolate/65 text-pretty">
