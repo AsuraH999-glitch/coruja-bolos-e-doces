@@ -53,15 +53,6 @@ export const Route = createFileRoute("/")({
   component: Landing,
 });
 
-const PRODUCTS = [
-  { icon: Cake, name: "Bolos Personalizados", desc: "Criados sob medida para sua celebração, com decoração exclusiva e sabores autorais.", img: bolosImg, tag: "Assinatura" },
-  { icon: Heart, name: "Doces Tradicionais", desc: "Brigadeiros, beijinhos, cajuzinhos e clássicos que aquecem a memória.", img: docesImg, tag: "Clássicos" },
-  { icon: Cookie, name: "Cupcakes", desc: "Massa aveludada e coberturas cremosas em porções irresistíveis.", img: cupcakesImg, tag: "Individuais" },
-  { icon: Coffee, name: "Donuts", desc: "Massa fofinha com coberturas especiais e confeitos selecionados.", img: donutsImg, tag: "Autoral" },
-  { icon: Cherry, name: "Tortas", desc: "Combinações delicadas de frutas frescas, cremes e massas artesanais.", img: tortasImg, tag: "Finas" },
-  { icon: Sparkles, name: "Mini Trufas", desc: "Chocolate belga em recheios que se desmancham na boca.", img: trufasImg, tag: "Boutique" },
-];
-
 const PRICE_TRAD = "R$ 95,00 /kg";
 const PRICE_ESP = "R$ 110,00 /kg";
 
