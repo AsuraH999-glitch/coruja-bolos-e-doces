@@ -20,12 +20,6 @@ import miniTrufasAsset from "@/assets/mini-trufas.jpg.asset.json";
 import donutsAsset from "@/assets/donuts.jpg.asset.json";
 import cupcakesAsset from "@/assets/cupcakes.jpg.asset.json";
 
-import bolosImg from "@/assets/product-bolos.jpg";
-import docesImg from "@/assets/product-doces.jpg";
-import cupcakesImg from "@/assets/product-cupcakes.jpg";
-import donutsImg from "@/assets/product-donuts.jpg";
-import tortasImg from "@/assets/product-tortas.jpg";
-import trufasImg from "@/assets/product-trufas.jpg";
 import gallery1 from "@/assets/gallery-1.jpg";
 import gallery2 from "@/assets/gallery-2.jpg";
 import gallery3 from "@/assets/gallery-3.jpg";
@@ -426,61 +420,6 @@ function About() {
             </a>
             <a href="#produtos" className="btn-ghost">Conhecer produtos</a>
           </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/* ---------------- PRODUCTS ---------------- */
-function Products() {
-  return (
-    <section id="produtos" className="py-20 md:py-28">
-      <div className="mx-auto max-w-6xl px-4">
-        <div className="max-w-2xl">
-          <span className="eyebrow"><span className="inline-block h-1.5 w-1.5 rounded-full bg-rose-deep" /> Nossos produtos</span>
-          <h2 className="mt-4 font-display text-4xl md:text-5xl text-chocolate text-balance">
-            Uma seleção pensada para <em className="not-italic text-rose-deep">encantar</em> todos os sentidos.
-          </h2>
-          <p className="mt-4 text-chocolate/65 text-pretty">
-            Do clássico brigadeiro à peça central da sua festa: cada produto é preparado com receitas próprias e acabamento boutique.
-          </p>
-        </div>
-
-        <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {PRODUCTS.map((p) => (
-            <article
-              key={p.name}
-              data-reveal
-              className="group card-product flex flex-col"
-            >
-              <div className="relative aspect-[4/3] overflow-hidden rounded-t-[32px]">
-                <img src={p.img} alt={p.name} width={1024} height={768} loading="lazy" className="h-full w-full object-cover transition-transform duration-[1100ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.08]" />
-                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" style={{ background: "linear-gradient(180deg, transparent 55%, rgba(78,52,46,0.35) 100%)" }} />
-                <div className="absolute top-4 left-4 glass rounded-full px-3 py-1 text-[11px] font-semibold text-chocolate tracking-wide shadow-[0_6px_18px_-8px_rgba(78,52,46,0.35)]">
-                  {p.tag}
-                </div>
-              </div>
-              <div className="p-6 relative">
-                <div className="flex items-center gap-2 text-rose-deep">
-                  <p.icon className="h-4 w-4" />
-                  <span className="text-xs font-semibold uppercase tracking-widest">Coleção</span>
-                </div>
-                <h3 className="mt-2 font-display text-2xl text-chocolate">{p.name}</h3>
-                <p className="mt-2 text-sm text-chocolate/65 leading-relaxed">{p.desc}</p>
-                <div className="divider-hairline mt-5" />
-                <a
-                  href={wa(`Olá, Coruja! Gostaria de um orçamento de ${p.name}.`)}
-                  target="_blank" rel="noopener"
-                  className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-rose-deep group/link"
-                >
-                  Solicitar Orçamento
-                  <ArrowRight className="h-4 w-4 transition-transform group-hover/link:translate-x-1" />
-                </a>
-              </div>
-            </article>
-
-          ))}
         </div>
       </div>
     </section>
