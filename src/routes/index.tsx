@@ -605,15 +605,28 @@ function Menu() {
   return (
     <section id="cardapio" className="py-20 md:py-28 relative section-cool">
       <div className="mx-auto max-w-6xl px-4">
-        <div className="max-w-2xl">
-          <span className="eyebrow"><span className="inline-block h-1.5 w-1.5 rounded-full bg-rose-deep" /> Configurador</span>
-          <h2 className="mt-4 font-display text-4xl md:text-5xl text-chocolate text-balance">
-            Monte o seu bolo <em className="not-italic accent-rose">passo a passo</em>.
+        <div className="max-w-2xl mx-auto text-center">
+          <span className="eyebrow justify-center"><span className="inline-block h-1.5 w-1.5 rounded-full bg-rose-deep" /> Nosso cardápio</span>
+          <h2 className="mt-4 font-display text-4xl md:text-6xl text-chocolate text-balance">
+            Nosso <em className="not-italic accent-rose">Cardápio</em>
           </h2>
+          <p className="mt-4 text-chocolate/65 text-pretty">
+            Escolha seu bolo personalizado e descubra uma seleção de doces artesanais preparados com ingredientes selecionados e muito carinho.
+          </p>
+        </div>
+
+        <div className="divider-hairline mt-14" />
+
+        <div className="mt-14 max-w-2xl">
+          <span className="eyebrow"><span className="inline-block h-1.5 w-1.5 rounded-full bg-rose-deep" /> Parte 01 · Configurador</span>
+          <h3 className="mt-4 font-display text-3xl md:text-4xl text-chocolate text-balance">
+            Monte o seu bolo <em className="not-italic accent-rose">passo a passo</em>.
+          </h3>
           <p className="mt-4 text-chocolate/65 text-pretty">
             Uma experiência guiada para desenhar o bolo perfeito para o seu momento — escolha a massa, o sabor e o acabamento, e receba seu orçamento pelo WhatsApp.
           </p>
         </div>
+
 
         <div className="mt-14 grid lg:grid-cols-[1fr_360px] gap-10">
           {/* Steps */}
