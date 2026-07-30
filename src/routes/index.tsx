@@ -835,9 +835,8 @@ function PartySection() {
           </span>
           <h3 className="mt-4 font-display text-3xl md:text-4xl text-chocolate text-balance">
             Complete sua <em className="not-italic text-rose-deep">festa</em>.
+          </h3>
 
-            Complete sua <em className="not-italic text-rose-deep">festa</em>.
-          </h2>
           <p className="mt-4 text-chocolate/65 text-pretty">
             Além dos bolos personalizados, temos uma seleção de doces artesanais preparados com o mesmo carinho para deixar sua comemoração ainda mais especial.
           </p>
