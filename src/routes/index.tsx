@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import {
-  Heart, Sparkles, Cake, Cookie, Coffee, Cherry, Star, Instagram,
+  Heart, Sparkles, Cake, Star, Instagram,
   MessageCircle, Clock, ShieldCheck, Palette, HandHeart, ChevronDown,
   ArrowRight, MapPin, Phone, CheckCircle2, CalendarDays,
 } from "lucide-react";
@@ -20,12 +20,6 @@ import miniTrufasAsset from "@/assets/mini-trufas.jpg.asset.json";
 import donutsAsset from "@/assets/donuts.jpg.asset.json";
 import cupcakesAsset from "@/assets/cupcakes.jpg.asset.json";
 
-import bolosImg from "@/assets/product-bolos.jpg";
-import docesImg from "@/assets/product-doces.jpg";
-import cupcakesImg from "@/assets/product-cupcakes.jpg";
-import donutsImg from "@/assets/product-donuts.jpg";
-import tortasImg from "@/assets/product-tortas.jpg";
-import trufasImg from "@/assets/product-trufas.jpg";
 import gallery1 from "@/assets/gallery-1.jpg";
 import gallery2 from "@/assets/gallery-2.jpg";
 import gallery3 from "@/assets/gallery-3.jpg";
@@ -58,15 +52,6 @@ export const Route = createFileRoute("/")({
   }),
   component: Landing,
 });
-
-const PRODUCTS = [
-  { icon: Cake, name: "Bolos Personalizados", desc: "Criados sob medida para sua celebração, com decoração exclusiva e sabores autorais.", img: bolosImg, tag: "Assinatura" },
-  { icon: Heart, name: "Doces Tradicionais", desc: "Brigadeiros, beijinhos, cajuzinhos e clássicos que aquecem a memória.", img: docesImg, tag: "Clássicos" },
-  { icon: Cookie, name: "Cupcakes", desc: "Massa aveludada e coberturas cremosas em porções irresistíveis.", img: cupcakesImg, tag: "Individuais" },
-  { icon: Coffee, name: "Donuts", desc: "Massa fofinha com coberturas especiais e confeitos selecionados.", img: donutsImg, tag: "Autoral" },
-  { icon: Cherry, name: "Tortas", desc: "Combinações delicadas de frutas frescas, cremes e massas artesanais.", img: tortasImg, tag: "Finas" },
-  { icon: Sparkles, name: "Mini Trufas", desc: "Chocolate belga em recheios que se desmancham na boca.", img: trufasImg, tag: "Boutique" },
-];
 
 const PRICE_TRAD = "R$ 95,00 /kg";
 const PRICE_ESP = "R$ 110,00 /kg";
@@ -154,7 +139,6 @@ function Landing() {
         <Hero />
         <SocialProof />
         <About />
-        <Products />
         <Menu />
         <PartySection />
         <Differentials />
@@ -211,7 +195,6 @@ function Nav() {
   const [open, setOpen] = useState(false);
   const links = [
     { href: "#sobre", label: "Sobre" },
-    { href: "#produtos", label: "Produtos" },
     { href: "#cardapio", label: "Cardápio" },
     { href: "#galeria", label: "Galeria" },
     { href: "#faq", label: "FAQ" },
@@ -424,63 +407,8 @@ function About() {
             <a href={wa("Olá, Coruja! Quero conversar sobre um pedido especial.")} target="_blank" rel="noopener" className="btn-primary">
               <MessageCircle className="h-4 w-4" /> Conversar no WhatsApp
             </a>
-            <a href="#produtos" className="btn-ghost">Conhecer produtos</a>
+            <a href="#cardapio" className="btn-ghost">Ver cardápio</a>
           </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/* ---------------- PRODUCTS ---------------- */
-function Products() {
-  return (
-    <section id="produtos" className="py-20 md:py-28">
-      <div className="mx-auto max-w-6xl px-4">
-        <div className="max-w-2xl">
-          <span className="eyebrow"><span className="inline-block h-1.5 w-1.5 rounded-full bg-rose-deep" /> Nossos produtos</span>
-          <h2 className="mt-4 font-display text-4xl md:text-5xl text-chocolate text-balance">
-            Uma seleção pensada para <em className="not-italic text-rose-deep">encantar</em> todos os sentidos.
-          </h2>
-          <p className="mt-4 text-chocolate/65 text-pretty">
-            Do clássico brigadeiro à peça central da sua festa: cada produto é preparado com receitas próprias e acabamento boutique.
-          </p>
-        </div>
-
-        <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {PRODUCTS.map((p) => (
-            <article
-              key={p.name}
-              data-reveal
-              className="group card-product flex flex-col"
-            >
-              <div className="relative aspect-[4/3] overflow-hidden rounded-t-[32px]">
-                <img src={p.img} alt={p.name} width={1024} height={768} loading="lazy" className="h-full w-full object-cover transition-transform duration-[1100ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.08]" />
-                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" style={{ background: "linear-gradient(180deg, transparent 55%, rgba(78,52,46,0.35) 100%)" }} />
-                <div className="absolute top-4 left-4 glass rounded-full px-3 py-1 text-[11px] font-semibold text-chocolate tracking-wide shadow-[0_6px_18px_-8px_rgba(78,52,46,0.35)]">
-                  {p.tag}
-                </div>
-              </div>
-              <div className="p-6 relative">
-                <div className="flex items-center gap-2 text-rose-deep">
-                  <p.icon className="h-4 w-4" />
-                  <span className="text-xs font-semibold uppercase tracking-widest">Coleção</span>
-                </div>
-                <h3 className="mt-2 font-display text-2xl text-chocolate">{p.name}</h3>
-                <p className="mt-2 text-sm text-chocolate/65 leading-relaxed">{p.desc}</p>
-                <div className="divider-hairline mt-5" />
-                <a
-                  href={wa(`Olá, Coruja! Gostaria de um orçamento de ${p.name}.`)}
-                  target="_blank" rel="noopener"
-                  className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-rose-deep group/link"
-                >
-                  Solicitar Orçamento
-                  <ArrowRight className="h-4 w-4 transition-transform group-hover/link:translate-x-1" />
-                </a>
-              </div>
-            </article>
-
-          ))}
         </div>
       </div>
     </section>
@@ -605,15 +533,28 @@ function Menu() {
   return (
     <section id="cardapio" className="py-20 md:py-28 relative section-cool">
       <div className="mx-auto max-w-6xl px-4">
-        <div className="max-w-2xl">
-          <span className="eyebrow"><span className="inline-block h-1.5 w-1.5 rounded-full bg-rose-deep" /> Configurador</span>
-          <h2 className="mt-4 font-display text-4xl md:text-5xl text-chocolate text-balance">
-            Monte o seu bolo <em className="not-italic accent-rose">passo a passo</em>.
+        <div className="max-w-2xl mx-auto text-center">
+          <span className="eyebrow justify-center"><span className="inline-block h-1.5 w-1.5 rounded-full bg-rose-deep" /> Nosso cardápio</span>
+          <h2 className="mt-4 font-display text-4xl md:text-6xl text-chocolate text-balance">
+            Nosso <em className="not-italic accent-rose">Cardápio</em>
           </h2>
+          <p className="mt-4 text-chocolate/65 text-pretty">
+            Escolha seu bolo personalizado e descubra uma seleção de doces artesanais preparados com ingredientes selecionados e muito carinho.
+          </p>
+        </div>
+
+        <div className="divider-hairline mt-14" />
+
+        <div className="mt-14 max-w-2xl">
+          <span className="eyebrow"><span className="inline-block h-1.5 w-1.5 rounded-full bg-rose-deep" /> Parte 01 · Configurador</span>
+          <h3 className="mt-4 font-display text-3xl md:text-4xl text-chocolate text-balance">
+            Monte o seu bolo <em className="not-italic accent-rose">passo a passo</em>.
+          </h3>
           <p className="mt-4 text-chocolate/65 text-pretty">
             Uma experiência guiada para desenhar o bolo perfeito para o seu momento — escolha a massa, o sabor e o acabamento, e receba seu orçamento pelo WhatsApp.
           </p>
         </div>
+
 
         <div className="mt-14 grid lg:grid-cols-[1fr_360px] gap-10">
           {/* Steps */}
@@ -877,15 +818,25 @@ function PartyCard({ cat }: { cat: (typeof PARTY_CATEGORIES)[number] }) {
 
 function PartySection() {
   return (
-    <section id="complete-sua-festa" className="py-20 md:py-28 relative overflow-hidden section-warm">
+    <section id="complete-sua-festa" className="pt-10 pb-20 md:pt-12 md:pb-28 relative overflow-hidden section-warm">
       <div className="mx-auto max-w-6xl px-4">
-        <div className="max-w-2xl mx-auto text-center">
+        {/* Transição elegante entre o configurador e os doces */}
+        <div className="flex items-center gap-5 md:gap-8" data-reveal>
+          <span className="hidden sm:block h-px flex-1 bg-[linear-gradient(90deg,transparent,color-mix(in_oklab,var(--rose)_45%,transparent))]" />
+          <p className="font-display text-xl md:text-2xl text-chocolate/80 text-center italic">
+            Quer deixar sua festa ainda mais completa?
+          </p>
+          <span className="hidden sm:block h-px flex-1 bg-[linear-gradient(270deg,transparent,color-mix(in_oklab,var(--rose)_45%,transparent))]" />
+        </div>
+
+        <div className="mt-14 max-w-2xl mx-auto text-center">
           <span className="eyebrow justify-center">
-            <span className="inline-block h-1.5 w-1.5 rounded-full bg-rose-deep" /> Para sua festa
+            <span className="inline-block h-1.5 w-1.5 rounded-full bg-rose-deep" /> Parte 02 · Para sua festa
           </span>
-          <h2 className="mt-4 font-display text-4xl md:text-5xl text-chocolate text-balance">
+          <h3 className="mt-4 font-display text-3xl md:text-4xl text-chocolate text-balance">
             Complete sua <em className="not-italic text-rose-deep">festa</em>.
-          </h2>
+          </h3>
+
           <p className="mt-4 text-chocolate/65 text-pretty">
             Além dos bolos personalizados, temos uma seleção de doces artesanais preparados com o mesmo carinho para deixar sua comemoração ainda mais especial.
           </p>
