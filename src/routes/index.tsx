@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import {
-  Heart, Sparkles, Cake, Cookie, Coffee, Cherry, Star, Instagram,
+  Heart, Sparkles, Cake, Star, Instagram,
   MessageCircle, Clock, ShieldCheck, Palette, HandHeart, ChevronDown,
   ArrowRight, MapPin, Phone, CheckCircle2, CalendarDays,
 } from "lucide-react";
@@ -195,7 +195,6 @@ function Nav() {
   const [open, setOpen] = useState(false);
   const links = [
     { href: "#sobre", label: "Sobre" },
-    { href: "#cardapio", label: "Cardápio" },
     { href: "#cardapio", label: "Cardápio" },
     { href: "#galeria", label: "Galeria" },
     { href: "#faq", label: "FAQ" },
@@ -408,7 +407,7 @@ function About() {
             <a href={wa("Olá, Coruja! Quero conversar sobre um pedido especial.")} target="_blank" rel="noopener" className="btn-primary">
               <MessageCircle className="h-4 w-4" /> Conversar no WhatsApp
             </a>
-            <a href="#produtos" className="btn-ghost">Conhecer produtos</a>
+            <a href="#cardapio" className="btn-ghost">Ver cardápio</a>
           </div>
         </div>
       </div>
