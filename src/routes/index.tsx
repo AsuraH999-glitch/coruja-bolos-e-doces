@@ -139,7 +139,6 @@ function Landing() {
         <Hero />
         <SocialProof />
         <About />
-        <Products />
         <Menu />
         <PartySection />
         <Differentials />
@@ -196,7 +195,7 @@ function Nav() {
   const [open, setOpen] = useState(false);
   const links = [
     { href: "#sobre", label: "Sobre" },
-    { href: "#produtos", label: "Produtos" },
+    { href: "#cardapio", label: "Cardápio" },
     { href: "#cardapio", label: "Cardápio" },
     { href: "#galeria", label: "Galeria" },
     { href: "#faq", label: "FAQ" },
