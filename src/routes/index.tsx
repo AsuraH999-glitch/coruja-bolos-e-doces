@@ -3,7 +3,7 @@ import { useState } from "react";
 import {
   Heart, Sparkles, Cake, Star, Instagram,
   MessageCircle, Clock, ShieldCheck, Palette, HandHeart, ChevronDown,
-  ArrowRight, MapPin, Phone, CheckCircle2, CalendarDays,
+  ArrowRight, MapPin, Phone, CheckCircle2, CalendarDays, CakeSlice, Cookie,
 } from "lucide-react";
 import {
   Accordion, AccordionContent, AccordionItem, AccordionTrigger,
@@ -258,7 +258,7 @@ function Hero() {
             <span className="inline-block h-1.5 w-1.5 rounded-full bg-rose-deep" />
             Confeitaria artesanal boutique
           </span>
-          <h1 className="mt-5 font-display text-[2.5rem] leading-[1.05] sm:text-5xl md:text-6xl lg:text-[4.25rem] text-chocolate text-balance">
+          <h1 className="mt-5 font-display text-[2.1rem] leading-[1.12] sm:text-[2.6rem] md:text-5xl lg:text-[3.4rem] text-chocolate text-balance">
             Bolos e doces feitos com <em className="not-italic bg-clip-text text-transparent" style={{ backgroundImage: "var(--gradient-primary)" }}>carinho</em> para tornar seus momentos inesquecíveis.
           </h1>
           <p className="mt-6 max-w-xl text-[15px] md:text-base leading-relaxed text-chocolate/70 text-pretty">
@@ -394,7 +394,7 @@ function About() {
           <span className="eyebrow">
             <span className="inline-block h-1.5 w-1.5 rounded-full bg-rose-deep" /> Nossa história
           </span>
-          <h2 className="mt-4 font-display text-4xl md:text-5xl text-chocolate text-balance">
+          <h2 className="mt-4 font-display text-3xl md:text-[2.5rem] text-chocolate text-balance">
             Mais do que doces, criamos <em className="not-italic text-rose-deep">momentos especiais</em>.
           </h2>
           <p className="mt-6 text-chocolate/70 leading-relaxed text-pretty">
@@ -416,33 +416,6 @@ function About() {
 }
 
 /* ---------------- CONFIGURATOR ---------------- */
-const FLAVOR_EMOJI: Record<string, string> = {
-  "Ninho com Morango": "🍓",
-  "Nutella com Ninho": "🍫",
-  "Nutella com Morango": "🍓",
-  "Leite Condensado com Morango": "🍓",
-  "Ninho com Brownie e Morango": "🍫",
-  "Ouro Branco": "🥥",
-  "Doce de Leite com Nozes": "🌰",
-  "Ninho com Abacaxi": "🍍",
-  "Ninho com Pêssego": "🍑",
-  "Doce de Leite com Abacaxi": "🍍",
-  "Doce de Leite com Ameixa": "🍇",
-  "Floresta Branca": "🍒",
-  "Bolo de Pudim": "🍮",
-  "Brigadeiro": "🍫",
-  "Brigadeiro com Mousse de Limão": "🍋",
-  "Brigadeiro com Doce de Leite": "🍯",
-  "Ninho com Brigadeiro": "🍫",
-  "Ninho com Brigadeiro e Nutella": "🍫",
-  "Prestígio": "🥥",
-  "Ninho Trufado Preto": "🍫",
-  "Ninho Trufado Branco": "🤍",
-  "Floresta Negra": "🍒",
-  "Brigadeiro com Morango": "🍓",
-  "Brownie com Morango e Brigadeiro": "🍓",
-  "Sonho de Valsa": "💗",
-};
 
 type Dough = "branca" | "chocolate";
 type Tier = "tradicionais" | "especiais";
@@ -535,7 +508,7 @@ function Menu() {
       <div className="mx-auto max-w-6xl px-4">
         <div className="max-w-2xl mx-auto text-center">
           <span className="eyebrow justify-center"><span className="inline-block h-1.5 w-1.5 rounded-full bg-rose-deep" /> Nosso cardápio</span>
-          <h2 className="mt-4 font-display text-4xl md:text-6xl text-chocolate text-balance">
+          <h2 className="mt-4 font-display text-3xl md:text-[2.75rem] text-chocolate text-balance">
             Nosso <em className="not-italic accent-rose">Cardápio</em>
           </h2>
           <p className="mt-4 text-chocolate/65 text-pretty">
@@ -564,13 +537,13 @@ function Menu() {
               <StepHeader n={1} title="Escolha a massa" subtitle="A base que dá caráter ao seu bolo." done={!!dough} />
               <div className="mt-6 grid sm:grid-cols-2 gap-5">
                 {([
-                  { v: "branca", label: "Massa Branca", emoji: "🍰", desc: "Aveludada, leve e delicada." },
-                  { v: "chocolate", label: "Massa de Chocolate", emoji: "🍫", desc: "Intensa, cremosa e marcante." },
+                  { v: "branca", label: "Massa Branca", Icon: CakeSlice, desc: "Aveludada, leve e delicada." },
+                  { v: "chocolate", label: "Massa de Chocolate", Icon: Cookie, desc: "Intensa, cremosa e marcante." },
                 ] as const).map((o) => (
                   <OptionCard key={o.v} active={dough === o.v} onClick={() => pickDough(o.v)}>
                     <div className="flex items-center gap-4">
-                      <div className="grid h-14 w-14 shrink-0 place-items-center rounded-2xl bg-[color-mix(in_oklab,var(--rose)_10%,white)] border border-white text-3xl">
-                        {o.emoji}
+                      <div className={`grid h-14 w-14 shrink-0 place-items-center rounded-2xl border transition-colors ${dough === o.v ? "bg-rose-deep border-rose-deep text-white" : "bg-[color-mix(in_oklab,var(--cream)_75%,white)] border-[color-mix(in_oklab,var(--gold)_32%,transparent)] text-chocolate"}`}>
+                        <o.Icon className="h-6 w-6" aria-hidden="true" />
                       </div>
                       <div className="min-w-0">
                         <p className="font-display text-xl text-chocolate leading-tight">{o.label}</p>
@@ -616,8 +589,8 @@ function Menu() {
                   return (
                     <OptionCard key={name} active={active} onClick={() => setFlavor(name)} className="!p-5">
                       <div className="flex items-center gap-3">
-                        <div className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-[color-mix(in_oklab,var(--rose)_10%,white)] border border-white text-xl">
-                          {FLAVOR_EMOJI[name] ?? "🍰"}
+                        <div className={`grid h-11 w-11 shrink-0 place-items-center rounded-xl border transition-colors ${active ? "bg-rose-deep border-rose-deep text-white" : "bg-[color-mix(in_oklab,var(--cream)_75%,white)] border-[color-mix(in_oklab,var(--gold)_32%,transparent)] text-chocolate"}`}>
+                          <CakeSlice className="h-5 w-5" aria-hidden="true" />
                         </div>
                         <p className="font-display text-base text-chocolate leading-tight">{name}</p>
                       </div>
@@ -887,7 +860,7 @@ function Differentials() {
       <div className="mx-auto max-w-6xl px-4">
         <div className="max-w-2xl">
           <span className="eyebrow"><span className="inline-block h-1.5 w-1.5 rounded-full bg-rose-deep" /> Diferenciais</span>
-          <h2 className="mt-4 font-display text-4xl md:text-5xl text-chocolate text-balance">
+          <h2 className="mt-4 font-display text-3xl md:text-[2.5rem] text-chocolate text-balance">
             O cuidado que faz a <em className="not-italic text-rose-deep">diferença</em>.
           </h2>
         </div>
@@ -922,7 +895,7 @@ function HowItWorks() {
       <div className="mx-auto max-w-6xl px-4">
         <div className="text-center max-w-2xl mx-auto">
           <span className="eyebrow"><span className="inline-block h-1.5 w-1.5 rounded-full bg-rose-deep" /> Como funciona</span>
-          <h2 className="mt-4 font-display text-4xl md:text-5xl text-chocolate text-balance">
+          <h2 className="mt-4 font-display text-3xl md:text-[2.5rem] text-chocolate text-balance">
             Do primeiro <em className="not-italic text-rose-deep">"oi"</em> à entrega
           </h2>
           <p className="mt-4 text-chocolate/65">Um processo simples, humano e cuidadoso do começo ao fim.</p>
@@ -963,7 +936,7 @@ function Gallery() {
         <div className="flex flex-wrap items-end justify-between gap-6">
           <div className="max-w-xl">
             <span className="eyebrow"><span className="inline-block h-1.5 w-1.5 rounded-full bg-rose-deep" /> Galeria</span>
-            <h2 className="mt-4 font-display text-4xl md:text-5xl text-chocolate text-balance">
+            <h2 className="mt-4 font-display text-3xl md:text-[2.5rem] text-chocolate text-balance">
               Momentos que já <em className="not-italic text-rose-deep">adoçamos</em>.
             </h2>
           </div>
@@ -1001,7 +974,7 @@ function FAQSection() {
         <div className="flex flex-wrap items-end justify-between gap-6">
           <div className="max-w-xl">
             <span className="eyebrow"><span className="inline-block h-1.5 w-1.5 rounded-full bg-rose-deep" /> Dúvidas frequentes</span>
-            <h2 className="mt-4 font-display text-4xl md:text-5xl text-chocolate text-balance">
+            <h2 className="mt-4 font-display text-3xl md:text-[2.5rem] text-chocolate text-balance">
               Tudo o que você quer <em className="not-italic text-rose-deep">saber</em>.
             </h2>
           </div>
@@ -1040,7 +1013,7 @@ function FinalCTA() {
       <div className="absolute inset-0 opacity-[0.08] mix-blend-overlay" style={{ backgroundImage: "var(--noise-url)", backgroundSize: "220px 220px" }} />
 
       <div className="relative mx-auto max-w-3xl px-4 text-center">
-        <h2 data-reveal className="font-display text-4xl md:text-5xl lg:text-6xl text-white text-balance leading-[1.05]">
+        <h2 data-reveal className="font-display text-3xl md:text-[2.6rem] lg:text-[3rem] text-white text-balance leading-[1.05]">
           Seu próximo momento especial merece algo <em className="not-italic" style={{ background: "linear-gradient(135deg, var(--rose) 0%, var(--gold) 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>inesquecível</em>.
         </h2>
         <p data-reveal className="mt-5 mx-auto text-white/75 text-base md:text-lg text-pretty max-w-lg">

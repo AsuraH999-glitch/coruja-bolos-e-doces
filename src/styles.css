@@ -5,8 +5,8 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --font-display: "Cormorant Garamond", ui-serif, Georgia, serif;
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Lora", ui-serif, Georgia, serif;
+  --font-sans: "Poppins", ui-sans-serif, system-ui, sans-serif;
 
 
   --radius-sm: calc(var(--radius) - 4px);
@@ -38,58 +38,60 @@
   --color-beige: var(--beige);
   --color-gold: var(--gold);
   --color-cream: var(--cream);
+  --color-coffee: var(--coffee);
 }
 
 :root {
   --radius: 1rem;
 
-  /* Brand palette */
-  --cream: oklch(0.985 0.008 20);        /* #FFF8FA */
-  --blush: oklch(0.955 0.02 10);
-  --rose: oklch(0.78 0.11 5);             /* #F48FB1 */
-  --rose-deep: oklch(0.62 0.16 2);        /* #D95B8D */
-  --chocolate: oklch(0.31 0.04 45);       /* #4E342E */
-  --beige: oklch(0.94 0.015 55);          /* #F6EDE7 */
-  --gold: oklch(0.74 0.09 70);            /* #D4A373 */
+  /* Brand palette — Brand Book oficial Coruja Bolos & Doces */
+  --cream: oklch(0.945 0.021 85.9);       /* Creme-manteiga #F3ECDD */
+  --blush: oklch(0.960 0.019 72.6);       /* Creme claro de apoio */
+  --rose: oklch(0.840 0.071 353.7);       /* Rosa-suave #F1B8CE */
+  --rose-deep: oklch(0.625 0.197 2.1);    /* Rosa-confeitaria #E0447E */
+  --chocolate: oklch(0.404 0.081 49.5);   /* Marrom-torrado #6B3A1D */
+  --coffee: oklch(0.244 0.036 50.5);      /* Preto-café #2E1B10 */
+  --beige: oklch(0.906 0.031 86.5);       /* Creme profundo */
+  --gold: oklch(0.655 0.110 74.6);        /* Caramelo #B8863B */
 
   --background: var(--cream);
-  --foreground: var(--chocolate);
-  --card: oklch(1 0 0);
-  --card-foreground: var(--chocolate);
+  --foreground: var(--coffee);
+  --card: oklch(0.985 0.010 86);
+  --card-foreground: var(--coffee);
   --primary: var(--rose-deep);
   --primary-foreground: oklch(1 0 0);
   --secondary: var(--beige);
   --secondary-foreground: var(--chocolate);
-  --muted: oklch(0.96 0.01 20);
-  --muted-foreground: oklch(0.5 0.03 30);
+  --muted: oklch(0.925 0.022 84);
+  --muted-foreground: oklch(0.47 0.05 50);
   --accent: var(--rose);
-  --accent-foreground: oklch(1 0 0);
-  --border: oklch(0.92 0.015 15);
-  --ring: var(--rose);
+  --accent-foreground: var(--coffee);
+  --border: oklch(0.878 0.030 78);
+  --ring: var(--rose-deep);
 
-  /* Rich tokens */
-  --gradient-hero: radial-gradient(ellipse at top left, color-mix(in oklab, var(--rose) 22%, transparent) 0%, transparent 55%),
-                   radial-gradient(ellipse at bottom right, color-mix(in oklab, var(--gold) 15%, transparent) 0%, transparent 60%),
+  /* Rich tokens — papel editorial, luz difusa, artesanal */
+  --gradient-hero: radial-gradient(ellipse at top left, color-mix(in oklab, var(--rose) 16%, transparent) 0%, transparent 55%),
+                   radial-gradient(ellipse at bottom right, color-mix(in oklab, var(--gold) 12%, transparent) 0%, transparent 60%),
                    linear-gradient(180deg, var(--cream) 0%, var(--beige) 100%);
-  --gradient-primary: linear-gradient(135deg, var(--rose) 0%, var(--rose-deep) 100%);
-  --gradient-soft: linear-gradient(180deg, color-mix(in oklab, var(--rose) 8%, var(--cream)) 0%, var(--cream) 100%);
-  --gradient-dark: linear-gradient(135deg, var(--chocolate) 0%, oklch(0.24 0.04 20) 100%);
+  --gradient-primary: linear-gradient(135deg, color-mix(in oklab, var(--rose-deep) 88%, var(--rose)) 0%, var(--rose-deep) 100%);
+  --gradient-soft: linear-gradient(180deg, color-mix(in oklab, var(--rose) 7%, var(--cream)) 0%, var(--cream) 100%);
+  --gradient-dark: linear-gradient(135deg, var(--chocolate) 0%, var(--coffee) 100%);
 
-  /* Atmospheric page background — layered radial washes + warm whites */
+  /* Atmospheric page background — creme-manteiga com luz difusa */
   --gradient-atmosphere:
-    radial-gradient(1200px 700px at 8% -5%, color-mix(in oklab, var(--rose) 14%, transparent) 0%, transparent 55%),
-    radial-gradient(900px 700px at 105% 12%, color-mix(in oklab, var(--gold) 10%, transparent) 0%, transparent 60%),
-    radial-gradient(1000px 800px at 50% 55%, color-mix(in oklab, var(--rose) 6%, transparent) 0%, transparent 65%),
-    radial-gradient(900px 700px at -5% 95%, color-mix(in oklab, var(--rose-deep) 8%, transparent) 0%, transparent 60%),
-    linear-gradient(180deg, var(--cream) 0%, color-mix(in oklab, var(--beige) 60%, var(--cream)) 45%, var(--cream) 100%);
+    radial-gradient(1200px 700px at 8% -5%, color-mix(in oklab, var(--rose) 10%, transparent) 0%, transparent 55%),
+    radial-gradient(900px 700px at 105% 12%, color-mix(in oklab, var(--gold) 9%, transparent) 0%, transparent 60%),
+    radial-gradient(1000px 800px at 50% 55%, color-mix(in oklab, var(--gold) 5%, transparent) 0%, transparent 65%),
+    radial-gradient(900px 700px at -5% 95%, color-mix(in oklab, var(--rose) 8%, transparent) 0%, transparent 60%),
+    linear-gradient(180deg, var(--cream) 0%, color-mix(in oklab, var(--beige) 55%, var(--cream)) 45%, var(--cream) 100%);
 
   /* Sophisticated SVG noise (base64) — near-imperceptible grain */
-  --noise-url: url("data:image/svg+xml;utf8,<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.31  0 0 0 0 0.20  0 0 0 0 0.18  0 0 0 0.55 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  --noise-url: url("data:image/svg+xml;utf8,<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.42  0 0 0 0 0.26  0 0 0 0 0.13  0 0 0 0.55 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
 
-  --shadow-sm: 0 1px 2px 0 color-mix(in oklab, var(--chocolate) 6%, transparent);
-  --shadow-soft: 0 10px 40px -12px color-mix(in oklab, var(--rose-deep) 18%, transparent);
-  --shadow-elegant: 0 24px 60px -20px color-mix(in oklab, var(--rose-deep) 25%, transparent);
-  --shadow-gold: 0 20px 50px -18px color-mix(in oklab, var(--gold) 45%, transparent);
+  --shadow-sm: 0 1px 2px 0 color-mix(in oklab, var(--coffee) 7%, transparent);
+  --shadow-soft: 0 10px 34px -14px color-mix(in oklab, var(--chocolate) 22%, transparent);
+  --shadow-elegant: 0 22px 54px -22px color-mix(in oklab, var(--chocolate) 26%, transparent);
+  --shadow-gold: 0 18px 44px -20px color-mix(in oklab, var(--gold) 40%, transparent);
 
   --transition-smooth: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
 }
@@ -103,27 +105,30 @@
     font-family: var(--font-sans);
     font-weight: 400;
     font-size: 1rem;
-    line-height: 1.7;
-    letter-spacing: -0.005em;
+    line-height: 1.75;
+    letter-spacing: 0;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
-    font-feature-settings: "cv02", "cv03", "cv04", "cv11", "ss01", "kern";
+    font-feature-settings: "kern";
   }
-  p { line-height: 1.75; }
+  p { line-height: 1.8; }
   h1, h2, h3, h4 {
     font-family: var(--font-display);
     font-weight: 500;
-    letter-spacing: -0.015em;
-    line-height: 1.08;
-    font-feature-settings: "kern", "liga", "dlig", "ss01";
+    color: var(--chocolate);
+    letter-spacing: -0.01em;
+    line-height: 1.18;
+    font-feature-settings: "kern", "liga";
     text-rendering: geometricPrecision;
   }
-  h1 { font-weight: 500; letter-spacing: -0.022em; }
-  h2 { font-weight: 500; letter-spacing: -0.018em; line-height: 1.1; }
-  h3 { font-weight: 500; letter-spacing: -0.012em; line-height: 1.2; }
-  h4 { font-weight: 500; letter-spacing: -0.008em; line-height: 1.3; }
+  h1 { font-weight: 500; letter-spacing: -0.018em; line-height: 1.12; }
+  h2 { font-weight: 500; letter-spacing: -0.014em; line-height: 1.16; }
+  h3 { font-weight: 500; letter-spacing: -0.008em; line-height: 1.25; }
+  h4 { font-weight: 500; letter-spacing: -0.004em; line-height: 1.35; }
   em { font-style: italic; }
+  ::selection { background: color-mix(in oklab, var(--rose) 55%, transparent); color: var(--coffee); }
+  :focus-visible { outline: 2px solid var(--rose-deep); outline-offset: 3px; }
 }
 
 /* Editorial highlight — for key words inside display headings */
@@ -185,53 +190,31 @@
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  padding: 0.95rem 1.75rem;
-  border-radius: 9999px;
-  background: var(--gradient-primary);
+  padding: 0.95rem 1.9rem;
+  border-radius: 14px;
+  background: var(--rose-deep);
   color: var(--primary-foreground);
   font-family: var(--font-sans);
   font-weight: 500;
   font-size: 0.9rem;
-  letter-spacing: 0.02em;
-  border: 1px solid color-mix(in oklab, white 22%, transparent);
+  letter-spacing: 0.01em;
+  border: 1px solid color-mix(in oklab, var(--rose-deep) 82%, var(--coffee));
   box-shadow:
-    0 1px 0 0 rgba(255,255,255,0.35) inset,
-    0 -1px 0 0 color-mix(in oklab, var(--rose-deep) 45%, transparent) inset,
-    0 10px 24px -12px color-mix(in oklab, var(--rose-deep) 45%, transparent),
-    0 24px 60px -24px color-mix(in oklab, var(--rose-deep) 55%, transparent);
+    0 1px 0 0 color-mix(in oklab, white 24%, transparent) inset,
+    0 10px 24px -18px color-mix(in oklab, var(--rose-deep) 70%, transparent);
   overflow: hidden;
-  transition: transform 0.35s cubic-bezier(0.22,1,0.36,1),
-              box-shadow 0.4s cubic-bezier(0.22,1,0.36,1),
-              filter 0.3s ease;
+  transition: transform 0.4s cubic-bezier(0.22,1,0.36,1),
+              background 0.4s ease,
+              box-shadow 0.45s cubic-bezier(0.22,1,0.36,1);
   & > * { position: relative; z-index: 2; }
-  &::before {
-    content: "";
-    position: absolute; inset: 0;
-    background: radial-gradient(120% 80% at 50% -20%, color-mix(in oklab, white 45%, transparent) 0%, transparent 55%);
-    opacity: 0.9;
-    pointer-events: none;
-    z-index: 1;
-  }
-  &::after {
-    content: "";
-    position: absolute; inset: 0;
-    background: linear-gradient(120deg, transparent 30%, color-mix(in oklab, white 55%, transparent) 50%, transparent 70%);
-    transform: translateX(-120%);
-    transition: transform 0.9s cubic-bezier(0.22,1,0.36,1);
-    z-index: 1;
-    pointer-events: none;
-  }
   &:hover {
     transform: translateY(-2px);
-    filter: brightness(1.04);
+    background: color-mix(in oklab, var(--rose-deep) 92%, var(--coffee));
     box-shadow:
-      0 1px 0 0 rgba(255,255,255,0.4) inset,
-      0 -1px 0 0 color-mix(in oklab, var(--rose-deep) 45%, transparent) inset,
-      0 18px 36px -14px color-mix(in oklab, var(--rose-deep) 55%, transparent),
-      0 34px 80px -28px color-mix(in oklab, var(--rose-deep) 60%, transparent);
+      0 1px 0 0 color-mix(in oklab, white 28%, transparent) inset,
+      0 16px 32px -20px color-mix(in oklab, var(--rose-deep) 75%, transparent);
   }
-  &:hover::after { transform: translateX(120%); }
-  &:active { transform: translateY(0); filter: brightness(0.98); }
+  &:active { transform: translateY(0); }
 }
 
 @utility btn-ghost {
@@ -240,141 +223,125 @@
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  padding: 0.95rem 1.75rem;
-  border-radius: 9999px;
-  border: 1px solid color-mix(in oklab, var(--chocolate) 14%, transparent);
-  background:
-    linear-gradient(180deg, color-mix(in oklab, white 82%, transparent) 0%, color-mix(in oklab, white 60%, transparent) 100%);
-  backdrop-filter: blur(14px) saturate(140%);
+  padding: 0.95rem 1.9rem;
+  border-radius: 14px;
+  border: 1px solid color-mix(in oklab, var(--chocolate) 22%, transparent);
+  background: color-mix(in oklab, white 55%, transparent);
   color: var(--chocolate);
   font-family: var(--font-sans);
   font-weight: 500;
   font-size: 0.9rem;
-  letter-spacing: 0.02em;
-  box-shadow:
-    0 1px 0 0 rgba(255,255,255,0.9) inset,
-    0 8px 22px -14px color-mix(in oklab, var(--chocolate) 30%, transparent);
-  transition: transform 0.35s cubic-bezier(0.22,1,0.36,1),
-              background 0.35s ease,
-              border-color 0.35s ease,
-              color 0.35s ease,
-              box-shadow 0.4s ease;
+  letter-spacing: 0.01em;
+  box-shadow: 0 8px 20px -18px color-mix(in oklab, var(--coffee) 40%, transparent);
+  transition: transform 0.4s cubic-bezier(0.22,1,0.36,1),
+              background 0.4s ease,
+              border-color 0.4s ease,
+              color 0.4s ease,
+              box-shadow 0.45s ease;
   &:hover {
-    background: white;
-    border-color: color-mix(in oklab, var(--rose-deep) 30%, transparent);
+    background: color-mix(in oklab, white 85%, transparent);
+    border-color: color-mix(in oklab, var(--gold) 60%, transparent);
     color: var(--rose-deep);
     transform: translateY(-2px);
-    box-shadow:
-      0 1px 0 0 rgba(255,255,255,1) inset,
-      0 16px 34px -18px color-mix(in oklab, var(--rose-deep) 30%, transparent);
+    box-shadow: 0 14px 28px -20px color-mix(in oklab, var(--chocolate) 40%, transparent);
   }
   &:active { transform: translateY(0); }
 }
 
-/* Premium content card — deep radius, layered borders, sophisticated shadow */
+/* Premium content card — editorial, papel premium, sombra discreta */
 @utility card-premium {
   position: relative;
-  border-radius: 28px;
+  border-radius: 20px;
   background:
-    linear-gradient(180deg, color-mix(in oklab, white 92%, transparent) 0%, color-mix(in oklab, white 78%, transparent) 100%);
-  backdrop-filter: blur(14px) saturate(135%);
-  border: 1px solid color-mix(in oklab, white 75%, transparent);
+    linear-gradient(180deg, color-mix(in oklab, white 90%, var(--cream)) 0%, color-mix(in oklab, white 72%, var(--cream)) 100%);
+  border: 1px solid color-mix(in oklab, var(--chocolate) 10%, transparent);
   box-shadow:
-    0 1px 0 0 rgba(255,255,255,0.9) inset,
-    0 0 0 1px color-mix(in oklab, var(--rose-deep) 4%, transparent),
-    0 12px 28px -16px color-mix(in oklab, var(--rose-deep) 22%, transparent),
-    0 30px 70px -28px color-mix(in oklab, var(--chocolate) 22%, transparent);
+    0 1px 0 0 color-mix(in oklab, white 70%, transparent) inset,
+    0 10px 24px -18px color-mix(in oklab, var(--chocolate) 30%, transparent),
+    0 26px 60px -34px color-mix(in oklab, var(--coffee) 26%, transparent);
   transition: transform 0.5s cubic-bezier(0.22,1,0.36,1),
               box-shadow 0.5s cubic-bezier(0.22,1,0.36,1),
               border-color 0.4s ease;
   &:hover {
-    transform: translateY(-4px);
-    border-color: color-mix(in oklab, var(--rose) 45%, transparent);
+    transform: translateY(-3px);
+    border-color: color-mix(in oklab, var(--gold) 45%, transparent);
     box-shadow:
-      0 1px 0 0 rgba(255,255,255,1) inset,
-      0 0 0 1px color-mix(in oklab, var(--rose-deep) 10%, transparent),
-      0 20px 44px -18px color-mix(in oklab, var(--rose-deep) 30%, transparent),
-      0 48px 90px -30px color-mix(in oklab, var(--chocolate) 28%, transparent);
+      0 1px 0 0 color-mix(in oklab, white 80%, transparent) inset,
+      0 18px 38px -22px color-mix(in oklab, var(--chocolate) 34%, transparent),
+      0 40px 80px -38px color-mix(in oklab, var(--coffee) 30%, transparent);
   }
 }
 
-/* Product showcase card — vitrine premium */
+/* Product showcase card — vitrine editorial */
 @utility card-product {
   position: relative;
-  border-radius: 32px;
+  border-radius: 24px;
   overflow: hidden;
-  background: linear-gradient(180deg, white 0%, color-mix(in oklab, var(--cream) 60%, white) 100%);
-  border: 1px solid color-mix(in oklab, white 70%, transparent);
+  background: linear-gradient(180deg, white 0%, color-mix(in oklab, var(--cream) 55%, white) 100%);
+  border: 1px solid color-mix(in oklab, var(--chocolate) 10%, transparent);
   box-shadow:
-    0 1px 0 0 rgba(255,255,255,0.9) inset,
-    0 0 0 1px color-mix(in oklab, var(--rose-deep) 4%, transparent),
-    0 14px 32px -18px color-mix(in oklab, var(--rose-deep) 24%, transparent),
-    0 40px 90px -32px color-mix(in oklab, var(--chocolate) 28%, transparent);
+    0 1px 0 0 color-mix(in oklab, white 70%, transparent) inset,
+    0 12px 28px -20px color-mix(in oklab, var(--chocolate) 30%, transparent),
+    0 34px 76px -40px color-mix(in oklab, var(--coffee) 28%, transparent);
   transition: transform 0.6s cubic-bezier(0.22,1,0.36,1),
               box-shadow 0.6s cubic-bezier(0.22,1,0.36,1),
               border-color 0.5s ease;
   &:hover {
-    transform: translateY(-6px);
-    border-color: color-mix(in oklab, var(--rose) 55%, transparent);
+    transform: translateY(-4px);
+    border-color: color-mix(in oklab, var(--gold) 55%, transparent);
     box-shadow:
-      0 1px 0 0 rgba(255,255,255,1) inset,
-      0 0 0 1px color-mix(in oklab, var(--rose-deep) 12%, transparent),
-      0 26px 54px -20px color-mix(in oklab, var(--rose-deep) 34%, transparent),
-      0 60px 120px -34px color-mix(in oklab, var(--chocolate) 34%, transparent);
+      0 1px 0 0 color-mix(in oklab, white 85%, transparent) inset,
+      0 22px 46px -24px color-mix(in oklab, var(--chocolate) 34%, transparent),
+      0 52px 104px -44px color-mix(in oklab, var(--coffee) 32%, transparent);
   }
 }
 
-/* Delicate hairline divider */
+/* Delicate hairline divider — caramelo, assinatura discreta */
 @utility divider-hairline {
   height: 1px;
   width: 100%;
-  background: linear-gradient(90deg, transparent 0%, color-mix(in oklab, var(--rose-deep) 22%, transparent) 50%, transparent 100%);
+  background: linear-gradient(90deg, transparent 0%, color-mix(in oklab, var(--gold) 45%, transparent) 50%, transparent 100%);
 }
 
 
 @utility glass {
-  background: color-mix(in oklab, white 65%, transparent);
-  backdrop-filter: blur(20px) saturate(140%);
-  border: 1px solid color-mix(in oklab, white 60%, transparent);
+  background: color-mix(in oklab, var(--cream) 72%, transparent);
+  backdrop-filter: blur(14px) saturate(120%);
+  border: 1px solid color-mix(in oklab, var(--chocolate) 10%, transparent);
 }
 
 /* Global stroke refinement for Lucide icons — premium editorial weight */
 svg.lucide { stroke-width: 1.5; }
 
-/* Premium icon chip — glass container with soft shadow + hover polish */
+/* Icon chip — creme sobre papel, detalhe caramelo, hover rosa */
 @utility icon-chip {
   position: relative;
   display: inline-grid;
   place-items: center;
   height: 2.75rem;
   width: 2.75rem;
-  border-radius: 9999px;
-  color: var(--rose-deep);
-  background:
-    linear-gradient(160deg, color-mix(in oklab, white 85%, transparent) 0%, color-mix(in oklab, var(--rose) 12%, white) 100%);
-  backdrop-filter: blur(14px) saturate(140%);
-  border: 1px solid color-mix(in oklab, white 70%, transparent);
-  box-shadow:
-    0 1px 0 0 rgba(255,255,255,0.9) inset,
-    0 -1px 0 0 color-mix(in oklab, var(--rose-deep) 8%, transparent) inset,
-    0 10px 24px -14px color-mix(in oklab, var(--rose-deep) 40%, transparent);
-  transition: transform 0.4s cubic-bezier(0.22,1,0.36,1),
-              box-shadow 0.4s cubic-bezier(0.22,1,0.36,1),
-              color 0.3s ease,
-              background 0.4s ease;
-  & svg { transition: transform 0.4s cubic-bezier(0.22,1,0.36,1); }
+  border-radius: 14px;
+  color: var(--chocolate);
+  background: color-mix(in oklab, var(--cream) 75%, white);
+  border: 1px solid color-mix(in oklab, var(--gold) 32%, transparent);
+  box-shadow: 0 8px 20px -18px color-mix(in oklab, var(--chocolate) 45%, transparent);
+  transition: transform 0.45s cubic-bezier(0.22,1,0.36,1),
+              box-shadow 0.45s cubic-bezier(0.22,1,0.36,1),
+              color 0.35s ease,
+              border-color 0.35s ease,
+              background 0.45s ease;
+  & svg { transition: transform 0.45s cubic-bezier(0.22,1,0.36,1); }
 }
 .group:hover .icon-chip,
 .icon-chip:hover {
-  transform: translateY(-2px) scale(1.06);
+  transform: translateY(-2px);
   color: white;
-  background: var(--gradient-primary);
-  box-shadow:
-    0 1px 0 0 rgba(255,255,255,0.35) inset,
-    0 18px 40px -18px color-mix(in oklab, var(--rose-deep) 55%, transparent);
+  background: var(--rose-deep);
+  border-color: color-mix(in oklab, var(--rose-deep) 80%, var(--coffee));
+  box-shadow: 0 14px 28px -20px color-mix(in oklab, var(--rose-deep) 70%, transparent);
 }
 .group:hover .icon-chip svg,
-.icon-chip:hover svg { transform: scale(1.08); }
+.icon-chip:hover svg { transform: scale(1.06); }
 
 @utility icon-chip-lg {
   height: 3.25rem;
@@ -383,12 +350,9 @@ svg.lucide { stroke-width: 1.5; }
 
 @utility icon-chip-dark {
   color: color-mix(in oklab, white 92%, transparent);
-  background:
-    linear-gradient(160deg, color-mix(in oklab, white 14%, transparent) 0%, color-mix(in oklab, var(--rose-deep) 22%, transparent) 100%);
-  border: 1px solid color-mix(in oklab, white 22%, transparent);
-  box-shadow:
-    0 1px 0 0 color-mix(in oklab, white 25%, transparent) inset,
-    0 12px 30px -14px rgba(0,0,0,0.5);
+  background: color-mix(in oklab, white 10%, transparent);
+  border: 1px solid color-mix(in oklab, var(--gold) 45%, transparent);
+  box-shadow: 0 10px 26px -18px rgba(0,0,0,0.55);
 }
 
 
@@ -397,10 +361,10 @@ svg.lucide { stroke-width: 1.5; }
   align-items: center;
   gap: 0.5rem;
   font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 0.22em;
+  font-weight: 500;
+  letter-spacing: 0.24em;
   text-transform: uppercase;
-  color: var(--rose-deep);
+  color: var(--gold);
 }
 
 @keyframes fade-up {
