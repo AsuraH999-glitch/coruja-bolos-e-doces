@@ -43,29 +43,30 @@
 :root {
   --radius: 1rem;
 
-  /* Brand palette */
-  --cream: oklch(0.985 0.008 20);        /* #FFF8FA */
-  --blush: oklch(0.955 0.02 10);
-  --rose: oklch(0.78 0.11 5);             /* #F48FB1 */
-  --rose-deep: oklch(0.62 0.16 2);        /* #D95B8D */
-  --chocolate: oklch(0.31 0.04 45);       /* #4E342E */
-  --beige: oklch(0.94 0.015 55);          /* #F6EDE7 */
-  --gold: oklch(0.74 0.09 70);            /* #D4A373 */
+  /* Brand palette — Brand Book oficial Coruja Bolos & Doces */
+  --cream: oklch(0.945 0.021 85.9);       /* Creme-manteiga #F3ECDD */
+  --blush: oklch(0.960 0.019 72.6);       /* Creme claro de apoio */
+  --rose: oklch(0.840 0.071 353.7);       /* Rosa-suave #F1B8CE */
+  --rose-deep: oklch(0.625 0.197 2.1);    /* Rosa-confeitaria #E0447E */
+  --chocolate: oklch(0.404 0.081 49.5);   /* Marrom-torrado #6B3A1D */
+  --coffee: oklch(0.244 0.036 50.5);      /* Preto-café #2E1B10 */
+  --beige: oklch(0.906 0.031 86.5);       /* Creme profundo */
+  --gold: oklch(0.655 0.110 74.6);        /* Caramelo #B8863B */
 
   --background: var(--cream);
-  --foreground: var(--chocolate);
-  --card: oklch(1 0 0);
-  --card-foreground: var(--chocolate);
+  --foreground: var(--coffee);
+  --card: oklch(0.985 0.010 86);
+  --card-foreground: var(--coffee);
   --primary: var(--rose-deep);
   --primary-foreground: oklch(1 0 0);
   --secondary: var(--beige);
   --secondary-foreground: var(--chocolate);
-  --muted: oklch(0.96 0.01 20);
-  --muted-foreground: oklch(0.5 0.03 30);
+  --muted: oklch(0.925 0.022 84);
+  --muted-foreground: oklch(0.47 0.05 50);
   --accent: var(--rose);
-  --accent-foreground: oklch(1 0 0);
-  --border: oklch(0.92 0.015 15);
-  --ring: var(--rose);
+  --accent-foreground: var(--coffee);
+  --border: oklch(0.878 0.030 78);
+  --ring: var(--rose-deep);
 
   /* Rich tokens */
   --gradient-hero: radial-gradient(ellipse at top left, color-mix(in oklab, var(--rose) 22%, transparent) 0%, transparent 55%),
