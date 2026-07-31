@@ -38,6 +38,7 @@
   --color-beige: var(--beige);
   --color-gold: var(--gold);
   --color-cream: var(--cream);
+  --color-coffee: var(--coffee);
 }
 
 :root {
