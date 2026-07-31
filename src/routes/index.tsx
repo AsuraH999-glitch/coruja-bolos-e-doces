@@ -3,7 +3,7 @@ import { useState } from "react";
 import {
   Heart, Sparkles, Cake, Star, Instagram,
   MessageCircle, Clock, ShieldCheck, Palette, HandHeart, ChevronDown,
-  ArrowRight, MapPin, Phone, CheckCircle2, CalendarDays,
+  ArrowRight, MapPin, Phone, CheckCircle2, CalendarDays, CakeSlice, Cookie,
 } from "lucide-react";
 import {
   Accordion, AccordionContent, AccordionItem, AccordionTrigger,
@@ -416,33 +416,6 @@ function About() {
 }
 
 /* ---------------- CONFIGURATOR ---------------- */
-const FLAVOR_EMOJI: Record<string, string> = {
-  "Ninho com Morango": "🍓",
-  "Nutella com Ninho": "🍫",
-  "Nutella com Morango": "🍓",
-  "Leite Condensado com Morango": "🍓",
-  "Ninho com Brownie e Morango": "🍫",
-  "Ouro Branco": "🥥",
-  "Doce de Leite com Nozes": "🌰",
-  "Ninho com Abacaxi": "🍍",
-  "Ninho com Pêssego": "🍑",
-  "Doce de Leite com Abacaxi": "🍍",
-  "Doce de Leite com Ameixa": "🍇",
-  "Floresta Branca": "🍒",
-  "Bolo de Pudim": "🍮",
-  "Brigadeiro": "🍫",
-  "Brigadeiro com Mousse de Limão": "🍋",
-  "Brigadeiro com Doce de Leite": "🍯",
-  "Ninho com Brigadeiro": "🍫",
-  "Ninho com Brigadeiro e Nutella": "🍫",
-  "Prestígio": "🥥",
-  "Ninho Trufado Preto": "🍫",
-  "Ninho Trufado Branco": "🤍",
-  "Floresta Negra": "🍒",
-  "Brigadeiro com Morango": "🍓",
-  "Brownie com Morango e Brigadeiro": "🍓",
-  "Sonho de Valsa": "💗",
-};
 
 type Dough = "branca" | "chocolate";
 type Tier = "tradicionais" | "especiais";
