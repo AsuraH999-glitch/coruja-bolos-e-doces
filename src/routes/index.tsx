@@ -258,7 +258,7 @@ function Hero() {
             <span className="inline-block h-1.5 w-1.5 rounded-full bg-rose-deep" />
             Confeitaria artesanal boutique
           </span>
-          <h1 className="mt-5 font-display text-[2.5rem] leading-[1.05] sm:text-5xl md:text-6xl lg:text-[4.25rem] text-chocolate text-balance">
+          <h1 className="mt-5 font-display text-[2.1rem] leading-[1.12] sm:text-[2.6rem] md:text-5xl lg:text-[3.4rem] text-chocolate text-balance">
             Bolos e doces feitos com <em className="not-italic bg-clip-text text-transparent" style={{ backgroundImage: "var(--gradient-primary)" }}>carinho</em> para tornar seus momentos inesquecíveis.
           </h1>
           <p className="mt-6 max-w-xl text-[15px] md:text-base leading-relaxed text-chocolate/70 text-pretty">
@@ -394,7 +394,7 @@ function About() {
           <span className="eyebrow">
             <span className="inline-block h-1.5 w-1.5 rounded-full bg-rose-deep" /> Nossa história
           </span>
-          <h2 className="mt-4 font-display text-4xl md:text-5xl text-chocolate text-balance">
+          <h2 className="mt-4 font-display text-3xl md:text-[2.5rem] text-chocolate text-balance">
             Mais do que doces, criamos <em className="not-italic text-rose-deep">momentos especiais</em>.
           </h2>
           <p className="mt-6 text-chocolate/70 leading-relaxed text-pretty">
@@ -508,7 +508,7 @@ function Menu() {
       <div className="mx-auto max-w-6xl px-4">
         <div className="max-w-2xl mx-auto text-center">
           <span className="eyebrow justify-center"><span className="inline-block h-1.5 w-1.5 rounded-full bg-rose-deep" /> Nosso cardápio</span>
-          <h2 className="mt-4 font-display text-4xl md:text-6xl text-chocolate text-balance">
+          <h2 className="mt-4 font-display text-3xl md:text-[2.75rem] text-chocolate text-balance">
             Nosso <em className="not-italic accent-rose">Cardápio</em>
           </h2>
           <p className="mt-4 text-chocolate/65 text-pretty">
@@ -860,7 +860,7 @@ function Differentials() {
       <div className="mx-auto max-w-6xl px-4">
         <div className="max-w-2xl">
           <span className="eyebrow"><span className="inline-block h-1.5 w-1.5 rounded-full bg-rose-deep" /> Diferenciais</span>
-          <h2 className="mt-4 font-display text-4xl md:text-5xl text-chocolate text-balance">
+          <h2 className="mt-4 font-display text-3xl md:text-[2.5rem] text-chocolate text-balance">
             O cuidado que faz a <em className="not-italic text-rose-deep">diferença</em>.
           </h2>
         </div>
@@ -895,7 +895,7 @@ function HowItWorks() {
       <div className="mx-auto max-w-6xl px-4">
         <div className="text-center max-w-2xl mx-auto">
           <span className="eyebrow"><span className="inline-block h-1.5 w-1.5 rounded-full bg-rose-deep" /> Como funciona</span>
-          <h2 className="mt-4 font-display text-4xl md:text-5xl text-chocolate text-balance">
+          <h2 className="mt-4 font-display text-3xl md:text-[2.5rem] text-chocolate text-balance">
             Do primeiro <em className="not-italic text-rose-deep">"oi"</em> à entrega
           </h2>
           <p className="mt-4 text-chocolate/65">Um processo simples, humano e cuidadoso do começo ao fim.</p>
@@ -936,7 +936,7 @@ function Gallery() {
         <div className="flex flex-wrap items-end justify-between gap-6">
           <div className="max-w-xl">
             <span className="eyebrow"><span className="inline-block h-1.5 w-1.5 rounded-full bg-rose-deep" /> Galeria</span>
-            <h2 className="mt-4 font-display text-4xl md:text-5xl text-chocolate text-balance">
+            <h2 className="mt-4 font-display text-3xl md:text-[2.5rem] text-chocolate text-balance">
               Momentos que já <em className="not-italic text-rose-deep">adoçamos</em>.
             </h2>
           </div>
@@ -974,7 +974,7 @@ function FAQSection() {
         <div className="flex flex-wrap items-end justify-between gap-6">
           <div className="max-w-xl">
             <span className="eyebrow"><span className="inline-block h-1.5 w-1.5 rounded-full bg-rose-deep" /> Dúvidas frequentes</span>
-            <h2 className="mt-4 font-display text-4xl md:text-5xl text-chocolate text-balance">
+            <h2 className="mt-4 font-display text-3xl md:text-[2.5rem] text-chocolate text-balance">
               Tudo o que você quer <em className="not-italic text-rose-deep">saber</em>.
             </h2>
           </div>
@@ -1013,7 +1013,7 @@ function FinalCTA() {
       <div className="absolute inset-0 opacity-[0.08] mix-blend-overlay" style={{ backgroundImage: "var(--noise-url)", backgroundSize: "220px 220px" }} />
 
       <div className="relative mx-auto max-w-3xl px-4 text-center">
-        <h2 data-reveal className="font-display text-4xl md:text-5xl lg:text-6xl text-white text-balance leading-[1.05]">
+        <h2 data-reveal className="font-display text-3xl md:text-[2.6rem] lg:text-[3rem] text-white text-balance leading-[1.05]">
           Seu próximo momento especial merece algo <em className="not-italic" style={{ background: "linear-gradient(135deg, var(--rose) 0%, var(--gold) 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>inesquecível</em>.
         </h2>
         <p data-reveal className="mt-5 mx-auto text-white/75 text-base md:text-lg text-pretty max-w-lg">
