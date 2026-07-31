@@ -112,7 +112,7 @@
     text-rendering: optimizeLegibility;
     font-feature-settings: "kern";
   }
-  p { line-height: 1.8; max-width: 68ch; }
+  p { line-height: 1.8; }
   h1, h2, h3, h4 {
     font-family: var(--font-display);
     font-weight: 500;
