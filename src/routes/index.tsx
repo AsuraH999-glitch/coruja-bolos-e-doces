@@ -537,13 +537,13 @@ function Menu() {
               <StepHeader n={1} title="Escolha a massa" subtitle="A base que dá caráter ao seu bolo." done={!!dough} />
               <div className="mt-6 grid sm:grid-cols-2 gap-5">
                 {([
-                  { v: "branca", label: "Massa Branca", emoji: "🍰", desc: "Aveludada, leve e delicada." },
-                  { v: "chocolate", label: "Massa de Chocolate", emoji: "🍫", desc: "Intensa, cremosa e marcante." },
+                  { v: "branca", label: "Massa Branca", Icon: CakeSlice, desc: "Aveludada, leve e delicada." },
+                  { v: "chocolate", label: "Massa de Chocolate", Icon: Cookie, desc: "Intensa, cremosa e marcante." },
                 ] as const).map((o) => (
                   <OptionCard key={o.v} active={dough === o.v} onClick={() => pickDough(o.v)}>
                     <div className="flex items-center gap-4">
-                      <div className="grid h-14 w-14 shrink-0 place-items-center rounded-2xl bg-[color-mix(in_oklab,var(--rose)_10%,white)] border border-white text-3xl">
-                        {o.emoji}
+                      <div className={`grid h-14 w-14 shrink-0 place-items-center rounded-2xl border transition-colors ${dough === o.v ? "bg-rose-deep border-rose-deep text-white" : "bg-[color-mix(in_oklab,var(--cream)_75%,white)] border-[color-mix(in_oklab,var(--gold)_32%,transparent)] text-chocolate"}`}>
+                        <o.Icon className="h-6 w-6" aria-hidden="true" />
                       </div>
                       <div className="min-w-0">
                         <p className="font-display text-xl text-chocolate leading-tight">{o.label}</p>
