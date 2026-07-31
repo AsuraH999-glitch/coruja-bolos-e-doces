@@ -616,8 +616,8 @@ function Menu() {
                   return (
                     <OptionCard key={name} active={active} onClick={() => setFlavor(name)} className="!p-5">
                       <div className="flex items-center gap-3">
-                        <div className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-[color-mix(in_oklab,var(--rose)_10%,white)] border border-white text-xl">
-                          {FLAVOR_EMOJI[name] ?? "🍰"}
+                        <div className={`grid h-11 w-11 shrink-0 place-items-center rounded-xl border transition-colors ${active ? "bg-rose-deep border-rose-deep text-white" : "bg-[color-mix(in_oklab,var(--cream)_75%,white)] border-[color-mix(in_oklab,var(--gold)_32%,transparent)] text-chocolate"}`}>
+                          <CakeSlice className="h-5 w-5" aria-hidden="true" />
                         </div>
                         <p className="font-display text-base text-chocolate leading-tight">{name}</p>
                       </div>
