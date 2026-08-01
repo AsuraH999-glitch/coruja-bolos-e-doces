@@ -323,8 +323,6 @@ svg.lucide {
   stroke-width: 1.5;
   stroke-linecap: round;
   stroke-linejoin: round;
-  fill: none;
-  vector-effect: non-scaling-stroke;
 }
 
 /* Icon chip — creme sobre papel, detalhe caramelo, hover rosa */
