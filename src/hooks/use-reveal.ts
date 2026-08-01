@@ -14,7 +14,7 @@ export function useReveal<T extends HTMLElement = HTMLDivElement>() {
       const idx = groupIndex.get(parent) ?? 0;
       groupIndex.set(parent, idx + 1);
       if (!n.style.transitionDelay) {
-        n.style.transitionDelay = `${Math.min(idx * 80, 480)}ms`;
+        n.style.transitionDelay = `${Math.min(idx * 90, 540)}ms`;
       }
     });
 

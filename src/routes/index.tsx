@@ -202,7 +202,7 @@ function Nav() {
   return (
     <header className="fixed top-0 inset-x-0 z-40">
       <div className="mx-auto mt-4 max-w-6xl px-4">
-        <div className="glass flex items-center justify-between gap-4 rounded-full px-4 py-2.5 shadow-[0_10px_40px_-20px_rgba(217,91,141,0.25)]">
+        <div className="glass flex items-center justify-between gap-4 rounded-full px-4 py-2.5 shadow-[var(--shadow-soft)]">
           <a href="#top" className="flex items-center gap-2.5 min-w-0">
             <img src={logoAsset.url} alt="Coruja" width={40} height={40} className="h-10 w-10 rounded-full object-cover ring-1 ring-[color-mix(in_oklab,var(--rose)_30%,transparent)]" />
             <span className="font-display text-lg leading-none tracking-tight text-chocolate">
@@ -308,7 +308,7 @@ function Hero() {
 
         {/* Hero image card */}
         <div className="relative animate-fade-in">
-          <div className="relative rounded-[2.5rem] overflow-hidden shadow-[var(--shadow-elegant)] ring-1 ring-white/60">
+          <div className="relative rounded-[28px] overflow-hidden shadow-[var(--shadow-elegant)] ring-1 ring-[var(--hairline)]">
             <img
               src={confeiteiroAsset.url}
               alt="Confeiteiro artesão da Coruja Bolos & Doces"
@@ -379,7 +379,7 @@ function About() {
     <section id="sobre" className="py-20 md:py-28 relative" style={{ background: "var(--gradient-soft)" }}>
       <div className="mx-auto max-w-6xl px-4 grid lg:grid-cols-2 gap-14 items-center">
         <div data-reveal className="relative order-2 lg:order-1">
-          <div className="relative rounded-[2.5rem] overflow-hidden shadow-[var(--shadow-elegant)]">
+          <div className="relative rounded-[28px] overflow-hidden shadow-[var(--shadow-elegant)]">
             <img src={boloLilasMorangoAsset.url} alt="Bolo artesanal de chantilly lilás com morangos cobertos de chocolate branco e fitas decorativas" width={800} height={1000} loading="lazy" className="w-full h-[540px] object-cover" />
           </div>
           <div className="absolute -bottom-6 -right-4 md:-right-8 glass rounded-2xl px-5 py-4 max-w-[240px] shadow-[var(--shadow-soft)]">
@@ -431,7 +431,7 @@ function StepHeader({ n, title, subtitle, done }: { n: number; title: string; su
   return (
     <div className="flex items-start gap-4">
       <div
-        className={`grid h-10 w-10 shrink-0 place-items-center rounded-full font-display text-base transition-all duration-500 ${
+        className={`grid h-10 w-10 shrink-0 place-items-center rounded-full font-display text-base transition-all duration-700 ${
           done
             ? "bg-[image:var(--gradient-primary)] text-white shadow-[0_10px_24px_-12px_color-mix(in_oklab,var(--rose-deep)_55%,transparent)]"
             : "bg-white/70 backdrop-blur-sm text-chocolate/70 border border-white"
@@ -455,7 +455,7 @@ function OptionCard({
     <button
       type="button"
       onClick={onClick}
-      className={`group relative text-left rounded-[24px] p-6 md:p-7 transition-all duration-500 backdrop-blur-sm overflow-hidden ${
+      className={`group relative text-left rounded-[24px] p-6 md:p-7 transition-all duration-700 backdrop-blur-sm overflow-hidden ${
         active
           ? "bg-white border-[color-mix(in_oklab,var(--rose-deep)_55%,transparent)] shadow-[0_0_0_1px_color-mix(in_oklab,var(--rose-deep)_35%,transparent),0_24px_60px_-24px_color-mix(in_oklab,var(--rose-deep)_45%,transparent)] -translate-y-0.5"
           : "bg-white/70 border-white/70 hover:-translate-y-0.5 hover:bg-white hover:border-[color-mix(in_oklab,var(--rose)_45%,transparent)] hover:shadow-[0_18px_44px_-22px_color-mix(in_oklab,var(--rose-deep)_35%,transparent)]"
@@ -468,7 +468,7 @@ function OptionCard({
       )}
       <span
         aria-hidden
-        className={`pointer-events-none absolute -inset-px rounded-[24px] transition-opacity duration-500 ${active ? "opacity-100" : "opacity-0"}`}
+        className={`pointer-events-none absolute -inset-px rounded-[24px] transition-opacity duration-700 ${active ? "opacity-100" : "opacity-0"}`}
         style={{ background: "radial-gradient(120% 80% at 50% -10%, color-mix(in oklab, var(--rose) 22%, transparent) 0%, transparent 55%)" }}
       />
       <span className="relative block">{children}</span>
@@ -738,7 +738,7 @@ function PartyCard({ cat }: { cat: (typeof PARTY_CATEGORIES)[number] }) {
   return (
     <article
       data-reveal
-      className="group flex flex-col rounded-[28px] bg-[var(--card)]/75 border border-[var(--card)]/80 backdrop-blur-md shadow-[var(--shadow-soft)] overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-[var(--shadow-elegant)]"
+      className="group flex flex-col rounded-[28px] bg-[var(--card)]/75 border border-[var(--card)]/80 backdrop-blur-md shadow-[var(--shadow-soft)] overflow-hidden transition-all duration-700 hover:-translate-y-1 hover:shadow-[var(--shadow-elegant)]"
     >
       <div className="relative aspect-[4/3] overflow-hidden">
         <img
@@ -747,9 +747,9 @@ function PartyCard({ cat }: { cat: (typeof PARTY_CATEGORIES)[number] }) {
           width={1024}
           height={1024}
           loading="lazy"
-          className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+          className="h-full w-full object-cover transition-transform duration-[900ms] group-hover:scale-[1.045]"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-chocolate/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+        <div className="absolute inset-0 bg-gradient-to-t from-chocolate/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
       </div>
 
       <div className="flex flex-col flex-1 p-6 md:p-7">
@@ -822,7 +822,7 @@ function PartySection() {
         </div>
 
         <div
-          className="mt-16 md:mt-20 relative rounded-[32px] overflow-hidden p-8 md:p-12 text-center"
+          className="mt-16 md:mt-20 relative rounded-[28px] overflow-hidden p-8 md:p-12 text-center"
           style={{ background: "var(--gradient-dark)" }}
         >
           <div
@@ -950,12 +950,12 @@ function Gallery() {
             <div
               key={i}
               data-reveal
-              className={`group relative overflow-hidden rounded-[28px] border border-white/60 shadow-[0_20px_50px_-24px_rgba(78,52,46,0.32)] hover:shadow-[0_36px_80px_-28px_rgba(217,91,141,0.38)] transition-shadow duration-500 ${it.h}`}
+              className={`group relative overflow-hidden rounded-[28px] border border-[var(--hairline)] shadow-[var(--shadow-soft)] hover:shadow-[var(--shadow-elegant)] transition-shadow duration-700 ${it.h}`}
             >
 
-              <img src={it.src} alt={it.alt} loading="lazy" className="h-full w-full object-cover transition-transform duration-[1200ms] group-hover:scale-110" />
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" style={{ background: "linear-gradient(180deg, transparent 40%, rgba(78,52,46,0.55) 100%)" }} />
-              <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+              <img src={it.src} alt={it.alt} loading="lazy" className="h-full w-full object-cover transition-transform duration-[1400ms] group-hover:scale-[1.06]" />
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700" style={{ background: "linear-gradient(180deg, transparent 40%, rgba(78,52,46,0.55) 100%)" }} />
+              <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-700">
                 <p className="text-white text-sm font-medium drop-shadow">{it.alt}</p>
               </div>
             </div>
@@ -989,7 +989,7 @@ function FAQSection() {
               key={i}
               value={`item-${i}`}
               data-reveal
-              className="!border-0 rounded-[24px] bg-white/85 backdrop-blur-sm ring-1 ring-white/70 shadow-[0_10px_28px_-18px_rgba(78,52,46,0.22)] overflow-hidden px-6 hover:shadow-[0_20px_44px_-22px_rgba(217,91,141,0.28)] hover:ring-[color-mix(in_oklab,var(--rose)_40%,transparent)] transition-all self-start"
+              className="!border-0 rounded-[24px] bg-white/85 backdrop-blur-sm ring-1 ring-[var(--hairline)] shadow-[var(--shadow-soft)] overflow-hidden px-6 hover:shadow-[var(--shadow-elegant)] hover:ring-[color-mix(in_oklab,var(--rose)_40%,transparent)] transition-all self-start"
             >
               <AccordionTrigger className="!py-5 font-display text-lg text-chocolate hover:!no-underline text-left">
                 {f.q}
@@ -1103,7 +1103,7 @@ function WhatsAppFloat() {
       className="fixed bottom-5 right-5 z-50 group"
     >
       <span className="absolute inset-0 rounded-full animate-ping opacity-40" style={{ background: "var(--gradient-primary)" }} />
-      <span className="relative flex items-center gap-2 rounded-full pl-3 pr-4 py-3 text-white font-semibold shadow-[0_20px_50px_-10px_rgba(217,91,141,0.55)] transition-transform hover:scale-105"
+      <span className="relative flex items-center gap-2 rounded-full pl-3 pr-4 py-3 text-white font-semibold shadow-[0_10px_30px_-12px_color-mix(in_oklab,var(--rose-deep)_55%,transparent)] transition-transform duration-500 hover:scale-[1.03]"
             style={{ background: "var(--gradient-primary)" }}>
         <span className="grid place-items-center h-8 w-8 rounded-full bg-white/15">
           <MessageCircle className="h-4 w-4" />
