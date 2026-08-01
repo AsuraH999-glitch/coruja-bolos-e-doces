@@ -209,28 +209,30 @@
   justify-content: center;
   gap: 0.5rem;
   padding: 0.95rem 1.9rem;
-  border-radius: 14px;
+  border-radius: 16px;
   background: var(--rose-deep);
   color: var(--primary-foreground);
   font-family: var(--font-sans);
   font-weight: 500;
   font-size: 0.9rem;
-  letter-spacing: 0.01em;
-  border: 1px solid color-mix(in oklab, var(--rose-deep) 82%, var(--coffee));
+  letter-spacing: 0.012em;
+  border: 1px solid color-mix(in oklab, var(--rose-deep) 86%, var(--coffee));
   box-shadow:
-    0 1px 0 0 color-mix(in oklab, white 24%, transparent) inset,
-    0 10px 24px -18px color-mix(in oklab, var(--rose-deep) 70%, transparent);
+    0 1px 0 0 color-mix(in oklab, white 20%, transparent) inset,
+    0 1px 2px -1px color-mix(in oklab, var(--coffee) 18%, transparent),
+    0 10px 22px -18px color-mix(in oklab, var(--rose-deep) 55%, transparent);
   overflow: hidden;
-  transition: transform 0.4s cubic-bezier(0.22,1,0.36,1),
-              background 0.4s ease,
-              box-shadow 0.45s cubic-bezier(0.22,1,0.36,1);
+  transition: transform 0.6s var(--ease-editorial),
+              background 0.55s var(--ease-editorial),
+              box-shadow 0.6s var(--ease-editorial);
   & > * { position: relative; z-index: 2; }
   &:hover {
-    transform: translateY(-2px);
-    background: color-mix(in oklab, var(--rose-deep) 92%, var(--coffee));
+    transform: translateY(-1.5px);
+    background: color-mix(in oklab, var(--rose-deep) 94%, var(--coffee));
     box-shadow:
-      0 1px 0 0 color-mix(in oklab, white 28%, transparent) inset,
-      0 16px 32px -20px color-mix(in oklab, var(--rose-deep) 75%, transparent);
+      0 1px 0 0 color-mix(in oklab, white 24%, transparent) inset,
+      0 2px 4px -2px color-mix(in oklab, var(--coffee) 18%, transparent),
+      0 16px 30px -22px color-mix(in oklab, var(--rose-deep) 60%, transparent);
   }
   &:active { transform: translateY(0); }
 }
@@ -242,26 +244,26 @@
   justify-content: center;
   gap: 0.5rem;
   padding: 0.95rem 1.9rem;
-  border-radius: 14px;
-  border: 1px solid color-mix(in oklab, var(--chocolate) 22%, transparent);
+  border-radius: 16px;
+  border: 1px solid var(--hairline-strong);
   background: color-mix(in oklab, white 55%, transparent);
   color: var(--chocolate);
   font-family: var(--font-sans);
   font-weight: 500;
   font-size: 0.9rem;
-  letter-spacing: 0.01em;
-  box-shadow: 0 8px 20px -18px color-mix(in oklab, var(--coffee) 40%, transparent);
-  transition: transform 0.4s cubic-bezier(0.22,1,0.36,1),
-              background 0.4s ease,
-              border-color 0.4s ease,
-              color 0.4s ease,
-              box-shadow 0.45s ease;
+  letter-spacing: 0.012em;
+  box-shadow: 0 1px 2px -1px color-mix(in oklab, var(--coffee) 12%, transparent);
+  transition: transform 0.6s var(--ease-editorial),
+              background 0.55s var(--ease-editorial),
+              border-color 0.55s var(--ease-editorial),
+              color 0.55s var(--ease-editorial),
+              box-shadow 0.6s var(--ease-editorial);
   &:hover {
     background: color-mix(in oklab, white 85%, transparent);
-    border-color: color-mix(in oklab, var(--gold) 60%, transparent);
+    border-color: color-mix(in oklab, var(--gold) 45%, transparent);
     color: var(--rose-deep);
-    transform: translateY(-2px);
-    box-shadow: 0 14px 28px -20px color-mix(in oklab, var(--chocolate) 40%, transparent);
+    transform: translateY(-1.5px);
+    box-shadow: 0 10px 24px -22px color-mix(in oklab, var(--chocolate) 40%, transparent);
   }
   &:active { transform: translateY(0); }
 }
@@ -269,24 +271,18 @@
 /* Premium content card — editorial, papel premium, sombra discreta */
 @utility card-premium {
   position: relative;
-  border-radius: 20px;
+  border-radius: 24px;
   background:
     linear-gradient(180deg, color-mix(in oklab, white 90%, var(--cream)) 0%, color-mix(in oklab, white 72%, var(--cream)) 100%);
-  border: 1px solid color-mix(in oklab, var(--chocolate) 10%, transparent);
-  box-shadow:
-    0 1px 0 0 color-mix(in oklab, white 70%, transparent) inset,
-    0 10px 24px -18px color-mix(in oklab, var(--chocolate) 30%, transparent),
-    0 26px 60px -34px color-mix(in oklab, var(--coffee) 26%, transparent);
-  transition: transform 0.5s cubic-bezier(0.22,1,0.36,1),
-              box-shadow 0.5s cubic-bezier(0.22,1,0.36,1),
-              border-color 0.4s ease;
+  border: 1px solid var(--hairline);
+  box-shadow: var(--shadow-soft);
+  transition: transform 0.65s var(--ease-editorial),
+              box-shadow 0.65s var(--ease-editorial),
+              border-color 0.55s var(--ease-editorial);
   &:hover {
-    transform: translateY(-3px);
-    border-color: color-mix(in oklab, var(--gold) 45%, transparent);
-    box-shadow:
-      0 1px 0 0 color-mix(in oklab, white 80%, transparent) inset,
-      0 18px 38px -22px color-mix(in oklab, var(--chocolate) 34%, transparent),
-      0 40px 80px -38px color-mix(in oklab, var(--coffee) 30%, transparent);
+    transform: translateY(-2px);
+    border-color: color-mix(in oklab, var(--gold) 32%, transparent);
+    box-shadow: var(--shadow-elegant);
   }
 }
 
@@ -296,21 +292,15 @@
   border-radius: 24px;
   overflow: hidden;
   background: linear-gradient(180deg, white 0%, color-mix(in oklab, var(--cream) 55%, white) 100%);
-  border: 1px solid color-mix(in oklab, var(--chocolate) 10%, transparent);
-  box-shadow:
-    0 1px 0 0 color-mix(in oklab, white 70%, transparent) inset,
-    0 12px 28px -20px color-mix(in oklab, var(--chocolate) 30%, transparent),
-    0 34px 76px -40px color-mix(in oklab, var(--coffee) 28%, transparent);
-  transition: transform 0.6s cubic-bezier(0.22,1,0.36,1),
-              box-shadow 0.6s cubic-bezier(0.22,1,0.36,1),
-              border-color 0.5s ease;
+  border: 1px solid var(--hairline);
+  box-shadow: var(--shadow-soft);
+  transition: transform 0.7s var(--ease-editorial),
+              box-shadow 0.7s var(--ease-editorial),
+              border-color 0.6s var(--ease-editorial);
   &:hover {
-    transform: translateY(-4px);
-    border-color: color-mix(in oklab, var(--gold) 55%, transparent);
-    box-shadow:
-      0 1px 0 0 color-mix(in oklab, white 85%, transparent) inset,
-      0 22px 46px -24px color-mix(in oklab, var(--chocolate) 34%, transparent),
-      0 52px 104px -44px color-mix(in oklab, var(--coffee) 32%, transparent);
+    transform: translateY(-3px);
+    border-color: color-mix(in oklab, var(--gold) 36%, transparent);
+    box-shadow: var(--shadow-elegant);
   }
 }
 
