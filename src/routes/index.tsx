@@ -316,7 +316,7 @@ function Hero() {
               height={1000}
               className="w-full h-[520px] md:h-[600px] object-cover"
             />
-            <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, transparent 55%, rgba(78,52,46,0.30) 100%)" }} />
+            <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, transparent 55%, color-mix(in oklab, var(--coffee) 32%, transparent) 100%)" }} />
           </div>
 
           {/* Floating badge top — Feito com amor */}
@@ -954,7 +954,7 @@ function Gallery() {
             >
 
               <img src={it.src} alt={it.alt} loading="lazy" className="h-full w-full object-cover transition-transform duration-[1400ms] group-hover:scale-[1.06]" />
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700" style={{ background: "linear-gradient(180deg, transparent 40%, rgba(78,52,46,0.55) 100%)" }} />
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700" style={{ background: "linear-gradient(180deg, transparent 40%, color-mix(in oklab, var(--coffee) 55%, transparent) 100%)" }} />
               <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-700">
                 <p className="text-white text-sm font-medium drop-shadow">{it.alt}</p>
               </div>
