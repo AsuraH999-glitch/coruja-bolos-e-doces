@@ -314,7 +314,7 @@ function Hero() {
               alt="Confeiteiro artesão da Coruja Bolos & Doces"
               width={800}
               height={1000}
-              className="w-full h-[520px] md:h-[600px] object-cover"
+              className="w-full h-[520px] md:h-[600px] object-cover object-[50%_22%]"
             />
             <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, transparent 55%, color-mix(in oklab, var(--coffee) 32%, transparent) 100%)" }} />
           </div>
