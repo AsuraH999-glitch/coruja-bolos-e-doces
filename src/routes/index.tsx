@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import {
-  Heart, Sparkles, Cake, Star, Instagram,
+  Sparkles, Cake, Star, Instagram,
   MessageCircle, Clock, ShieldCheck, Palette, HandHeart, ChevronDown,
   ArrowRight, MapPin, Phone, CheckCircle2, CalendarDays, CakeSlice, Cookie,
 } from "lucide-react";
