@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import {
-  Sparkles, Cake, Star, Instagram,
+  Heart, Sparkles, Cake, Star, Instagram,
   MessageCircle, Clock, ShieldCheck, Palette, HandHeart, ChevronDown,
   ArrowRight, MapPin, Phone, CheckCircle2, CalendarDays, CakeSlice, Cookie,
 } from "lucide-react";
@@ -242,74 +242,102 @@ function Nav() {
 /* ---------------- HERO ---------------- */
 function Hero() {
   return (
-    <section id="top" className="relative pt-32 pb-24 md:pt-44 md:pb-36 overflow-hidden" style={{ background: "var(--gradient-hero)" }}>
+    <section id="top" className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden" style={{ background: "var(--gradient-hero)" }}>
       {/* Organic decorative shapes */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden>
-        <div className="absolute -top-24 -left-24 h-96 w-96 rounded-full opacity-30 blur-3xl animate-drift" style={{ background: "radial-gradient(circle, var(--rose) 0%, transparent 70%)" }} />
-        <div className="absolute -bottom-32 -right-16 h-[28rem] w-[28rem] rounded-full opacity-25 blur-3xl animate-drift" style={{ background: "radial-gradient(circle, var(--gold) 0%, transparent 70%)", animationDelay: "3s" }} />
-        <Sparkles className="hidden md:block absolute top-44 left-[7%] h-4 w-4 text-gold/50 animate-twinkle" />
+        <div className="absolute -top-24 -left-24 h-96 w-96 rounded-full opacity-40 blur-3xl" style={{ background: "radial-gradient(circle, var(--rose) 0%, transparent 70%)" }} />
+        <div className="absolute -bottom-32 -right-16 h-[28rem] w-[28rem] rounded-full opacity-30 blur-3xl" style={{ background: "radial-gradient(circle, var(--gold) 0%, transparent 70%)" }} />
+        <Heart className="absolute top-32 right-[15%] h-6 w-6 text-rose/60 animate-float" style={{ animationDelay: "0.3s" }} />
+        <Sparkles className="absolute top-48 left-[10%] h-5 w-5 text-gold/70 animate-float" style={{ animationDelay: "1.2s" }} />
+        <Heart className="absolute bottom-20 left-[20%] h-4 w-4 text-rose-deep/50 animate-float" style={{ animationDelay: "2s" }} />
       </div>
 
-      <div className="relative mx-auto max-w-6xl px-5 sm:px-6 grid lg:grid-cols-[1.08fr_0.92fr] gap-14 lg:gap-20 items-center">
+      <div className="relative mx-auto max-w-6xl px-4 grid lg:grid-cols-[1.05fr_0.95fr] gap-12 lg:gap-16 items-center">
         <div className="animate-fade-up">
           <span className="eyebrow">
             <span className="inline-block h-1.5 w-1.5 rounded-full bg-rose-deep" />
             Confeitaria artesanal boutique
           </span>
-          <h1 className="mt-6 font-display text-[2.35rem] leading-[1.06] sm:text-[3rem] md:text-[3.4rem] lg:text-[3.9rem] tracking-[-0.022em] text-chocolate text-balance max-w-[15ch] lg:max-w-[16ch]">
+          <h1 className="mt-5 font-display text-[2.1rem] leading-[1.12] sm:text-[2.6rem] md:text-5xl lg:text-[3.4rem] text-chocolate text-balance">
             Bolos e doces feitos com <em className="not-italic bg-clip-text text-transparent" style={{ backgroundImage: "var(--gradient-primary)" }}>carinho</em> para tornar seus momentos inesquecíveis.
           </h1>
-          <p className="mt-7 max-w-[46ch] text-[15.5px] md:text-[17px] leading-[1.72] text-chocolate/65 text-pretty">
+          <p className="mt-6 max-w-xl text-[15px] md:text-base leading-relaxed text-chocolate/70 text-pretty">
             Encomende bolos personalizados e doces artesanais produzidos com ingredientes selecionados para aniversários, festas e ocasiões especiais.
           </p>
 
-          <div className="mt-10 flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4">
-            <a href={wa("Olá, Coruja! Gostaria de fazer uma encomenda.")} target="_blank" rel="noopener" className="btn-primary w-full sm:w-auto px-8 py-[1.05rem] text-[0.95rem]">
+          <div className="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-xl">
+            {[
+              { icon: HandHeart, label: "Produção Artesanal" },
+              { icon: ShieldCheck, label: "Ingredientes Selecionados" },
+              { icon: Palette, label: "Personalização Completa" },
+              { icon: MessageCircle, label: "Atendimento Humanizado" },
+            ].map((f) => (
+              <div key={f.label} className="flex flex-col items-center text-center gap-2 group">
+                <div className="icon-chip">
+                  <f.icon className="h-5 w-5" strokeWidth={1.5} />
+                </div>
+                <span className="text-[11px] font-semibold text-chocolate/75 leading-tight">{f.label}</span>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-9 flex flex-wrap items-center gap-3">
+            <a href={wa("Olá, Coruja! Gostaria de fazer uma encomenda.")} target="_blank" rel="noopener" className="btn-primary">
               <MessageCircle className="h-4 w-4" /> Fazer Encomenda
             </a>
-            <a href="#cardapio" className="btn-ghost w-full sm:w-auto">
+            <a href="#cardapio" className="btn-ghost">
               Ver Cardápio <ArrowRight className="h-4 w-4" />
             </a>
           </div>
 
-          <div className="mt-12 pt-8 border-t border-[var(--hairline)]">
-            <ul className="flex flex-wrap gap-x-7 gap-y-4">
-              {[
-                { icon: HandHeart, label: "Produção artesanal" },
-                { icon: ShieldCheck, label: "Ingredientes selecionados" },
-                { icon: Palette, label: "Personalização completa" },
-                { icon: MessageCircle, label: "Atendimento humanizado" },
-              ].map((f) => (
-                <li key={f.label} className="flex items-center gap-2.5 text-chocolate/70">
-                  <f.icon className="h-4 w-4 text-gold shrink-0" strokeWidth={1.5} />
-                  <span className="text-[12.5px] tracking-wide">{f.label}</span>
-                </li>
+          <div className="mt-8 flex items-center gap-4 text-xs text-chocolate/60">
+            <div className="flex -space-x-2">
+              {[0,1,2,3].map((i) => (
+                <div key={i} className="h-8 w-8 rounded-full ring-2 ring-cream" style={{ background: `linear-gradient(135deg, oklch(0.85 0.08 ${350 + i*10}), oklch(0.78 0.11 5))` }} />
               ))}
-            </ul>
+            </div>
+            <div className="flex flex-col">
+              <div className="flex items-center gap-1 text-gold">
+                {[0,1,2,3,4].map((i) => <Star key={i} className="h-3.5 w-3.5 fill-current" />)}
+              </div>
+              <span><strong className="text-chocolate/80">+500 clientes</strong> satisfeitos</span>
+            </div>
           </div>
+
         </div>
 
         {/* Hero image card */}
-        <div className="relative animate-fade-in lg:mt-2">
+        <div className="relative animate-fade-in">
           <div className="relative rounded-[28px] overflow-hidden shadow-[var(--shadow-elegant)] ring-1 ring-[var(--hairline)]">
             <img
               src={confeiteiroAsset.url}
               alt="Confeiteiro artesão da Coruja Bolos & Doces"
               width={800}
               height={1000}
-              className="w-full h-[440px] sm:h-[520px] md:h-[600px] object-cover object-[50%_20%]"
+              className="w-full h-[520px] md:h-[600px] object-cover object-[50%_22%]"
             />
-            <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, transparent 55%, color-mix(in oklab, var(--coffee) 30%, transparent) 100%)" }} />
+            <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, transparent 55%, color-mix(in oklab, var(--coffee) 32%, transparent) 100%)" }} />
+          </div>
+
+          {/* Floating badge top — Feito com amor */}
+          <div className="absolute -top-4 left-6 md:-left-6 glass rounded-2xl px-4 py-3 flex items-center gap-3 animate-float shadow-[var(--shadow-soft)]">
+            <div className="h-9 w-9 rounded-full grid place-items-center text-white shrink-0" style={{ background: "var(--gradient-primary)" }}>
+              <Heart className="h-4 w-4 fill-current" />
+            </div>
+            <div className="text-xs leading-tight">
+              <p className="font-semibold text-chocolate">Feito com amor</p>
+              <p className="text-chocolate/60">para momentos únicos</p>
+            </div>
           </div>
 
           {/* Floating badge bottom — Encomendas 100% Personalizadas */}
-          <div className="absolute -bottom-5 right-4 md:-right-6 glass rounded-2xl px-4 py-3 flex items-center gap-3 shadow-[var(--shadow-soft)] animate-float">
+          <div className="absolute -bottom-5 right-4 md:-right-6 glass rounded-2xl px-4 py-3 flex items-center gap-3 animate-float shadow-[var(--shadow-soft)]" style={{ animationDelay: "1s" }}>
             <div className="h-9 w-9 rounded-full grid place-items-center shrink-0" style={{ background: "color-mix(in oklab, var(--rose) 22%, white)" }}>
               <Sparkles className="h-4 w-4 text-rose-deep" />
             </div>
             <div className="text-xs leading-tight">
               <p className="font-semibold text-chocolate">Encomendas</p>
-              <p className="text-chocolate/60">100% personalizadas</p>
+              <p className="text-chocolate/60">100% Personalizadas</p>
             </div>
           </div>
         </div>
