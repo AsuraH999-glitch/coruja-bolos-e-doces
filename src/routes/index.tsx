@@ -137,7 +137,6 @@ function Landing() {
       <div className="relative z-10">
         <Nav />
         <Hero />
-        <SocialProof />
         <About />
         <Menu />
         <PartySection />
@@ -347,30 +346,6 @@ function Hero() {
   );
 }
 
-/* ---------------- STATS BAR ---------------- */
-
-function SocialProof() {
-  const stats = [
-    { value: "+500", label: "Encomendas realizadas" },
-    { value: "+100", label: "Sabores exclusivos" },
-    { value: "100%", label: "Feito com carinho" },
-    { value: "5★",   label: "Avaliações dos clientes" },
-  ];
-  return (
-    <section className="pt-8 pb-6 md:pt-10 md:pb-10 relative">
-      <div className="mx-auto max-w-6xl px-4">
-        <div data-reveal className="card-premium px-6 py-8 md:px-10 md:py-9 grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-4 items-center">
-          {stats.map((s, i) => (
-            <div key={s.label} className={`text-center relative ${i > 0 ? "md:before:absolute md:before:left-0 md:before:top-1/2 md:before:-translate-y-1/2 md:before:h-10 md:before:w-px md:before:bg-[color-mix(in_oklab,var(--rose-deep)_18%,transparent)]" : ""}`}>
-              <p className="font-display text-3xl md:text-4xl text-rose-deep leading-none">{s.value}</p>
-              <p className="mt-2 text-xs md:text-sm text-chocolate/65 tracking-wide">{s.label}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
 
 
 /* ---------------- ABOUT ---------------- */
