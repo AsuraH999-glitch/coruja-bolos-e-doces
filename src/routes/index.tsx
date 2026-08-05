@@ -1023,7 +1023,7 @@ function Footer() {
               <span className="font-display text-xl text-chocolate">Coruja</span>
             </div>
             <p className="mt-4 text-sm text-chocolate/65 leading-relaxed">
-              Confeitaria artesanal boutique. Bolos e doces feitos com carinho para os seus melhores momentos.
+              Confeitaria artesanal em Campinas. Bolos e doces feitos sob encomenda para as datas que ficam na memória.
             </p>
           </div>
 
