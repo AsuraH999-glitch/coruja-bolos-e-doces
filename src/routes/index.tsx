@@ -913,11 +913,11 @@ function Gallery() {
           <div className="max-w-xl">
             <span className="eyebrow"><span className="inline-block h-1.5 w-1.5 rounded-full bg-rose-deep" /> Galeria</span>
             <h2 className="mt-4 font-display text-3xl md:text-[2.5rem] text-chocolate text-balance">
-              Momentos que já <em className="not-italic text-rose-deep">adoçamos</em>.
+              Festas que já <em className="not-italic text-rose-deep">passaram por aqui</em>.
             </h2>
           </div>
           <a href={wa("Olá, Coruja! Vi a galeria e queria inspiração para meu evento.")} target="_blank" rel="noopener" className="btn-ghost">
-            Inspirar meu evento <ArrowRight className="h-4 w-4" />
+            Quero algo parecido <ArrowRight className="h-4 w-4" />
           </a>
         </div>
 
