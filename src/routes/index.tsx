@@ -1084,7 +1084,7 @@ function WhatsAppFloat() {
         <span className="grid place-items-center h-8 w-8 rounded-full bg-white/15">
           <MessageCircle className="h-4 w-4" />
         </span>
-        <span className="hidden sm:inline text-sm">Pedir no WhatsApp</span>
+        <span className="hidden sm:inline text-sm">Falar com a Coruja</span>
       </span>
     </a>
   );
