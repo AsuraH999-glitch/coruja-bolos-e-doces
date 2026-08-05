@@ -951,11 +951,11 @@ function FAQSection() {
           <div className="max-w-xl">
             <span className="eyebrow"><span className="inline-block h-1.5 w-1.5 rounded-full bg-rose-deep" /> Dúvidas frequentes</span>
             <h2 className="mt-4 font-display text-3xl md:text-[2.5rem] text-chocolate text-balance">
-              Tudo o que você quer <em className="not-italic text-rose-deep">saber</em>.
+              Antes de <em className="not-italic text-rose-deep">encomendar</em>.
             </h2>
           </div>
           <a href={wa("Olá, Coruja! Ainda tenho uma dúvida.")} target="_blank" rel="noopener" className="text-sm text-chocolate/70 hover:text-rose-deep inline-flex items-center gap-2">
-            Ainda tem dúvidas? Fale conosco <MessageCircle className="h-4 w-4" />
+            Ficou faltando alguma coisa? É só perguntar <MessageCircle className="h-4 w-4" />
           </a>
         </div>
 
