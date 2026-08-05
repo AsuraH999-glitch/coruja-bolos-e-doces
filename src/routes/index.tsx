@@ -1051,8 +1051,8 @@ function Footer() {
             <p className="text-xs font-semibold uppercase tracking-widest text-rose-deep">Atendimento</p>
             <ul className="mt-4 space-y-2 text-sm text-chocolate/75">
               <li className="flex items-center gap-2"><MapPin className="h-4 w-4 text-rose-deep" />&nbsp;Campinas - SP e região</li>
-              <li>Pedidos com 5 dias de antecedência</li>
-              <li>Personalizados para cada ocasião</li>
+              <li>Pedidos com cinco dias de antecedência</li>
+              <li>Cada encomenda combinada à parte</li>
             </ul>
           </div>
         </div>
