@@ -217,7 +217,7 @@ function Nav() {
           </nav>
           <a href={wa("Olá, Coruja! Gostaria de fazer uma encomenda.")} target="_blank" rel="noopener" className="btn-primary !py-2 !px-4 text-sm">
             <MessageCircle className="h-4 w-4" />
-            <span className="hidden sm:inline">Fazer Encomenda</span>
+            <span className="hidden sm:inline">Encomendar</span>
             <span className="sm:hidden">Pedir</span>
           </a>
           <button aria-label="Menu" onClick={() => setOpen(!open)} className="md:hidden p-2 text-chocolate">
