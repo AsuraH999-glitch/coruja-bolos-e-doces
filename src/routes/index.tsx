@@ -990,20 +990,20 @@ function FinalCTA() {
 
       <div className="relative mx-auto max-w-3xl px-4 text-center">
         <h2 data-reveal className="font-display text-3xl md:text-[2.6rem] lg:text-[3rem] text-white text-balance leading-[1.05]">
-          Seu próximo momento especial merece algo <em className="not-italic" style={{ background: "linear-gradient(135deg, var(--rose) 0%, var(--gold) 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>inesquecível</em>.
+          Tem uma data marcada? A gente <em className="not-italic" style={{ background: "linear-gradient(135deg, var(--rose) 0%, var(--gold) 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>começa pela conversa</em>.
         </h2>
         <p data-reveal className="mt-5 mx-auto text-white/75 text-base md:text-lg text-pretty max-w-lg">
-          Solicite seu orçamento e transforme sua celebração em uma experiência ainda mais especial.&nbsp;
+          Manda o dia, quantas pessoas e o que você imaginou. Se ainda não sabe, tudo bem — a gente ajuda a decidir.
         </p>
         <div data-reveal className="mt-8">
           <a href={wa("Olá, Coruja! Quero fazer uma encomenda pelo site.")} target="_blank" rel="noopener" className="btn-primary !py-4 !px-8 text-base">
-            <MessageCircle className="h-5 w-5" /> Fazer Encomenda pelo WhatsApp
+            <MessageCircle className="h-5 w-5" /> Começar pelo WhatsApp
           </a>
         </div>
         <div data-reveal className="mt-8 flex flex-wrap justify-center gap-x-6 gap-y-2 text-xs text-white/60">
-          <span className="inline-flex items-center gap-2"><CheckCircle2 className="h-3.5 w-3.5 text-rose" /> Resposta rápida</span>
-          <span className="inline-flex items-center gap-2"><CheckCircle2 className="h-3.5 w-3.5 text-rose" /> Atendimento humanizado</span>
-          <span className="inline-flex items-center gap-2"><CheckCircle2 className="h-3.5 w-3.5 text-rose" /> Encomendas 100% seguras</span>
+          <span className="inline-flex items-center gap-2"><CheckCircle2 className="h-3.5 w-3.5 text-rose" /> Resposta no mesmo dia</span>
+          <span className="inline-flex items-center gap-2"><CheckCircle2 className="h-3.5 w-3.5 text-rose" /> Sem compromisso</span>
+          <span className="inline-flex items-center gap-2"><CheckCircle2 className="h-3.5 w-3.5 text-rose" /> Valores combinados antes</span>
         </div>
       </div>
     </section>
