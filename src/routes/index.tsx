@@ -1059,7 +1059,7 @@ function Footer() {
 
         <div className="mt-14 pt-8 border-t border-border/60 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="font-display italic text-chocolate/70 text-center md:text-left">
-            "Feito com carinho para adoçar seus melhores momentos."
+            "Um bolo bom é aquele que some antes do fim da festa."
           </p>
           <p className="text-xs text-chocolate/50">© {new Date().getFullYear()} Coruja Bolos & Doces. Todos os direitos reservados.</p>
         </div>
