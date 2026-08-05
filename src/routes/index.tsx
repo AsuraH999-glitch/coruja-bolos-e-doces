@@ -34,17 +34,17 @@ const wa = (msg: string) =>
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Coruja Bolos & Doces — Confeitaria Artesanal Boutique" },
+      { title: "Coruja Bolos & Doces — Confeitaria Artesanal em Campinas" },
       {
         name: "description",
         content:
-          "Bolos personalizados, doces artesanais e cupcakes feitos com carinho para tornar aniversários, festas e ocasiões especiais inesquecíveis. Peça seu orçamento pelo WhatsApp.",
+          "Bolos personalizados e doces artesanais feitos sob encomenda, um a um, para aniversários, celebrações e encontros em Campinas e região. Converse com a gente pelo WhatsApp.",
       },
-      { property: "og:title", content: "Coruja Bolos & Doces — Confeitaria Artesanal Boutique" },
+      { property: "og:title", content: "Coruja Bolos & Doces — Confeitaria Artesanal em Campinas" },
       {
         property: "og:description",
         content:
-          "Bolos personalizados, doces artesanais e cupcakes feitos com carinho para tornar aniversários, festas e ocasiões especiais inesquecíveis. Peça seu orçamento pelo WhatsApp.",
+          "Bolos personalizados e doces artesanais feitos sob encomenda, um a um, para aniversários, celebrações e encontros em Campinas e região. Converse com a gente pelo WhatsApp.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -99,34 +99,34 @@ const MENU = {
 } as const;
 
 const FINISHES = [
-  { title: "Bolo Liso", desc: "Sem topo e sem bico. Acabamento clean e elegante.", extra: "Sem valor adicional", cta: "Solicitar Orçamento" },
-  { title: "Bolo com Detalhes em Bico", desc: "Bicos decorativos delicados que valorizam o design.", extra: "+ R$ 10,00 /kg", cta: "Solicitar Orçamento" },
-  { title: "Decoração Personalizada", desc: "Projeto autoral criado sob medida para o seu evento.", extra: "Valor sob consulta", cta: "Solicitar Orçamento" },
+  { title: "Bolo Liso", desc: "Superfície lisa, sem topo e sem bico. Discreto e bonito de perto.", extra: "Sem valor adicional", cta: "Falar sobre esse bolo" },
+  { title: "Bolo com Detalhes em Bico", desc: "Bicos feitos à mão, um a um, contornando o bolo.", extra: "+ R$ 10,00 /kg", cta: "Falar sobre esse bolo" },
+  { title: "Decoração Personalizada", desc: "Desenhamos a decoração a partir do tema e das cores da sua festa.", extra: "Valor sob consulta", cta: "Falar sobre esse bolo" },
 ];
 
 const DIFFERENTIALS = [
-  { icon: HandHeart, title: "Feito com carinho", desc: "Cada peça é preparada à mão com atenção aos detalhes." },
-  { icon: Palette, title: "Personalização completa", desc: "Cores, sabores e temas pensados para a sua história." },
-  { icon: ShieldCheck, title: "Ingredientes selecionados", desc: "Chocolate belga, laticínios frescos e frutas da estação." },
-  { icon: Sparkles, title: "Acabamento impecável", desc: "Camadas, texturas e finalização com estética boutique." },
-  { icon: MessageCircle, title: "Atendimento humanizado", desc: "Conversamos até desenhar exatamente o que você imagina." },
-  { icon: Clock, title: "Produção sob encomenda", desc: "Feito no momento certo para chegar fresquinho na sua celebração." },
+  { icon: HandHeart, title: "Feito à mão, um por vez", desc: "Nada sai em série. Cada bolo é montado e finalizado individualmente." },
+  { icon: Palette, title: "Do jeito que você imaginou", desc: "Cores, tema e sabores acertados com você antes de irmos para a cozinha." },
+  { icon: ShieldCheck, title: "Chocolate belga e frutas frescas", desc: "Compramos pouco e com frequência, para usar sempre no ponto certo." },
+  { icon: Sparkles, title: "Cuidado no acabamento", desc: "Camadas niveladas, recheio na medida e uma finalização limpa." },
+  { icon: MessageCircle, title: "Conversa antes do pedido", desc: "A gente escuta a ideia, sugere caminhos e só fecha quando faz sentido." },
+  { icon: Clock, title: "Feito perto da data", desc: "A produção é agendada para o bolo chegar fresco no dia da sua festa." },
 ];
 
 const STEPS = [
-  { n: "01", title: "Escolha os produtos", desc: "Explore o cardápio e monte a combinação perfeita para o seu evento." },
-  { n: "02", title: "Envie sua ideia", desc: "Conte tema, cores e quantidade — inspire-se ou traga referências." },
-  { n: "03", title: "Receba seu orçamento", desc: "Enviamos uma proposta personalizada em poucas horas." },
-  { n: "04", title: "Produzimos com carinho", desc: "Cada receita é feita à mão com ingredientes selecionados." },
-  { n: "05", title: "Receba sua encomenda", desc: "Entregue pronta para brilhar no seu momento especial." },
+  { n: "01", title: "Dê uma olhada", desc: "Percorra o cardápio com calma e veja o que combina com a sua data." },
+  { n: "02", title: "Mande um oi", desc: "Conte a data, quantas pessoas e como você imagina o bolo. Referências ajudam." },
+  { n: "03", title: "Combinamos tudo", desc: "Respondemos com os valores e ajustamos os detalhes junto com você." },
+  { n: "04", title: "Vamos para a cozinha", desc: "Seu pedido entra na agenda e é preparado à mão, perto do dia." },
+  { n: "05", title: "Chega na hora certa", desc: "Você recebe pronto para servir, no dia e no horário combinados." },
 ];
 
 const FAQ = [
-  { q: "Qual a antecedência mínima para pedidos?", a: "Recomendamos pedidos com no mínimo 5 dias de antecedência, para garantir a produção artesanal com o cuidado que a Coruja oferece. Encomendas maiores podem exigir prazo estendido." },
-  { q: "Posso personalizar sabores, cores e tema?", a: "Sim! Personalização é a nossa essência. Cores, decoração, tema, topo do bolo e combinação de sabores são desenhados junto com você." },
-  { q: "Vocês fazem entrega?", a: "Realizamos entregas em Piracicaba e região sob consulta. O valor do frete é calculado conforme o endereço e informado no orçamento." },
-  { q: "Quais formas de pagamento vocês aceitam?", a: "Aceitamos PIX, transferência e cartão. Para confirmar o pedido, solicitamos um sinal e o restante próximo à entrega." },
-  { q: "Como solicitar meu orçamento?", a: "Basta clicar em qualquer botão de WhatsApp desta página. Nos conte a data, quantidade de convidados e sua ideia — respondemos rapidinho com uma proposta personalizada." },
+  { q: "Com quanto tempo preciso pedir?", a: "Cinco dias antes já é suficiente para a maioria das encomendas. Para mesas maiores ou decorações mais elaboradas, vale nos procurar com duas semanas de antecedência — a agenda de datas comemorativas costuma fechar cedo." },
+  { q: "Consigo escolher sabor, cor e tema?", a: "Sim. Antes de qualquer coisa, a gente conversa sobre a festa: quem é o aniversariante, quais cores você tem em mente e o que as pessoas gostam de comer. O bolo é desenhado a partir dessas respostas." },
+  { q: "Vocês entregam?", a: "Entregamos em Campinas e cidades vizinhas. O valor da entrega depende do endereço e vem junto com o orçamento, sem cobrança surpresa depois." },
+  { q: "Como funciona o pagamento?", a: "Aceitamos PIX, transferência e cartão. Um sinal reserva a data na agenda e o restante fica para perto da entrega." },
+  { q: "Por onde começo?", a: "Pelo WhatsApp, em qualquer botão desta página. Nos diga a data, quantas pessoas e o que você imaginou — respondemos no mesmo dia com uma proposta." },
 ];
 
 function Landing() {
@@ -217,7 +217,7 @@ function Nav() {
           </nav>
           <a href={wa("Olá, Coruja! Gostaria de fazer uma encomenda.")} target="_blank" rel="noopener" className="btn-primary !py-2 !px-4 text-sm">
             <MessageCircle className="h-4 w-4" />
-            <span className="hidden sm:inline">Fazer Encomenda</span>
+            <span className="hidden sm:inline">Encomendar</span>
             <span className="sm:hidden">Pedir</span>
           </a>
           <button aria-label="Menu" onClick={() => setOpen(!open)} className="md:hidden p-2 text-chocolate">
@@ -255,21 +255,22 @@ function Hero() {
         <div className="animate-fade-up">
           <span className="eyebrow">
             <span className="inline-block h-1.5 w-1.5 rounded-full bg-rose-deep" />
-            Confeitaria artesanal boutique
+            Confeitaria artesanal · Campinas e região
           </span>
           <h1 className="mt-5 font-display text-[2.1rem] leading-[1.12] sm:text-[2.6rem] md:text-5xl lg:text-[3.4rem] text-chocolate text-balance">
-            Bolos e doces feitos com <em className="not-italic bg-clip-text text-transparent" style={{ backgroundImage: "var(--gradient-primary)" }}>carinho</em> para tornar seus momentos inesquecíveis.
+            O bolo do meio da <em className="not-italic bg-clip-text text-transparent" style={{ backgroundImage: "var(--gradient-primary)" }}>mesa</em>, feito para a sua data.
           </h1>
           <p className="mt-6 max-w-xl text-[15px] md:text-base leading-relaxed text-chocolate/70 text-pretty">
-            Encomende bolos personalizados e doces artesanais produzidos com ingredientes selecionados para aniversários, festas e ocasiões especiais.
+            Bolos e doces preparados sob encomenda, um a um, para aniversários, batizados, encontros de família e aquelas conquistas que pedem uma fatia.
           </p>
+
 
           <div className="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-xl">
             {[
-              { icon: HandHeart, label: "Produção Artesanal" },
-              { icon: ShieldCheck, label: "Ingredientes Selecionados" },
-              { icon: Palette, label: "Personalização Completa" },
-              { icon: MessageCircle, label: "Atendimento Humanizado" },
+              { icon: HandHeart, label: "Feito à mão" },
+              { icon: ShieldCheck, label: "Chocolate belga" },
+              { icon: Palette, label: "Do seu jeito" },
+              { icon: MessageCircle, label: "A gente conversa" },
             ].map((f) => (
               <div key={f.label} className="flex flex-col items-center text-center gap-2 group">
                 <div className="icon-chip">
@@ -282,10 +283,10 @@ function Hero() {
 
           <div className="mt-9 flex flex-wrap items-center gap-3">
             <a href={wa("Olá, Coruja! Gostaria de fazer uma encomenda.")} target="_blank" rel="noopener" className="btn-primary">
-              <MessageCircle className="h-4 w-4" /> Fazer Encomenda
+              <MessageCircle className="h-4 w-4" /> Falar sobre minha data
             </a>
             <a href="#cardapio" className="btn-ghost">
-              Ver Cardápio <ArrowRight className="h-4 w-4" />
+              Ver sabores e valores <ArrowRight className="h-4 w-4" />
             </a>
           </div>
 
@@ -299,7 +300,7 @@ function Hero() {
               <div className="flex items-center gap-1 text-gold">
                 {[0,1,2,3,4].map((i) => <Star key={i} className="h-3.5 w-3.5 fill-current" />)}
               </div>
-              <span><strong className="text-chocolate/80">+500 clientes</strong> satisfeitos</span>
+              <span><strong className="text-chocolate/80">+500 festas</strong> atendidas até aqui</span>
             </div>
           </div>
 
@@ -324,8 +325,8 @@ function Hero() {
               <Heart className="h-4 w-4 fill-current" />
             </div>
             <div className="text-xs leading-tight">
-              <p className="font-semibold text-chocolate">Feito com amor</p>
-              <p className="text-chocolate/60">para momentos únicos</p>
+              <p className="font-semibold text-chocolate">Feito à mão</p>
+              <p className="text-chocolate/60">um bolo por vez</p>
             </div>
           </div>
 
@@ -335,8 +336,8 @@ function Hero() {
               <Sparkles className="h-4 w-4 text-rose-deep" />
             </div>
             <div className="text-xs leading-tight">
-              <p className="font-semibold text-chocolate">Encomendas</p>
-              <p className="text-chocolate/60">100% Personalizadas</p>
+              <p className="font-semibold text-chocolate">Cada pedido</p>
+              <p className="text-chocolate/60">combinado com você</p>
             </div>
           </div>
         </div>
@@ -361,7 +362,7 @@ function About() {
             <div className="flex items-center gap-2 text-gold text-sm">
               {[0,1,2,3,4].map((i) => <Star key={i} className="h-3.5 w-3.5 fill-current" />)}
             </div>
-            <p className="mt-1 text-sm text-chocolate/80 leading-snug">"Feito à mão com muito amor e ingredientes selecionados."</p>
+            <p className="mt-1 text-sm text-chocolate/80 leading-snug">"Chegou exatamente como a gente tinha combinado — e acabou antes do parabéns."</p>
           </div>
         </div>
 
@@ -370,19 +371,19 @@ function About() {
             <span className="inline-block h-1.5 w-1.5 rounded-full bg-rose-deep" /> Nossa história
           </span>
           <h2 className="mt-4 font-display text-3xl md:text-[2.5rem] text-chocolate text-balance">
-            Mais do que doces, criamos <em className="not-italic text-rose-deep">momentos especiais</em>.
+            A gente começou por causa de uma <em className="not-italic text-rose-deep">festa em casa</em>.
           </h2>
           <p className="mt-6 text-chocolate/70 leading-relaxed text-pretty">
-            Na Coruja Bolos & Doces, cada receita é preparada artesanalmente, com atenção aos detalhes e muito carinho, transformando aniversários, encontros e celebrações em experiências inesquecíveis.
+            A Coruja nasceu numa cozinha de família, entre bolos pedidos por vizinhos e encomendas que chegavam pelo telefone na véspera. O que era um gosto virou ofício — e o jeito de trabalhar continuou o mesmo: poucos pedidos por dia, todos preparados à mão.
           </p>
           <p className="mt-4 text-chocolate/70 leading-relaxed text-pretty">
-            Selecionamos ingredientes premium, trabalhamos chocolate belga e criamos peças personalizadas para que o seu momento seja tão único quanto você.
+            Cada bolo começa com uma conversa. A partir dela, escolhemos a massa, ajustamos o ponto do recheio e montamos camada por camada, com chocolate belga e frutas compradas na semana. A finalização é feita na véspera, para o bolo chegar inteiro e fresco na hora do parabéns.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <a href={wa("Olá, Coruja! Quero conversar sobre um pedido especial.")} target="_blank" rel="noopener" className="btn-primary">
-              <MessageCircle className="h-4 w-4" /> Conversar no WhatsApp
+              <MessageCircle className="h-4 w-4" /> Contar minha ideia
             </a>
-            <a href="#cardapio" className="btn-ghost">Ver cardápio</a>
+            <a href="#cardapio" className="btn-ghost">Ver sabores</a>
           </div>
         </div>
       </div>
@@ -475,8 +476,8 @@ function Menu() {
 
   const complete = dough && tier && flavor && finish;
   const message = complete
-    ? `Olá, Coruja! Quero encomendar um bolo personalizado:%0A%0A• Massa: ${doughLabel}%0A• Categoria: ${tierLabel}%0A• Sabor: ${flavor}%0A• Acabamento: ${finish!.title}%0A• Valor: R$ ${totalPerKg},00 /kg%0A%0APoderia me passar mais detalhes?`
-    : `Olá, Coruja! Gostaria de montar um bolo personalizado.`;
+    ? `Olá, Coruja! Montei meu bolo aqui pelo site:%0A%0A• Massa: ${doughLabel}%0A• Linha: ${tierLabel}%0A• Recheio: ${flavor}%0A• Acabamento: ${finish!.title}%0A• Valor: R$ ${totalPerKg},00 /kg%0A%0AA data é ___. Podemos combinar os detalhes?`
+    : `Olá, Coruja! Queria montar um bolo para uma data especial.`;
 
   return (
     <section id="cardapio" className="py-20 md:py-28 relative section-cool">
@@ -484,22 +485,22 @@ function Menu() {
         <div className="max-w-2xl mx-auto text-center">
           <span className="eyebrow justify-center"><span className="inline-block h-1.5 w-1.5 rounded-full bg-rose-deep" /> Nosso cardápio</span>
           <h2 className="mt-4 font-display text-3xl md:text-[2.75rem] text-chocolate text-balance">
-            Nosso <em className="not-italic accent-rose">Cardápio</em>
+            O que sai da nossa <em className="not-italic accent-rose">cozinha</em>
           </h2>
           <p className="mt-4 text-chocolate/65 text-pretty">
-            Escolha seu bolo personalizado e descubra uma seleção de doces artesanais preparados com ingredientes selecionados e muito carinho.
+            De um lado, o bolo montado do seu jeito. Do outro, os doces que completam a mesa. Tudo feito sob encomenda, para a data que você marcou.
           </p>
         </div>
 
         <div className="divider-hairline mt-14" />
 
         <div className="mt-14 max-w-2xl">
-          <span className="eyebrow"><span className="inline-block h-1.5 w-1.5 rounded-full bg-rose-deep" /> Parte 01 · Configurador</span>
+          <span className="eyebrow"><span className="inline-block h-1.5 w-1.5 rounded-full bg-rose-deep" /> Parte 01 · Monte seu bolo</span>
           <h3 className="mt-4 font-display text-3xl md:text-4xl text-chocolate text-balance">
-            Monte o seu bolo <em className="not-italic accent-rose">passo a passo</em>.
+            Monte o seu bolo <em className="not-italic accent-rose">com calma</em>.
           </h3>
           <p className="mt-4 text-chocolate/65 text-pretty">
-            Uma experiência guiada para desenhar o bolo perfeito para o seu momento — escolha a massa, o sabor e o acabamento, e receba seu orçamento pelo WhatsApp.
+            Quatro escolhas simples: a massa, a linha de sabores, o recheio e o acabamento. No fim, o resumo já vai pronto para o WhatsApp — e a gente continua a conversa por lá.
           </p>
         </div>
 
@@ -509,11 +510,11 @@ function Menu() {
           <div className="space-y-14">
             {/* STEP 1 — Dough */}
             <div>
-              <StepHeader n={1} title="Escolha a massa" subtitle="A base que dá caráter ao seu bolo." done={!!dough} />
+              <StepHeader n={1} title="Comece pela massa" subtitle="É ela que dá o tom do bolo inteiro." done={!!dough} />
               <div className="mt-6 grid sm:grid-cols-2 gap-5">
                 {([
-                  { v: "branca", label: "Massa Branca", Icon: CakeSlice, desc: "Aveludada, leve e delicada." },
-                  { v: "chocolate", label: "Massa de Chocolate", Icon: Cookie, desc: "Intensa, cremosa e marcante." },
+                  { v: "branca", label: "Massa Branca", Icon: CakeSlice, desc: "Leve e macia, deixa o recheio aparecer." },
+                  { v: "chocolate", label: "Massa de Chocolate", Icon: Cookie, desc: "Mais úmida e encorpada, de sabor marcante." },
                 ] as const).map((o) => (
                   <OptionCard key={o.v} active={dough === o.v} onClick={() => pickDough(o.v)}>
                     <div className="flex items-center gap-4">
@@ -532,11 +533,11 @@ function Menu() {
 
             {/* STEP 2 — Tier */}
             <div className={dough ? "" : "opacity-50 pointer-events-none"}>
-              <StepHeader n={2} title="Escolha a categoria" subtitle="Clássicos irresistíveis ou criações especiais." done={!!tier} />
+              <StepHeader n={2} title="Agora, a linha de sabores" subtitle="Os clássicos de sempre ou as combinações da casa." done={!!tier} />
               <div className="mt-6 grid sm:grid-cols-2 gap-5">
                 {([
-                  { v: "tradicionais", label: "Tradicionais", icon: Star, price: "R$ 95,00 /kg", desc: "Sabores queridos, sempre um sucesso." },
-                  { v: "especiais", label: "Especiais", icon: Sparkles, price: "R$ 110,00 /kg", desc: "Combinações autorais com ingredientes premium." },
+                  { v: "tradicionais", label: "Tradicionais", icon: Star, price: "R$ 95,00 /kg", desc: "Os sabores que todo mundo reconhece e come sem pensar." },
+                  { v: "especiais", label: "Especiais", icon: Sparkles, price: "R$ 110,00 /kg", desc: "Recheios com chocolate belga, nozes e frutas da estação." },
                 ] as const).map((o) => (
                   <OptionCard key={o.v} active={tier === o.v} onClick={() => pickTier(o.v)}>
                     <div className="flex items-start justify-between gap-4">
@@ -557,7 +558,7 @@ function Menu() {
 
             {/* STEP 3 — Flavor */}
             <div className={dough && tier ? "" : "opacity-50 pointer-events-none"}>
-              <StepHeader n={3} title="Escolha o sabor" subtitle={flavors.length ? `${flavors.length} opções disponíveis` : "Selecione massa e categoria primeiro."} done={!!flavor} />
+              <StepHeader n={3} title="Escolha o recheio" subtitle={flavors.length ? `${flavors.length} combinações para essa massa` : "Escolha a massa e a linha primeiro."} done={!!flavor} />
               <div className="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
                 {flavors.map((name) => {
                   const active = flavor === name;
@@ -577,7 +578,7 @@ function Menu() {
 
             {/* STEP 4 — Finish */}
             <div className={dough && tier && flavor ? "" : "opacity-50 pointer-events-none"}>
-              <StepHeader n={4} title="Escolha o acabamento" subtitle="O toque final que define a estética do bolo." done={!!finish} />
+              <StepHeader n={4} title="Por último, o acabamento" subtitle="Como o bolo vai chegar na mesa." done={!!finish} />
               <div className="mt-6 grid sm:grid-cols-3 gap-5">
                 {FINISH_OPTIONS.map((f) => (
                   <OptionCard key={f.title} active={finish?.title === f.title} onClick={() => setFinish(f)}>
@@ -598,14 +599,14 @@ function Menu() {
           <aside className="lg:sticky lg:top-24 self-start">
             <div className="card-premium p-7">
               <span className="eyebrow"><span className="inline-block h-1.5 w-1.5 rounded-full bg-rose-deep" /> Seu bolo</span>
-              <h3 className="mt-3 font-display text-2xl text-chocolate leading-tight">Resumo do pedido</h3>
+              <h3 className="mt-3 font-display text-2xl text-chocolate leading-tight">Como ficou até agora</h3>
               <div className="divider-hairline mt-5" />
 
               <dl className="mt-5 space-y-4 text-sm">
                 {[
                   { label: "Massa", value: doughLabel },
-                  { label: "Categoria", value: tierLabel },
-                  { label: "Sabor", value: flavor },
+                  { label: "Linha", value: tierLabel },
+                  { label: "Recheio", value: flavor },
                   { label: "Acabamento", value: finish?.title },
                 ].map((row) => (
                   <div key={row.label} className="flex items-start justify-between gap-4">
@@ -640,11 +641,11 @@ function Menu() {
                 onClick={(e) => { if (!complete) e.preventDefault(); }}
                 className={`btn-primary w-full mt-6 ${!complete ? "opacity-50 cursor-not-allowed pointer-events-none" : ""}`}
               >
-                <MessageCircle className="h-4 w-4" /> Pedir no WhatsApp
+                <MessageCircle className="h-4 w-4" /> Enviar para a Coruja
               </a>
 
               <p className="mt-4 text-[11px] text-chocolate/50 leading-relaxed text-center">
-                Encomendas com no mínimo 5 dias de antecedência. Valores por quilo, pedido mínimo de 2kg.
+                Pedidos com cinco dias de antecedência. Valores por quilo, a partir de 2kg.
               </p>
             </div>
           </aside>
@@ -662,7 +663,7 @@ const PARTY_CATEGORIES = [
     id: "doces-tradicionais",
     title: "Doces Tradicionais",
     image: docesTradicionaisAsset.url,
-    description: "Escolha até 4 sabores no cento ou 2 sabores no meio cento.",
+    description: "Os docinhos de sempre, enrolados um a um. Até 4 sabores no cento, 2 no meio cento.",
     items: ["Brigadeiro", "Beijinho", "Bicho de Pé", "Cajuzinho", "Casadinho", "Olho de Sogra", "Brigadeiro de Leite Ninho", "Ninho com Nutella"],
     pricing: ["Cento: R$ 150,00", "Meio Cento: R$ 80,00"],
   },
@@ -670,7 +671,7 @@ const PARTY_CATEGORIES = [
     id: "brownie",
     title: "Brownie",
     image: brownieAsset.url,
-    description: "Brownie tradicional com chocolate belga e casquinha crocante.",
+    description: "Chocolate belga, casquinha fina por fora e miolo úmido. Cortado em quadradinhos.",
     items: [],
     pricing: ["Cento: R$ 150,00", "Meio Cento: R$ 80,00"],
   },
@@ -678,7 +679,7 @@ const PARTY_CATEGORIES = [
     id: "mini-trufas",
     title: "Mini Trufas",
     image: miniTrufasAsset.url,
-    description: "Bombons de chocolate belga com recheios que se desmancham na boca.",
+    description: "Casquinha de chocolate belga e recheio cremoso, no tamanho de um bocado.",
     items: ["Brigadeiro", "Maracujá", "Cocada Cremosa", "Doce de Leite", "Creme de Avelã"],
     pricing: ["Cento: R$ 150,00", "Meio Cento: R$ 80,00"],
   },
@@ -686,7 +687,7 @@ const PARTY_CATEGORIES = [
     id: "donuts",
     title: "Donuts",
     image: donutsAsset.url,
-    description: "Donuts artesanais com massa fofinha e coberturas especiais.",
+    description: "Massa leve, fritos no dia e cobertos na hora. Fazem sucesso com as crianças e com o resto da mesa.",
     items: [],
     pricing: ["Cento: R$ 150,00", "Meio Cento: R$ 80,00"],
   },
@@ -694,18 +695,18 @@ const PARTY_CATEGORIES = [
     id: "cupcakes",
     title: "Cupcakes",
     image: cupcakesAsset.url,
-    description: "Massa aveludada, cobertura cremosa e decoração boutique.",
+    description: "Bolinhos individuais com cobertura decorada à mão. Bons para servir sem faca e sem prato.",
     items: ["Brigadeiro", "Ninho com Nutella", "Red Velvet", "Leite Ninho com Morango", "Chocolate Belga", "Cenoura com Brigadeiro"],
     pricing: ["R$ 7,00 por unidade", "Acima de 15 unidades: R$ 5,00 por unidade"],
   },
 ];
 
 function partyMessage(cat: (typeof PARTY_CATEGORIES)[number]) {
-  const lines = [`Olá, Coruja! Gostaria de encomendar ${cat.title}.`];
-  if (cat.items.length) lines.push(`Sabores: ${cat.items.join(", ")}.`);
+  const lines = [`Olá, Coruja! Tenho interesse em ${cat.title} para uma festa.`];
+  if (cat.items.length) lines.push(`Sabores do cardápio: ${cat.items.join(", ")}.`);
   lines.push(cat.description);
-  lines.push(`Preço: ${cat.pricing.join(" / ")}.`);
-  lines.push("Poderia me enviar mais informações?");
+  lines.push(`Valores do site: ${cat.pricing.join(" / ")}.`);
+  lines.push("Podemos combinar quantidade e data?");
   return lines.join("\n");
 }
 
@@ -756,7 +757,7 @@ function PartyCard({ cat }: { cat: (typeof PARTY_CATEGORIES)[number] }) {
             rel="noopener"
             className="btn-primary w-full mt-5 !py-3 !text-sm"
           >
-            <MessageCircle className="h-4 w-4" /> Pedir pelo WhatsApp
+            <MessageCircle className="h-4 w-4" /> Perguntar sobre esse doce
           </a>
         </div>
       </div>
@@ -772,21 +773,21 @@ function PartySection() {
         <div className="flex items-center gap-5 md:gap-8" data-reveal>
           <span className="hidden sm:block h-px flex-1 bg-[linear-gradient(90deg,transparent,color-mix(in_oklab,var(--rose)_45%,transparent))]" />
           <p className="font-display text-xl md:text-2xl text-chocolate/80 text-center italic">
-            Quer deixar sua festa ainda mais completa?
+            E o que mais vai ter na mesa?
           </p>
           <span className="hidden sm:block h-px flex-1 bg-[linear-gradient(270deg,transparent,color-mix(in_oklab,var(--rose)_45%,transparent))]" />
         </div>
 
         <div className="mt-14 max-w-2xl mx-auto text-center">
           <span className="eyebrow justify-center">
-            <span className="inline-block h-1.5 w-1.5 rounded-full bg-rose-deep" /> Parte 02 · Para sua festa
+            <span className="inline-block h-1.5 w-1.5 rounded-full bg-rose-deep" /> Parte 02 · Para a mesa
           </span>
           <h3 className="mt-4 font-display text-3xl md:text-4xl text-chocolate text-balance">
-            Complete sua <em className="not-italic text-rose-deep">festa</em>.
+            Os doces que ficam ao <em className="not-italic text-rose-deep">lado do bolo</em>.
           </h3>
 
           <p className="mt-4 text-chocolate/65 text-pretty">
-            Além dos bolos personalizados, temos uma seleção de doces artesanais preparados com o mesmo carinho para deixar sua comemoração ainda mais especial.
+            Brigadeiros enrolados um a um, trufas, brownies e cupcakes. Dá para pedir só o bolo, claro — mas eles costumam sumir primeiro.
           </p>
         </div>
 
@@ -809,15 +810,15 @@ function PartySection() {
           />
           <div className="relative z-10 max-w-2xl mx-auto">
             <Sparkles className="h-6 w-6 text-gold mx-auto mb-4" />
-            <h3 className="font-display text-3xl md:text-4xl text-cream leading-tight">Gostou? Faça sua encomenda agora mesmo.</h3>
-            <p className="mt-3 text-cream/70">Escolha seus doces favoritos e receba uma proposta personalizada em poucas horas.</p>
+            <h3 className="font-display text-3xl md:text-4xl text-cream leading-tight">Já tem uma data em mente?</h3>
+            <p className="mt-3 text-cream/70">Nos conte o dia e quantas pessoas. A gente monta a mesa junto com você e responde no mesmo dia.</p>
             <a
               href={wa("Olá, Coruja! Gostaria de fazer uma encomenda de doces.")}
               target="_blank"
               rel="noopener"
               className="btn-primary mt-6 mx-auto"
             >
-              <MessageCircle className="h-4 w-4" /> Solicitar pelo WhatsApp
+              <MessageCircle className="h-4 w-4" /> Combinar minha mesa de doces
             </a>
           </div>
         </div>
@@ -834,9 +835,9 @@ function Differentials() {
     <section className="py-20 md:py-28">
       <div className="mx-auto max-w-6xl px-4">
         <div className="max-w-2xl">
-          <span className="eyebrow"><span className="inline-block h-1.5 w-1.5 rounded-full bg-rose-deep" /> Diferenciais</span>
+          <span className="eyebrow"><span className="inline-block h-1.5 w-1.5 rounded-full bg-rose-deep" /> Como trabalhamos</span>
           <h2 className="mt-4 font-display text-3xl md:text-[2.5rem] text-chocolate text-balance">
-            O cuidado que faz a <em className="not-italic text-rose-deep">diferença</em>.
+            O que a gente faz <em className="not-italic text-rose-deep">diferente</em>.
           </h2>
         </div>
 
@@ -871,9 +872,9 @@ function HowItWorks() {
         <div className="text-center max-w-2xl mx-auto">
           <span className="eyebrow"><span className="inline-block h-1.5 w-1.5 rounded-full bg-rose-deep" /> Como funciona</span>
           <h2 className="mt-4 font-display text-3xl md:text-[2.5rem] text-chocolate text-balance">
-            Do primeiro <em className="not-italic text-rose-deep">"oi"</em> à entrega
+            Do primeiro <em className="not-italic text-rose-deep">"oi"</em> ao parabéns
           </h2>
-          <p className="mt-4 text-chocolate/65">Um processo simples, humano e cuidadoso do começo ao fim.</p>
+          <p className="mt-4 text-chocolate/65">São cinco passos, e a maior parte deles acontece numa conversa.</p>
         </div>
 
         <div className="mt-16 relative">
@@ -912,11 +913,11 @@ function Gallery() {
           <div className="max-w-xl">
             <span className="eyebrow"><span className="inline-block h-1.5 w-1.5 rounded-full bg-rose-deep" /> Galeria</span>
             <h2 className="mt-4 font-display text-3xl md:text-[2.5rem] text-chocolate text-balance">
-              Momentos que já <em className="not-italic text-rose-deep">adoçamos</em>.
+              Festas que já <em className="not-italic text-rose-deep">passaram por aqui</em>.
             </h2>
           </div>
           <a href={wa("Olá, Coruja! Vi a galeria e queria inspiração para meu evento.")} target="_blank" rel="noopener" className="btn-ghost">
-            Inspirar meu evento <ArrowRight className="h-4 w-4" />
+            Quero algo parecido <ArrowRight className="h-4 w-4" />
           </a>
         </div>
 
@@ -950,11 +951,11 @@ function FAQSection() {
           <div className="max-w-xl">
             <span className="eyebrow"><span className="inline-block h-1.5 w-1.5 rounded-full bg-rose-deep" /> Dúvidas frequentes</span>
             <h2 className="mt-4 font-display text-3xl md:text-[2.5rem] text-chocolate text-balance">
-              Tudo o que você quer <em className="not-italic text-rose-deep">saber</em>.
+              Antes de <em className="not-italic text-rose-deep">encomendar</em>.
             </h2>
           </div>
           <a href={wa("Olá, Coruja! Ainda tenho uma dúvida.")} target="_blank" rel="noopener" className="text-sm text-chocolate/70 hover:text-rose-deep inline-flex items-center gap-2">
-            Ainda tem dúvidas? Fale conosco <MessageCircle className="h-4 w-4" />
+            Ficou faltando alguma coisa? É só perguntar <MessageCircle className="h-4 w-4" />
           </a>
         </div>
 
@@ -989,20 +990,20 @@ function FinalCTA() {
 
       <div className="relative mx-auto max-w-3xl px-4 text-center">
         <h2 data-reveal className="font-display text-3xl md:text-[2.6rem] lg:text-[3rem] text-white text-balance leading-[1.05]">
-          Seu próximo momento especial merece algo <em className="not-italic" style={{ background: "linear-gradient(135deg, var(--rose) 0%, var(--gold) 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>inesquecível</em>.
+          Tem uma data marcada? A gente <em className="not-italic" style={{ background: "linear-gradient(135deg, var(--rose) 0%, var(--gold) 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>começa pela conversa</em>.
         </h2>
         <p data-reveal className="mt-5 mx-auto text-white/75 text-base md:text-lg text-pretty max-w-lg">
-          Solicite seu orçamento e transforme sua celebração em uma experiência ainda mais especial.&nbsp;
+          Manda o dia, quantas pessoas e o que você imaginou. Se ainda não sabe, tudo bem — a gente ajuda a decidir.
         </p>
         <div data-reveal className="mt-8">
           <a href={wa("Olá, Coruja! Quero fazer uma encomenda pelo site.")} target="_blank" rel="noopener" className="btn-primary !py-4 !px-8 text-base">
-            <MessageCircle className="h-5 w-5" /> Fazer Encomenda pelo WhatsApp
+            <MessageCircle className="h-5 w-5" /> Começar pelo WhatsApp
           </a>
         </div>
         <div data-reveal className="mt-8 flex flex-wrap justify-center gap-x-6 gap-y-2 text-xs text-white/60">
-          <span className="inline-flex items-center gap-2"><CheckCircle2 className="h-3.5 w-3.5 text-rose" /> Resposta rápida</span>
-          <span className="inline-flex items-center gap-2"><CheckCircle2 className="h-3.5 w-3.5 text-rose" /> Atendimento humanizado</span>
-          <span className="inline-flex items-center gap-2"><CheckCircle2 className="h-3.5 w-3.5 text-rose" /> Encomendas 100% seguras</span>
+          <span className="inline-flex items-center gap-2"><CheckCircle2 className="h-3.5 w-3.5 text-rose" /> Resposta no mesmo dia</span>
+          <span className="inline-flex items-center gap-2"><CheckCircle2 className="h-3.5 w-3.5 text-rose" /> Sem compromisso</span>
+          <span className="inline-flex items-center gap-2"><CheckCircle2 className="h-3.5 w-3.5 text-rose" /> Valores combinados antes</span>
         </div>
       </div>
     </section>
@@ -1022,7 +1023,7 @@ function Footer() {
               <span className="font-display text-xl text-chocolate">Coruja</span>
             </div>
             <p className="mt-4 text-sm text-chocolate/65 leading-relaxed">
-              Confeitaria artesanal boutique. Bolos e doces feitos com carinho para os seus melhores momentos.
+              Confeitaria artesanal em Campinas. Bolos e doces feitos sob encomenda para as datas que ficam na memória.
             </p>
           </div>
 
@@ -1050,15 +1051,15 @@ function Footer() {
             <p className="text-xs font-semibold uppercase tracking-widest text-rose-deep">Atendimento</p>
             <ul className="mt-4 space-y-2 text-sm text-chocolate/75">
               <li className="flex items-center gap-2"><MapPin className="h-4 w-4 text-rose-deep" />&nbsp;Campinas - SP e região</li>
-              <li>Pedidos com 5 dias de antecedência</li>
-              <li>Personalizados para cada ocasião</li>
+              <li>Pedidos com cinco dias de antecedência</li>
+              <li>Cada encomenda combinada à parte</li>
             </ul>
           </div>
         </div>
 
         <div className="mt-14 pt-8 border-t border-border/60 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="font-display italic text-chocolate/70 text-center md:text-left">
-            "Feito com carinho para adoçar seus melhores momentos."
+            "Um bolo bom é aquele que some antes do fim da festa."
           </p>
           <p className="text-xs text-chocolate/50">© {new Date().getFullYear()} Coruja Bolos & Doces. Todos os direitos reservados.</p>
         </div>
@@ -1083,7 +1084,7 @@ function WhatsAppFloat() {
         <span className="grid place-items-center h-8 w-8 rounded-full bg-white/15">
           <MessageCircle className="h-4 w-4" />
         </span>
-        <span className="hidden sm:inline text-sm">Pedir no WhatsApp</span>
+        <span className="hidden sm:inline text-sm">Falar com a Coruja</span>
       </span>
     </a>
   );
