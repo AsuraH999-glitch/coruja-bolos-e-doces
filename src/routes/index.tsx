@@ -124,7 +124,7 @@ const STEPS = [
 const FAQ = [
   { q: "Qual a antecedência mínima para pedidos?", a: "Recomendamos pedidos com no mínimo 5 dias de antecedência, para garantir a produção artesanal com o cuidado que a Coruja oferece. Encomendas maiores podem exigir prazo estendido." },
   { q: "Posso personalizar sabores, cores e tema?", a: "Sim! Personalização é a nossa essência. Cores, decoração, tema, topo do bolo e combinação de sabores são desenhados junto com você." },
-  { q: "Vocês fazem entrega?", a: "Realizamos entregas em Piracicaba e região sob consulta. O valor do frete é calculado conforme o endereço e informado no orçamento." },
+  { q: "Vocês fazem entrega?", a: "Realizamos entregas em Campinas e região sob consulta. O valor do frete é calculado conforme o endereço e informado no orçamento." },
   { q: "Quais formas de pagamento vocês aceitam?", a: "Aceitamos PIX, transferência e cartão. Para confirmar o pedido, solicitamos um sinal e o restante próximo à entrega." },
   { q: "Como solicitar meu orçamento?", a: "Basta clicar em qualquer botão de WhatsApp desta página. Nos conte a data, quantidade de convidados e sua ideia — respondemos rapidinho com uma proposta personalizada." },
 ];
