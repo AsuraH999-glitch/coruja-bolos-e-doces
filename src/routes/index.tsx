@@ -694,7 +694,8 @@ const PARTY_CATEGORIES = [
   {
     id: "mini-trufas",
     title: "Trufas",
-    image: miniTrufasAsset.url,
+    image: trufasAsset.url,
+    imagePosition: "object-center",
     description: "Bombons de chocolate com recheios que se desmancham na boca.",
     groups: [
       {
