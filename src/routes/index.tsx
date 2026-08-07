@@ -16,7 +16,7 @@ import boloLilasMorangoAsset from "@/assets/bolo-lilas-morango.jpg.asset.json";
 
 import docesTradicionaisAsset from "@/assets/doces-tradicionais.jpg.asset.json";
 import brownieAsset from "@/assets/brownie.jpg.asset.json";
-import miniTrufasAsset from "@/assets/mini-trufas.jpg.asset.json";
+import trufasAsset from "@/assets/trufas.jpg.asset.json";
 import donutsAsset from "@/assets/donuts.jpg.asset.json";
 import cupcakesAsset from "@/assets/cupcakes.jpg.asset.json";
 
