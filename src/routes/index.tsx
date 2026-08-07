@@ -660,51 +660,98 @@ function Menu() {
 const PARTY_CATEGORIES = [
   {
     id: "doces-tradicionais",
-    title: "Doces Tradicionais",
+    title: "Docinhos",
     image: docesTradicionaisAsset.url,
     description: "Escolha até 4 sabores no cento ou 2 sabores no meio cento.",
-    items: ["Brigadeiro", "Beijinho", "Bicho de Pé", "Cajuzinho", "Casadinho", "Olho de Sogra", "Brigadeiro de Leite Ninho", "Ninho com Nutella"],
-    pricing: ["Cento: R$ 150,00", "Meio Cento: R$ 80,00"],
+    groups: [
+      {
+        label: "Tradicionais",
+        items: ["Brigadeiro", "Beijinho", "Bicho de Pé", "Cajuzinho", "Casadinho", "Olho de Sogra", "Brigadeiro de Leite Ninho", "Prestígio"],
+        pricing: ["Cento: R$ 150,00", "Meio Cento: R$ 90,00"],
+      },
+      {
+        label: "Gourmet",
+        items: ["Ao Leite Belga", "Pistache", "Churros", "Ferrero Rocher", "Surpresa de Uva", "Romeu e Julieta", "Bicho de Pé (Morango)", "Leite Ninho com Nutella"],
+        pricing: ["Cento: R$ 250,00", "Meio Cento: R$ 125,00"],
+      },
+    ],
+    notes: [] as string[],
   },
   {
     id: "brownie",
     title: "Brownie",
     image: brownieAsset.url,
     description: "Brownie tradicional com chocolate belga e casquinha crocante.",
-    items: [],
-    pricing: ["Cento: R$ 150,00", "Meio Cento: R$ 80,00"],
+    groups: [
+      {
+        label: "",
+        items: [] as string[],
+        pricing: ["Cento: R$ 150,00", "Meio Cento: R$ 80,00"],
+      },
+    ],
+    notes: [] as string[],
   },
   {
     id: "mini-trufas",
-    title: "Mini Trufas",
+    title: "Trufas",
     image: miniTrufasAsset.url,
-    description: "Bombons de chocolate belga com recheios que se desmancham na boca.",
-    items: ["Brigadeiro", "Maracujá", "Cocada Cremosa", "Doce de Leite", "Creme de Avelã"],
-    pricing: ["Cento: R$ 150,00", "Meio Cento: R$ 80,00"],
+    description: "Bombons de chocolate com recheios que se desmancham na boca.",
+    groups: [
+      {
+        label: "Tradicionais e Frutados",
+        items: ["Tradicional", "Branco", "Maracujá", "Limão", "Morango / Sensação"],
+        pricing: [],
+      },
+      {
+        label: "Gourmet e Especiais",
+        items: ["Leite Ninho", "Ninho com Nutella", "Prestígio", "Avelã / Gianduia", "Cookies and Cream", "Caramelo com Flor de Sal"],
+        pricing: ["Cento: R$ 250,00", "Meio Cento: R$ 125,00", "Unidade: R$ 3,50"],
+      },
+    ],
+    notes: [] as string[],
   },
   {
     id: "donuts",
     title: "Donuts",
     image: donutsAsset.url,
     description: "Donuts artesanais com massa fofinha e coberturas especiais.",
-    items: [],
-    pricing: ["Cento: R$ 150,00", "Meio Cento: R$ 80,00"],
+    groups: [
+      {
+        label: "Tradicionais",
+        items: ["Açúcar e Canela", "Glacê Original", "Chocolate ao Leite"],
+        pricing: ["Cento: R$ 200,00", "Meio Cento: R$ 100,00", "Unidade: R$ 3,00"],
+      },
+      {
+        label: "Gourmet / Especiais",
+        items: ["Homer Simpson", "Doce de Leite / Churros", "Creme de Avelã (Nutella)", "Leite Ninho", "Red Velvet"],
+        pricing: ["Cento: R$ 250,00", "Meio Cento: R$ 125,00", "Unidade Gourmet: R$ 6,00"],
+      },
+    ],
+    notes: ["Meio cento: escolha até 2 sabores", "Cento: escolha até 4 sabores"],
   },
   {
     id: "cupcakes",
     title: "Cupcakes",
     image: cupcakesAsset.url,
     description: "Massa aveludada, cobertura cremosa e decoração boutique.",
-    items: ["Brigadeiro", "Ninho com Nutella", "Red Velvet", "Leite Ninho com Morango", "Chocolate Belga", "Cenoura com Brigadeiro"],
-    pricing: ["R$ 7,00 por unidade", "Acima de 15 unidades: R$ 5,00 por unidade"],
+    groups: [
+      {
+        label: "",
+        items: ["Brigadeiro", "Ninho com Nutella", "Red Velvet", "Leite Ninho com Morango", "Chocolate Belga", "Cenoura com Brigadeiro"],
+        pricing: ["R$ 7,00 por unidade", "Acima de 15 unidades: R$ 5,00 por unidade"],
+      },
+    ],
+    notes: [] as string[],
   },
 ];
 
 function partyMessage(cat: (typeof PARTY_CATEGORIES)[number]) {
   const lines = [`Olá, Coruja! Gostaria de encomendar ${cat.title}.`];
-  if (cat.items.length) lines.push(`Sabores: ${cat.items.join(", ")}.`);
-  lines.push(cat.description);
-  lines.push(`Preço: ${cat.pricing.join(" / ")}.`);
+  for (const g of cat.groups) {
+    if (g.items.length) lines.push(`${g.label ? `${g.label}: ` : "Sabores: "}${g.items.join(", ")}.`);
+    if (g.pricing.length) lines.push(`Preços${g.label ? ` (${g.label})` : ""}: ${g.pricing.join(" / ")}.`);
+  }
+  for (const n of cat.notes) lines.push(n);
   lines.push("Poderia me enviar mais informações?");
   return lines.join("\n");
 }
@@ -731,30 +778,48 @@ function PartyCard({ cat }: { cat: (typeof PARTY_CATEGORIES)[number] }) {
         <h3 className="font-display text-2xl md:text-[1.75rem] text-chocolate leading-tight">{cat.title}</h3>
         <p className="mt-2 text-sm text-chocolate/65 leading-relaxed">{cat.description}</p>
 
-        {cat.items.length > 0 && (
-          <div className="mt-4 flex flex-wrap gap-2">
-            {cat.items.map((item) => (
-              <span
-                key={item}
-                className="inline-flex items-center rounded-full bg-rose/10 px-2.5 py-1 text-[11px] font-medium text-rose-deep border border-rose/10"
-              >
-                {item}
-              </span>
-            ))}
-          </div>
-        )}
+        <div className="mt-4 space-y-5">
+          {cat.groups.map((group, i) => (
+            <div key={group.label || `grupo-${i}`}>
+              {group.label && (
+                <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-chocolate/50">{group.label}</p>
+              )}
+              {group.items.length > 0 && (
+                <div className={`flex flex-wrap gap-2 ${group.label ? "mt-2.5" : ""}`}>
+                  {group.items.map((item) => (
+                    <span
+                      key={item}
+                      className="inline-flex items-center rounded-full bg-rose/10 px-2.5 py-1 text-[11px] font-medium text-rose-deep border border-rose/10"
+                    >
+                      {item}
+                    </span>
+                  ))}
+                </div>
+              )}
+              {group.pricing.length > 0 && (
+                <div className="mt-3 space-y-1">
+                  {group.pricing.map((price) => (
+                    <p key={price} className="font-display text-lg text-rose-deep leading-tight">{price}</p>
+                  ))}
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
 
         <div className="mt-auto pt-6">
-          <div className="space-y-1">
-            {cat.pricing.map((price) => (
-              <p key={price} className="font-display text-lg text-rose-deep leading-tight">{price}</p>
-            ))}
-          </div>
+          {cat.notes.length > 0 && (
+            <ul className="mb-4 space-y-1">
+              {cat.notes.map((note) => (
+                <li key={note} className="text-[12px] text-chocolate/60 leading-relaxed">{note}</li>
+              ))}
+            </ul>
+          )}
           <a
             href={wa(partyMessage(cat))}
             target="_blank"
             rel="noopener"
-            className="btn-primary w-full mt-5 !py-3 !text-sm"
+            className="btn-primary w-full !py-3 !text-sm"
           >
             <MessageCircle className="h-4 w-4" /> Pedir pelo WhatsApp
           </a>
@@ -763,6 +828,7 @@ function PartyCard({ cat }: { cat: (typeof PARTY_CATEGORIES)[number] }) {
     </article>
   );
 }
+
 
 function PartySection() {
   return (
