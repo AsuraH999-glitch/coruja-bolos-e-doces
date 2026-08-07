@@ -789,7 +789,7 @@ function PartyCard({ cat }: { cat: (typeof PARTY_CATEGORIES)[number] }) {
                   {group.items.map((item) => (
                     <span
                       key={item}
-                      className="inline-flex items-center rounded-full bg-rose/10 px-2.5 py-1 text-[11px] font-medium text-rose-deep border border-rose/10"
+                      className="inline-flex items-center rounded-full bg-rose/5 px-2.5 py-1 text-[11px] font-medium text-rose-deep border border-rose/8"
                     >
                       {item}
                     </span>
@@ -797,10 +797,20 @@ function PartyCard({ cat }: { cat: (typeof PARTY_CATEGORIES)[number] }) {
                 </div>
               )}
               {group.pricing.length > 0 && (
-                <div className="mt-3 space-y-1">
-                  {group.pricing.map((price) => (
-                    <p key={price} className="font-display text-lg text-rose-deep leading-tight">{price}</p>
-                  ))}
+                <div className="mt-4 space-y-3">
+                  {group.pricing.map((price) => {
+                    const [label, value] = price.includes(":") ? price.split(":") : ["", price];
+                    return (
+                      <div key={price} className="flex items-baseline justify-between gap-3">
+                        {label && (
+                          <span className="text-[11px] uppercase tracking-[0.14em] text-chocolate/50">{label.trim()}</span>
+                        )}
+                        <span className="font-display text-lg text-chocolate leading-tight">
+                          {value ? value.trim() : price}
+                        </span>
+                      </div>
+                    );
+                  })}
                 </div>
               )}
             </div>
