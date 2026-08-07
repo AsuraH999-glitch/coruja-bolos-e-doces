@@ -770,7 +770,7 @@ function PartyCard({ cat }: { cat: (typeof PARTY_CATEGORIES)[number] }) {
           width={1024}
           height={1024}
           loading="lazy"
-          className="h-full w-full object-cover transition-transform duration-[900ms] group-hover:scale-[1.045]"
+          className={`h-full w-full object-cover transition-transform duration-[900ms] group-hover:scale-[1.045] ${cat.imagePosition ?? ""}`}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-chocolate/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
       </div>
