@@ -716,6 +716,7 @@ const PARTY_CATEGORIES = [
     id: "donuts",
     title: "Donuts",
     image: donutsAsset.url,
+    imagePosition: "object-center",
     description: "Donuts artesanais com massa fofinha e coberturas especiais.",
     groups: [
       {
