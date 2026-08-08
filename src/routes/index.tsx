@@ -662,6 +662,7 @@ const PARTY_CATEGORIES = [
     id: "doces-tradicionais",
     title: "Docinhos",
     image: docesTradicionaisAsset.url,
+    imagePosition: "object-center",
     description: "Escolha até 4 sabores no cento ou 2 sabores no meio cento.",
     groups: [
       {
