@@ -16,7 +16,7 @@ import boloLilasMorangoAsset from "@/assets/bolo-lilas-morango.jpg.asset.json";
 
 import docesTradicionaisAsset from "@/assets/doces-tradicionais.jpg.asset.json";
 import brownieAsset from "@/assets/brownie.jpg.asset.json";
-import trufasAsset from "@/assets/trufas.png.asset.json";
+import miniTrufasAsset from "@/assets/mini-trufas.jpg.asset.json";
 import donutsAsset from "@/assets/donuts.jpg.asset.json";
 import cupcakesAsset from "@/assets/cupcakes.jpg.asset.json";
 
@@ -694,8 +694,7 @@ const PARTY_CATEGORIES = [
   {
     id: "mini-trufas",
     title: "Trufas",
-    image: trufasAsset.url,
-    imagePosition: "object-center",
+    image: miniTrufasAsset.url,
     description: "Bombons de chocolate com recheios que se desmancham na boca.",
     groups: [
       {
@@ -770,7 +769,7 @@ function PartyCard({ cat }: { cat: (typeof PARTY_CATEGORIES)[number] }) {
           width={1024}
           height={1024}
           loading="lazy"
-          className={`h-full w-full object-cover transition-transform duration-[900ms] group-hover:scale-[1.045] ${cat.imagePosition ?? ""}`}
+          className="h-full w-full object-cover transition-transform duration-[900ms] group-hover:scale-[1.045]"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-chocolate/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
       </div>
